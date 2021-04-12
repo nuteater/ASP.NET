@@ -1,7 +1,0 @@
-input[type="radio"] {
-    display: none;
-}
-:host ::ng-deep .sales-summary-chart svg.ngx-charts {
-        margin-left: -35px;
-        margin-top: 35px;
-    }
