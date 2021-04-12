@@ -1,0 +1,2 @@
+После установки всех пакетов и запуска приложения, перенести файл в Abp.AspNetZeroCore.dll
+%USERPROFILE%\.nuget\packages\abp.aspnetzerocore\3.0.0\lib\net5.0

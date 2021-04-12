@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props"></Import>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>NewName.NewAbpZeroTemplate.Application</AssemblyName>
+    <PackageId>NewName.NewAbpZeroTemplate.Application</PackageId>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>NewName.NewAbpZeroTemplate</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Abp.EntityFrameworkCore.EFPlus" Version="6.1.1" />
+    <PackageReference Include="NPOI" Version="2.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewName.NewAbpZeroTemplate.Application.Shared\NewName.NewAbpZeroTemplate.Application.Shared.csproj" />
+    <ProjectReference Include="..\NewName.NewAbpZeroTemplate.Core\NewName.NewAbpZeroTemplate.Core.csproj" />
+    <ProjectReference Include="..\NewName.NewAbpZeroTemplate.EntityFrameworkCore\NewName.NewAbpZeroTemplate.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>
