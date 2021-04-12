@@ -27,7 +27,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     isTenantAvailable(body: IsTenantAvailableInput | undefined): Observable<IsTenantAvailableOutput> {
@@ -83,7 +83,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     resolveTenantId(body: ResolveTenantIdInput | undefined): Observable<number> {
@@ -139,7 +139,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     register(body: RegisterInput | undefined): Observable<RegisterOutput> {
@@ -195,7 +195,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     sendPasswordResetCode(body: SendPasswordResetCodeInput | undefined): Observable<void> {
@@ -247,7 +247,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     resetPassword(body: ResetPasswordInput | undefined): Observable<ResetPasswordOutput> {
@@ -303,7 +303,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     sendEmailActivationLink(body: SendEmailActivationLinkInput | undefined): Observable<void> {
@@ -355,7 +355,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     activateEmail(body: ActivateEmailInput | undefined): Observable<void> {
@@ -407,7 +407,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     impersonate(body: ImpersonateInput | undefined): Observable<ImpersonateOutput> {
@@ -463,7 +463,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     delegatedImpersonate(body: DelegatedImpersonateInput | undefined): Observable<ImpersonateOutput> {
@@ -570,7 +570,7 @@ export class AccountServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     switchToLinkedAccount(body: SwitchToLinkedAccountInput | undefined): Observable<SwitchToLinkedAccountOutput> {
@@ -638,18 +638,18 @@ export class AuditLogServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
-     * @param userName (optional) 
-     * @param serviceName (optional) 
-     * @param methodName (optional) 
-     * @param browserInfo (optional) 
-     * @param hasException (optional) 
-     * @param minExecutionDuration (optional) 
-     * @param maxExecutionDuration (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
+     * @param userName (optional)
+     * @param serviceName (optional)
+     * @param methodName (optional)
+     * @param browserInfo (optional)
+     * @param hasException (optional)
+     * @param minExecutionDuration (optional)
+     * @param maxExecutionDuration (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getAuditLogs(startDate: DateTime | undefined, endDate: DateTime | undefined, userName: string | null | undefined, serviceName: string | null | undefined, methodName: string | null | undefined, browserInfo: string | null | undefined, hasException: boolean | null | undefined, minExecutionDuration: number | null | undefined, maxExecutionDuration: number | null | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfAuditLogListDto> {
@@ -733,18 +733,18 @@ export class AuditLogServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
-     * @param userName (optional) 
-     * @param serviceName (optional) 
-     * @param methodName (optional) 
-     * @param browserInfo (optional) 
-     * @param hasException (optional) 
-     * @param minExecutionDuration (optional) 
-     * @param maxExecutionDuration (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
+     * @param userName (optional)
+     * @param serviceName (optional)
+     * @param methodName (optional)
+     * @param browserInfo (optional)
+     * @param hasException (optional)
+     * @param minExecutionDuration (optional)
+     * @param maxExecutionDuration (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getAuditLogsToExcel(startDate: DateTime | undefined, endDate: DateTime | undefined, userName: string | null | undefined, serviceName: string | null | undefined, methodName: string | null | undefined, browserInfo: string | null | undefined, hasException: boolean | null | undefined, minExecutionDuration: number | null | undefined, maxExecutionDuration: number | null | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<FileDto> {
@@ -883,13 +883,13 @@ export class AuditLogServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
-     * @param userName (optional) 
-     * @param entityTypeFullName (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
+     * @param userName (optional)
+     * @param entityTypeFullName (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getEntityChanges(startDate: DateTime | undefined, endDate: DateTime | undefined, userName: string | null | undefined, entityTypeFullName: string | null | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfEntityChangeListDto> {
@@ -963,11 +963,11 @@ export class AuditLogServiceProxy {
     }
 
     /**
-     * @param entityTypeFullName (optional) 
-     * @param entityId (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param entityTypeFullName (optional)
+     * @param entityId (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getEntityTypeChanges(entityTypeFullName: string | null | undefined, entityId: string | null | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfEntityChangeListDto> {
@@ -1033,13 +1033,13 @@ export class AuditLogServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
-     * @param userName (optional) 
-     * @param entityTypeFullName (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
+     * @param userName (optional)
+     * @param entityTypeFullName (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getEntityChangesToExcel(startDate: DateTime | undefined, endDate: DateTime | undefined, userName: string | null | undefined, entityTypeFullName: string | null | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<FileDto> {
@@ -1113,7 +1113,7 @@ export class AuditLogServiceProxy {
     }
 
     /**
-     * @param entityChangeId (optional) 
+     * @param entityChangeId (optional)
      * @return Success
      */
     getEntityPropertyChanges(entityChangeId: number | undefined): Observable<EntityPropertyChangeDto[]> {
@@ -1236,7 +1236,7 @@ export class CachingServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     clearCache(body: EntityDtoOfString | undefined): Observable<void> {
@@ -1398,9 +1398,9 @@ export class ChatServiceProxy {
     }
 
     /**
-     * @param tenantId (optional) 
-     * @param userId (optional) 
-     * @param minMessageId (optional) 
+     * @param tenantId (optional)
+     * @param userId (optional)
+     * @param minMessageId (optional)
      * @return Success
      */
     getUserChatMessages(tenantId: number | null | undefined, userId: number | undefined, minMessageId: number | null | undefined): Observable<ListResultDtoOfChatMessageDto> {
@@ -1460,7 +1460,7 @@ export class ChatServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     markAllUnreadMessagesOfUserAsRead(body: MarkAllUnreadMessagesOfUserAsReadInput | undefined): Observable<void> {
@@ -1524,7 +1524,7 @@ export class CommonLookupServiceProxy {
     }
 
     /**
-     * @param onlyFreeItems (optional) 
+     * @param onlyFreeItems (optional)
      * @return Success
      */
     getEditionsForCombobox(onlyFreeItems: boolean | undefined): Observable<ListResultDtoOfSubscribableEditionComboboxItemDto> {
@@ -1580,7 +1580,7 @@ export class CommonLookupServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     findUsers(body: FindUsersInput | undefined): Observable<PagedResultDtoOfNameValueDto> {
@@ -1699,8 +1699,8 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param dashboardName (optional) 
-     * @param application (optional) 
+     * @param dashboardName (optional)
+     * @param application (optional)
      * @return Success
      */
     getUserDashboard(dashboardName: string | null | undefined, application: string | null | undefined): Observable<Dashboard> {
@@ -1756,7 +1756,7 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     savePage(body: SavePageInput | undefined): Observable<void> {
@@ -1808,7 +1808,7 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     renamePage(body: RenamePageInput | undefined): Observable<void> {
@@ -1860,7 +1860,7 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     addNewPage(body: AddNewPageInput | undefined): Observable<AddNewPageOutput> {
@@ -1916,9 +1916,9 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param id (optional) 
-     * @param dashboardName (optional) 
-     * @param application (optional) 
+     * @param id (optional)
+     * @param dashboardName (optional)
+     * @param application (optional)
      * @return Success
      */
     deletePage(id: string | null | undefined, dashboardName: string | null | undefined, application: string | null | undefined): Observable<void> {
@@ -1972,7 +1972,7 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     addWidget(body: AddWidgetInput | undefined): Observable<Widget> {
@@ -2028,8 +2028,8 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param dashboardName (optional) 
-     * @param application (optional) 
+     * @param dashboardName (optional)
+     * @param application (optional)
      * @return Success
      */
     getDashboardDefinition(dashboardName: string | null | undefined, application: string | null | undefined): Observable<DashboardOutput> {
@@ -2085,8 +2085,8 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param dashboardName (optional) 
-     * @param application (optional) 
+     * @param dashboardName (optional)
+     * @param application (optional)
      * @return Success
      */
     getAllWidgetDefinitions(dashboardName: string | null | undefined, application: string | null | undefined): Observable<WidgetOutput[]> {
@@ -2146,7 +2146,7 @@ export class DashboardCustomizationServiceProxy {
     }
 
     /**
-     * @param application (optional) 
+     * @param application (optional)
      * @return Success
      */
     getSettingName(application: string | null | undefined): Observable<string> {
@@ -2212,7 +2212,7 @@ export class DemoUiComponentsServiceProxy {
     }
 
     /**
-     * @param date (optional) 
+     * @param date (optional)
      * @return Success
      */
     sendAndGetDate(date: DateTime | null | undefined): Observable<DateToStringOutput> {
@@ -2266,7 +2266,7 @@ export class DemoUiComponentsServiceProxy {
     }
 
     /**
-     * @param date (optional) 
+     * @param date (optional)
      * @return Success
      */
     sendAndGetDateTime(date: DateTime | null | undefined): Observable<DateToStringOutput> {
@@ -2320,8 +2320,8 @@ export class DemoUiComponentsServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
      * @return Success
      */
     sendAndGetDateRange(startDate: DateTime | null | undefined, endDate: DateTime | null | undefined): Observable<DateToStringOutput> {
@@ -2377,7 +2377,7 @@ export class DemoUiComponentsServiceProxy {
     }
 
     /**
-     * @param searchTerm (optional) 
+     * @param searchTerm (optional)
      * @return Success
      */
     getCountries(searchTerm: string | null | undefined): Observable<NameValueOfString[]> {
@@ -2435,7 +2435,7 @@ export class DemoUiComponentsServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     sendAndGetSelectedCountries(body: NameValueOfString[] | null | undefined): Observable<NameValueOfString[]> {
@@ -2495,7 +2495,7 @@ export class DemoUiComponentsServiceProxy {
     }
 
     /**
-     * @param input (optional) 
+     * @param input (optional)
      * @return Success
      */
     sendAndGetValue(input: string | null | undefined): Observable<StringOutput> {
@@ -2561,7 +2561,7 @@ export class DynamicEntityPropertyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<DynamicEntityPropertyDto> {
@@ -2617,7 +2617,7 @@ export class DynamicEntityPropertyServiceProxy {
     }
 
     /**
-     * @param entityFullName (optional) 
+     * @param entityFullName (optional)
      * @return Success
      */
     getAllPropertiesOfAnEntity(entityFullName: string | null | undefined): Observable<ListResultDtoOfDynamicEntityPropertyDto> {
@@ -2722,7 +2722,7 @@ export class DynamicEntityPropertyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     add(body: DynamicEntityPropertyDto | undefined): Observable<void> {
@@ -2774,7 +2774,7 @@ export class DynamicEntityPropertyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: DynamicEntityPropertyDto | undefined): Observable<void> {
@@ -2826,7 +2826,7 @@ export class DynamicEntityPropertyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -3063,7 +3063,7 @@ export class DynamicEntityPropertyValueServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<DynamicEntityPropertyValueDto> {
@@ -3119,8 +3119,8 @@ export class DynamicEntityPropertyValueServiceProxy {
     }
 
     /**
-     * @param entityId (optional) 
-     * @param propertyId (optional) 
+     * @param entityId (optional)
+     * @param propertyId (optional)
      * @return Success
      */
     getAll(entityId: string | null | undefined, propertyId: number | undefined): Observable<ListResultDtoOfDynamicEntityPropertyValueDto> {
@@ -3178,7 +3178,7 @@ export class DynamicEntityPropertyValueServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     add(body: DynamicEntityPropertyValueDto | undefined): Observable<void> {
@@ -3230,7 +3230,7 @@ export class DynamicEntityPropertyValueServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: DynamicEntityPropertyValueDto | undefined): Observable<void> {
@@ -3282,7 +3282,7 @@ export class DynamicEntityPropertyValueServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -3393,7 +3393,7 @@ export class DynamicEntityPropertyValueServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     insertOrUpdateAllValues(body: InsertOrUpdateAllValuesInput | undefined): Observable<void> {
@@ -3445,7 +3445,7 @@ export class DynamicEntityPropertyValueServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     cleanValues(body: CleanValuesInput | undefined): Observable<void> {
@@ -3509,7 +3509,7 @@ export class DynamicPropertyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<DynamicPropertyDto> {
@@ -3616,7 +3616,7 @@ export class DynamicPropertyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     add(body: DynamicPropertyDto | undefined): Observable<void> {
@@ -3668,7 +3668,7 @@ export class DynamicPropertyServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: DynamicPropertyDto | undefined): Observable<void> {
@@ -3720,7 +3720,7 @@ export class DynamicPropertyServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -3772,7 +3772,7 @@ export class DynamicPropertyServiceProxy {
     }
 
     /**
-     * @param name (optional) 
+     * @param name (optional)
      * @return Success
      */
     findAllowedInputType(name: string | null | undefined): Observable<IInputType> {
@@ -3838,7 +3838,7 @@ export class DynamicPropertyValueServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: number | undefined): Observable<DynamicPropertyValueDto> {
@@ -3894,7 +3894,7 @@ export class DynamicPropertyValueServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getAllValuesOfDynamicProperty(id: number | undefined): Observable<ListResultDtoOfDynamicPropertyValueDto> {
@@ -3950,7 +3950,7 @@ export class DynamicPropertyValueServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     add(body: DynamicPropertyValueDto | undefined): Observable<void> {
@@ -4002,7 +4002,7 @@ export class DynamicPropertyValueServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     update(body: DynamicPropertyValueDto | undefined): Observable<void> {
@@ -4054,7 +4054,7 @@ export class DynamicPropertyValueServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     delete(id: number | undefined): Observable<void> {
@@ -4169,7 +4169,7 @@ export class EditionServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getEditionForEdit(id: number | null | undefined): Observable<GetEditionEditOutput> {
@@ -4223,7 +4223,7 @@ export class EditionServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createEdition(body: CreateEditionDto | undefined): Observable<void> {
@@ -4275,7 +4275,7 @@ export class EditionServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateEdition(body: UpdateEditionDto | undefined): Observable<void> {
@@ -4327,7 +4327,7 @@ export class EditionServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     deleteEdition(id: number | undefined): Observable<void> {
@@ -4379,7 +4379,7 @@ export class EditionServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     moveTenantsToAnotherEdition(body: MoveTenantsToAnotherEditionDto | undefined): Observable<void> {
@@ -4431,9 +4431,9 @@ export class EditionServiceProxy {
     }
 
     /**
-     * @param selectedEditionId (optional) 
-     * @param addAllItem (optional) 
-     * @param onlyFreeItems (optional) 
+     * @param selectedEditionId (optional)
+     * @param addAllItem (optional)
+     * @param onlyFreeItems (optional)
      * @return Success
      */
     getEditionComboboxItems(selectedEditionId: number | null | undefined, addAllItem: boolean | undefined, onlyFreeItems: boolean | undefined): Observable<SubscribableEditionComboboxItemDto[]> {
@@ -4499,7 +4499,7 @@ export class EditionServiceProxy {
     }
 
     /**
-     * @param editionId (optional) 
+     * @param editionId (optional)
      * @return Success
      */
     getTenantCount(editionId: number | undefined): Observable<number> {
@@ -4567,7 +4567,7 @@ export class FriendshipServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createFriendshipRequest(body: CreateFriendshipRequestInput | undefined): Observable<FriendDto> {
@@ -4623,7 +4623,7 @@ export class FriendshipServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createFriendshipRequestByUserName(body: CreateFriendshipRequestByUserNameInput | undefined): Observable<FriendDto> {
@@ -4679,7 +4679,7 @@ export class FriendshipServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     blockUser(body: BlockUserInput | undefined): Observable<void> {
@@ -4731,7 +4731,7 @@ export class FriendshipServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     unblockUser(body: UnblockUserInput | undefined): Observable<void> {
@@ -4783,7 +4783,7 @@ export class FriendshipServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     acceptFriendshipRequest(body: AcceptFriendshipRequestInput | undefined): Observable<void> {
@@ -4847,8 +4847,8 @@ export class HostDashboardServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
      * @return Success
      */
     getTopStatsData(startDate: DateTime | undefined, endDate: DateTime | undefined): Observable<TopStatsData> {
@@ -5010,8 +5010,8 @@ export class HostDashboardServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
      * @return Success
      */
     getIncomeStatistics(incomeStatisticsDateInterval: ChartDateInterval, startDate: DateTime | undefined, endDate: DateTime | undefined): Observable<GetIncomeStatisticsDataOutput> {
@@ -5075,8 +5075,8 @@ export class HostDashboardServiceProxy {
     }
 
     /**
-     * @param startDate (optional) 
-     * @param endDate (optional) 
+     * @param startDate (optional)
+     * @param endDate (optional)
      * @return Success
      */
     getEditionTenantStatistics(startDate: DateTime | undefined, endDate: DateTime | undefined): Observable<GetEditionTenantStatisticsOutput> {
@@ -5199,7 +5199,7 @@ export class HostSettingsServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateAllSettings(body: HostSettingsEditDto | undefined): Observable<void> {
@@ -5251,7 +5251,7 @@ export class HostSettingsServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     sendTestEmail(body: SendTestEmailInput | undefined): Observable<void> {
@@ -5366,7 +5366,7 @@ export class InstallServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     setup(body: InstallDto | undefined): Observable<void> {
@@ -5532,7 +5532,7 @@ export class InvoiceServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getInvoiceInfo(id: number | undefined): Observable<InvoiceDto> {
@@ -5588,7 +5588,7 @@ export class InvoiceServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createInvoice(body: CreateInvoiceDto | undefined): Observable<void> {
@@ -5703,7 +5703,7 @@ export class LanguageServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getLanguageForEdit(id: number | null | undefined): Observable<GetLanguageForEditOutput> {
@@ -5757,7 +5757,7 @@ export class LanguageServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createOrUpdateLanguage(body: CreateOrUpdateLanguageInput | undefined): Observable<void> {
@@ -5809,7 +5809,7 @@ export class LanguageServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     deleteLanguage(id: number | undefined): Observable<void> {
@@ -5861,7 +5861,7 @@ export class LanguageServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     setDefaultLanguage(body: SetDefaultLanguageInput | undefined): Observable<void> {
@@ -5913,12 +5913,12 @@ export class LanguageServiceProxy {
     }
 
     /**
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
-     * @param sorting (optional) 
-     * @param baseLanguageName (optional) 
-     * @param targetValueFilter (optional) 
-     * @param filterText (optional) 
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
+     * @param sorting (optional)
+     * @param baseLanguageName (optional)
+     * @param targetValueFilter (optional)
+     * @param filterText (optional)
      * @return Success
      */
     getLanguageTexts(maxResultCount: number | undefined, skipCount: number | undefined, sorting: string | null | undefined, sourceName: string, baseLanguageName: string | null | undefined, targetLanguageName: string, targetValueFilter: string | null | undefined, filterText: string | null | undefined): Observable<PagedResultDtoOfLanguageTextListDto> {
@@ -5994,7 +5994,7 @@ export class LanguageServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateLanguageText(body: UpdateLanguageTextInput | undefined): Observable<void> {
@@ -6058,11 +6058,11 @@ export class NotificationServiceProxy {
     }
 
     /**
-     * @param state (optional) 
-     * @param startDate (optional) 
-     * @param endDate (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param state (optional)
+     * @param startDate (optional)
+     * @param endDate (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getUserNotifications(state: UserNotificationState | undefined, startDate: DateTime | null | undefined, endDate: DateTime | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<GetNotificationsOutput> {
@@ -6177,7 +6177,7 @@ export class NotificationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     setNotificationAsRead(body: EntityDtoOfGuid | undefined): Observable<void> {
@@ -6280,7 +6280,7 @@ export class NotificationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateNotificationSettings(body: UpdateNotificationSettingsInput | undefined): Observable<void> {
@@ -6332,7 +6332,7 @@ export class NotificationServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     deleteNotification(id: string | undefined): Observable<void> {
@@ -6384,9 +6384,9 @@ export class NotificationServiceProxy {
     }
 
     /**
-     * @param state (optional) 
-     * @param startDate (optional) 
-     * @param endDate (optional) 
+     * @param state (optional)
+     * @param startDate (optional)
+     * @param endDate (optional)
      * @return Success
      */
     deleteAllUserNotifications(state: UserNotificationState | undefined, startDate: DateTime | null | undefined, endDate: DateTime | null | undefined): Observable<void> {
@@ -6505,10 +6505,10 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param id (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param id (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getOrganizationUnitUsers(id: number | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfOrganizationUnitUserListDto> {
@@ -6574,10 +6574,10 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param id (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param id (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getOrganizationUnitRoles(id: number | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfOrganizationUnitRoleListDto> {
@@ -6643,7 +6643,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createOrganizationUnit(body: CreateOrganizationUnitInput | undefined): Observable<OrganizationUnitDto> {
@@ -6699,7 +6699,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateOrganizationUnit(body: UpdateOrganizationUnitInput | undefined): Observable<OrganizationUnitDto> {
@@ -6755,7 +6755,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     moveOrganizationUnit(body: MoveOrganizationUnitInput | undefined): Observable<OrganizationUnitDto> {
@@ -6811,7 +6811,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     deleteOrganizationUnit(id: number | undefined): Observable<void> {
@@ -6863,8 +6863,8 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param userId (optional) 
-     * @param organizationUnitId (optional) 
+     * @param userId (optional)
+     * @param organizationUnitId (optional)
      * @return Success
      */
     removeUserFromOrganizationUnit(userId: number | undefined, organizationUnitId: number | undefined): Observable<void> {
@@ -6920,8 +6920,8 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param roleId (optional) 
-     * @param organizationUnitId (optional) 
+     * @param roleId (optional)
+     * @param organizationUnitId (optional)
      * @return Success
      */
     removeRoleFromOrganizationUnit(roleId: number | undefined, organizationUnitId: number | undefined): Observable<void> {
@@ -6977,7 +6977,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     addUsersToOrganizationUnit(body: UsersToOrganizationUnitInput | undefined): Observable<void> {
@@ -7029,7 +7029,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     addRolesToOrganizationUnit(body: RolesToOrganizationUnitInput | undefined): Observable<void> {
@@ -7081,7 +7081,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     findUsers(body: FindOrganizationUnitUsersInput | undefined): Observable<PagedResultDtoOfNameValueDto> {
@@ -7137,7 +7137,7 @@ export class OrganizationUnitServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     findRoles(body: FindOrganizationUnitRolesInput | undefined): Observable<PagedResultDtoOfNameValueDto> {
@@ -7205,7 +7205,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param upgradeEditionId (optional) 
+     * @param upgradeEditionId (optional)
      * @return Success
      */
     getPaymentInfo(upgradeEditionId: number | null | undefined): Observable<PaymentInfoDto> {
@@ -7259,7 +7259,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createPayment(body: CreatePaymentDto | undefined): Observable<number> {
@@ -7315,7 +7315,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     cancelPayment(body: CancelPaymentDto | undefined): Observable<void> {
@@ -7367,9 +7367,9 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getPaymentHistory(sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfSubscriptionPaymentListDto> {
@@ -7431,7 +7431,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param recurringPaymentsEnabled (optional) 
+     * @param recurringPaymentsEnabled (optional)
      * @return Success
      */
     getActiveGateways(recurringPaymentsEnabled: boolean | null | undefined): Observable<PaymentGatewayModel[]> {
@@ -7489,7 +7489,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
+     * @param paymentId (optional)
      * @return Success
      */
     getPayment(paymentId: number | undefined): Observable<SubscriptionPaymentDto> {
@@ -7596,7 +7596,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
+     * @param paymentId (optional)
      * @return Success
      */
     buyNowSucceed(paymentId: number | undefined): Observable<void> {
@@ -7648,7 +7648,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
+     * @param paymentId (optional)
      * @return Success
      */
     newRegistrationSucceed(paymentId: number | undefined): Observable<void> {
@@ -7700,7 +7700,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
+     * @param paymentId (optional)
      * @return Success
      */
     upgradeSucceed(paymentId: number | undefined): Observable<void> {
@@ -7752,7 +7752,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
+     * @param paymentId (optional)
      * @return Success
      */
     extendSucceed(paymentId: number | undefined): Observable<void> {
@@ -7804,7 +7804,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
+     * @param paymentId (optional)
      * @return Success
      */
     paymentFailed(paymentId: number | undefined): Observable<void> {
@@ -7856,7 +7856,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param upgradeEditionId (optional) 
+     * @param upgradeEditionId (optional)
      * @return Success
      */
     switchBetweenFreeEditions(upgradeEditionId: number | undefined): Observable<void> {
@@ -7908,7 +7908,7 @@ export class PaymentServiceProxy {
     }
 
     /**
-     * @param editionId (optional) 
+     * @param editionId (optional)
      * @return Success
      */
     upgradeSubscriptionCostsLessThenMinAmount(editionId: number | undefined): Observable<void> {
@@ -8023,8 +8023,8 @@ export class PayPalPaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
-     * @param paypalOrderId (optional) 
+     * @param paymentId (optional)
+     * @param paypalOrderId (optional)
      * @return Success
      */
     confirmPayment(paymentId: number | undefined, paypalOrderId: string | null | undefined): Observable<void> {
@@ -8353,7 +8353,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     sendVerificationSms(body: SendVerificationSmsInputDto | undefined): Observable<void> {
@@ -8405,7 +8405,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     verifySmsCode(body: VerifySmsCodeInputDto | undefined): Observable<void> {
@@ -8504,7 +8504,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateCurrentUserProfile(body: CurrentUserProfileEditDto | undefined): Observable<void> {
@@ -8556,7 +8556,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     changePassword(body: ChangePasswordInput | undefined): Observable<void> {
@@ -8608,7 +8608,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateProfilePicture(body: UpdateProfilePictureInput | undefined): Observable<void> {
@@ -8762,7 +8762,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param username (optional) 
+     * @param username (optional)
      * @return Success
      */
     getProfilePictureByUserName(username: string | null | undefined): Observable<GetProfilePictureOutput> {
@@ -8816,8 +8816,8 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param userId (optional) 
-     * @param tenantId (optional) 
+     * @param userId (optional)
+     * @param tenantId (optional)
      * @return Success
      */
     getFriendProfilePicture(userId: number | undefined, tenantId: number | null | undefined): Observable<GetProfilePictureOutput> {
@@ -8875,7 +8875,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param userId (optional) 
+     * @param userId (optional)
      * @return Success
      */
     getProfilePictureByUser(userId: number | undefined): Observable<GetProfilePictureOutput> {
@@ -8931,7 +8931,7 @@ export class ProfileServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     changeLanguage(body: ChangeUserLanguageDto | undefined): Observable<void> {
@@ -8995,7 +8995,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     getRoles(body: GetRolesInput | undefined): Observable<ListResultDtoOfRoleListDto> {
@@ -9051,7 +9051,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getRoleForEdit(id: number | null | undefined): Observable<GetRoleForEditOutput> {
@@ -9105,7 +9105,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createOrUpdateRole(body: CreateOrUpdateRoleInput | undefined): Observable<void> {
@@ -9157,7 +9157,7 @@ export class RoleServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     deleteRole(id: number | undefined): Observable<void> {
@@ -9386,7 +9386,7 @@ export class StripePaymentServiceProxy {
     }
 
     /**
-     * @param stripeSessionId (optional) 
+     * @param stripeSessionId (optional)
      * @return Success
      */
     getPayment(stripeSessionId: string | null | undefined): Observable<SubscriptionPaymentDto> {
@@ -9440,7 +9440,7 @@ export class StripePaymentServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createPaymentSession(body: StripeCreatePaymentSessionInput | undefined): Observable<string> {
@@ -9496,7 +9496,7 @@ export class StripePaymentServiceProxy {
     }
 
     /**
-     * @param paymentId (optional) 
+     * @param paymentId (optional)
      * @return Success
      */
     getPaymentResult(paymentId: number | undefined): Observable<StripePaymentResultOutput> {
@@ -9670,16 +9670,16 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param filter (optional) 
-     * @param subscriptionEndDateStart (optional) 
-     * @param subscriptionEndDateEnd (optional) 
-     * @param creationDateStart (optional) 
-     * @param creationDateEnd (optional) 
-     * @param editionId (optional) 
-     * @param editionIdSpecified (optional) 
-     * @param sorting (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param filter (optional)
+     * @param subscriptionEndDateStart (optional)
+     * @param subscriptionEndDateEnd (optional)
+     * @param creationDateStart (optional)
+     * @param creationDateEnd (optional)
+     * @param editionId (optional)
+     * @param editionIdSpecified (optional)
+     * @param sorting (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getTenants(filter: string | null | undefined, subscriptionEndDateStart: DateTime | null | undefined, subscriptionEndDateEnd: DateTime | null | undefined, creationDateStart: DateTime | null | undefined, creationDateEnd: DateTime | null | undefined, editionId: number | null | undefined, editionIdSpecified: boolean | undefined, sorting: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfTenantListDto> {
@@ -9757,7 +9757,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createTenant(body: CreateTenantInput | undefined): Observable<void> {
@@ -9809,7 +9809,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getTenantForEdit(id: number | undefined): Observable<TenantEditDto> {
@@ -9865,7 +9865,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateTenant(body: TenantEditDto | undefined): Observable<void> {
@@ -9917,7 +9917,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     deleteTenant(id: number | undefined): Observable<void> {
@@ -9969,7 +9969,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getTenantFeaturesForEdit(id: number | undefined): Observable<GetTenantFeaturesEditOutput> {
@@ -10025,7 +10025,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateTenantFeatures(body: UpdateTenantFeaturesInput | undefined): Observable<void> {
@@ -10077,7 +10077,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     resetTenantSpecificFeatures(body: EntityDto | undefined): Observable<void> {
@@ -10129,7 +10129,7 @@ export class TenantServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     unlockTenantAdmin(body: EntityDto | undefined): Observable<void> {
@@ -10621,7 +10621,7 @@ export class TenantRegistrationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     registerTenant(body: RegisterTenantInput | undefined): Observable<RegisterTenantOutput> {
@@ -10728,7 +10728,7 @@ export class TenantRegistrationServiceProxy {
     }
 
     /**
-     * @param editionId (optional) 
+     * @param editionId (optional)
      * @return Success
      */
     getEdition(editionId: number | undefined): Observable<EditionSelectDto> {
@@ -10847,7 +10847,7 @@ export class TenantSettingsServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateAllSettings(body: TenantSettingsEditDto | undefined): Observable<void> {
@@ -10993,7 +10993,7 @@ export class TenantSettingsServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     sendTestEmail(body: SendTestEmailInput | undefined): Observable<void> {
@@ -11163,7 +11163,7 @@ export class TimingServiceProxy {
     }
 
     /**
-     * @param selectedTimezoneId (optional) 
+     * @param selectedTimezoneId (optional)
      * @return Success
      */
     getTimezoneComboboxItems(selectedTimezoneId: string | null | undefined): Observable<ComboboxItemDto[]> {
@@ -11233,7 +11233,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     authenticate(body: AuthenticateModel | undefined): Observable<AuthenticateResultModel> {
@@ -11289,7 +11289,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param refreshToken (optional) 
+     * @param refreshToken (optional)
      * @return Success
      */
     refreshToken(refreshToken: string | null | undefined): Observable<RefreshTokenResult> {
@@ -11390,7 +11390,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     sendTwoFactorAuthCode(body: SendTwoFactorAuthCodeModel | undefined): Observable<void> {
@@ -11442,7 +11442,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param impersonationToken (optional) 
+     * @param impersonationToken (optional)
      * @return Success
      */
     impersonatedAuthenticate(impersonationToken: string | null | undefined): Observable<ImpersonatedAuthenticateResultModel> {
@@ -11496,8 +11496,8 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param userDelegationId (optional) 
-     * @param impersonationToken (optional) 
+     * @param userDelegationId (optional)
+     * @param impersonationToken (optional)
      * @return Success
      */
     delegatedImpersonatedAuthenticate(userDelegationId: number | undefined, impersonationToken: string | null | undefined): Observable<ImpersonatedAuthenticateResultModel> {
@@ -11555,7 +11555,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param switchAccountToken (optional) 
+     * @param switchAccountToken (optional)
      * @return Success
      */
     linkedAccountAuthenticate(switchAccountToken: string | null | undefined): Observable<SwitchedAccountAuthenticateResultModel> {
@@ -11664,7 +11664,7 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     externalAuthenticate(body: ExternalAuthenticateModel | undefined): Observable<ExternalAuthenticateResultModel> {
@@ -11720,8 +11720,8 @@ export class TokenAuthServiceProxy {
     }
 
     /**
-     * @param message (optional) 
-     * @param severity (optional) 
+     * @param message (optional)
+     * @param severity (optional)
      * @return Success
      */
     testNotification(message: string | null | undefined, severity: string | null | undefined): Observable<void> {
@@ -11836,8 +11836,8 @@ export class TwitterServiceProxy {
     }
 
     /**
-     * @param token (optional) 
-     * @param verifier (optional) 
+     * @param token (optional)
+     * @param verifier (optional)
      * @return Success
      */
     getAccessToken(token: string | null | undefined, verifier: string | null | undefined): Observable<TwitterGetAccessTokenResponse> {
@@ -11960,7 +11960,7 @@ export class UiCustomizationSettingsServiceProxy {
     }
 
     /**
-     * @param themeName (optional) 
+     * @param themeName (optional)
      * @return Success
      */
     changeThemeWithDefaultValues(themeName: string | null | undefined): Observable<void> {
@@ -12010,7 +12010,7 @@ export class UiCustomizationSettingsServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateUiManagementSettings(body: ThemeSettingsDto | undefined): Observable<void> {
@@ -12062,7 +12062,7 @@ export class UiCustomizationSettingsServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateDefaultUiManagementSettings(body: ThemeSettingsDto | undefined): Observable<void> {
@@ -12173,7 +12173,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     getUsers(body: GetUsersInput | undefined): Observable<PagedResultDtoOfUserListDto> {
@@ -12229,11 +12229,11 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param filter (optional) 
-     * @param permissions (optional) 
-     * @param role (optional) 
-     * @param onlyLockedUsers (optional) 
-     * @param sorting (optional) 
+     * @param filter (optional)
+     * @param permissions (optional)
+     * @param role (optional)
+     * @param onlyLockedUsers (optional)
+     * @param sorting (optional)
      * @return Success
      */
     getUsersToExcel(filter: string | null | undefined, permissions: string[] | null | undefined, role: number | null | undefined, onlyLockedUsers: boolean | undefined, sorting: string | null | undefined): Observable<FileDto> {
@@ -12297,7 +12297,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getUserForEdit(id: number | null | undefined): Observable<GetUserForEditOutput> {
@@ -12351,7 +12351,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getUserPermissionsForEdit(id: number | undefined): Observable<GetUserPermissionsForEditOutput> {
@@ -12407,7 +12407,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     resetUserSpecificPermissions(body: EntityDtoOfInt64 | undefined): Observable<void> {
@@ -12459,7 +12459,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateUserPermissions(body: UpdateUserPermissionsInput | undefined): Observable<void> {
@@ -12511,7 +12511,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     createOrUpdateUser(body: CreateOrUpdateUserInput | undefined): Observable<void> {
@@ -12563,7 +12563,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     deleteUser(id: number | undefined): Observable<void> {
@@ -12615,7 +12615,7 @@ export class UserServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     unlockUser(body: EntityDtoOfInt64 | undefined): Observable<void> {
@@ -12679,9 +12679,9 @@ export class UserDelegationServiceProxy {
     }
 
     /**
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
-     * @param sorting (optional) 
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
+     * @param sorting (optional)
      * @return Success
      */
     getDelegatedUsers(maxResultCount: number | undefined, skipCount: number | undefined, sorting: string | null | undefined): Observable<PagedResultDtoOfUserDelegationDto> {
@@ -12743,7 +12743,7 @@ export class UserDelegationServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     delegateNewUser(body: CreateUserDelegationDto | undefined): Observable<void> {
@@ -12795,7 +12795,7 @@ export class UserDelegationServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     removeDelegation(id: number | undefined): Observable<void> {
@@ -12914,7 +12914,7 @@ export class UserLinkServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     linkToUser(body: LinkToUserInput | undefined): Observable<void> {
@@ -12966,9 +12966,9 @@ export class UserLinkServiceProxy {
     }
 
     /**
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
-     * @param sorting (optional) 
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
+     * @param sorting (optional)
      * @return Success
      */
     getLinkedUsers(maxResultCount: number | undefined, skipCount: number | undefined, sorting: string | null | undefined): Observable<PagedResultDtoOfLinkedUserDto> {
@@ -13081,7 +13081,7 @@ export class UserLinkServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     unlinkUser(body: UnlinkUserInput | undefined): Observable<void> {
@@ -13208,7 +13208,7 @@ export class WebhookEventServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     get(id: string | null | undefined): Observable<WebhookEvent> {
@@ -13274,9 +13274,9 @@ export class WebhookSendAttemptServiceProxy {
     }
 
     /**
-     * @param subscriptionId (optional) 
-     * @param maxResultCount (optional) 
-     * @param skipCount (optional) 
+     * @param subscriptionId (optional)
+     * @param maxResultCount (optional)
+     * @param skipCount (optional)
      * @return Success
      */
     getAllSendAttempts(subscriptionId: string | null | undefined, maxResultCount: number | undefined, skipCount: number | undefined): Observable<PagedResultDtoOfGetAllSendAttemptsOutput> {
@@ -13338,7 +13338,7 @@ export class WebhookSendAttemptServiceProxy {
     }
 
     /**
-     * @param id (optional) 
+     * @param id (optional)
      * @return Success
      */
     getAllSendAttemptsOfWebhookEvent(id: string | null | undefined): Observable<ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput> {
@@ -13392,7 +13392,7 @@ export class WebhookSendAttemptServiceProxy {
     }
 
     /**
-     * @param sendAttemptId (optional) 
+     * @param sendAttemptId (optional)
      * @return Success
      */
     resend(sendAttemptId: string | null | undefined): Observable<void> {
@@ -13556,7 +13556,7 @@ export class WebhookSubscriptionServiceProxy {
     }
 
     /**
-     * @param subscriptionId (optional) 
+     * @param subscriptionId (optional)
      * @return Success
      */
     getSubscription(subscriptionId: string | null | undefined): Observable<WebhookSubscription> {
@@ -13610,7 +13610,7 @@ export class WebhookSubscriptionServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     addSubscription(body: WebhookSubscription | undefined): Observable<void> {
@@ -13662,7 +13662,7 @@ export class WebhookSubscriptionServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     updateSubscription(body: WebhookSubscription | undefined): Observable<void> {
@@ -13714,7 +13714,7 @@ export class WebhookSubscriptionServiceProxy {
     }
 
     /**
-     * @param body (optional) 
+     * @param body (optional)
      * @return Success
      */
     activateWebhookSubscription(body: ActivateWebhookSubscriptionInput | undefined): Observable<void> {
@@ -13766,7 +13766,7 @@ export class WebhookSubscriptionServiceProxy {
     }
 
     /**
-     * @param webhookName (optional) 
+     * @param webhookName (optional)
      * @return Success
      */
     isSubscribed(webhookName: string | null | undefined): Observable<boolean> {
@@ -13820,7 +13820,7 @@ export class WebhookSubscriptionServiceProxy {
     }
 
     /**
-     * @param webhookName (optional) 
+     * @param webhookName (optional)
      * @return Success
      */
     getAllSubscriptionsIfFeaturesGranted(webhookName: string | null | undefined): Observable<ListResultDtoOfGetAllSubscriptionsOutput> {
@@ -14067,7 +14067,7 @@ export class IsTenantAvailableInput implements IIsTenantAvailableInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["tenancyName"] = this.tenancyName;
-        return data; 
+        return data;
     }
 }
 
@@ -14115,7 +14115,7 @@ export class IsTenantAvailableOutput implements IIsTenantAvailableOutput {
         data["state"] = this.state;
         data["tenantId"] = this.tenantId;
         data["serverRootAddress"] = this.serverRootAddress;
-        return data; 
+        return data;
     }
 }
 
@@ -14153,7 +14153,7 @@ export class ResolveTenantIdInput implements IResolveTenantIdInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["c"] = this.c;
-        return data; 
+        return data;
     }
 }
 
@@ -14204,7 +14204,7 @@ export class RegisterInput implements IRegisterInput {
         data["emailAddress"] = this.emailAddress;
         data["password"] = this.password;
         data["captchaResponse"] = this.captchaResponse;
-        return data; 
+        return data;
     }
 }
 
@@ -14245,7 +14245,7 @@ export class RegisterOutput implements IRegisterOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["canLogin"] = this.canLogin;
-        return data; 
+        return data;
     }
 }
 
@@ -14281,7 +14281,7 @@ export class SendPasswordResetCodeInput implements ISendPasswordResetCodeInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["emailAddress"] = this.emailAddress;
-        return data; 
+        return data;
     }
 }
 
@@ -14332,7 +14332,7 @@ export class ResetPasswordInput implements IResetPasswordInput {
         data["returnUrl"] = this.returnUrl;
         data["singleSignIn"] = this.singleSignIn;
         data["c"] = this.c;
-        return data; 
+        return data;
     }
 }
 
@@ -14376,7 +14376,7 @@ export class ResetPasswordOutput implements IResetPasswordOutput {
         data = typeof data === 'object' ? data : {};
         data["canLogin"] = this.canLogin;
         data["userName"] = this.userName;
-        return data; 
+        return data;
     }
 }
 
@@ -14413,7 +14413,7 @@ export class SendEmailActivationLinkInput implements ISendEmailActivationLinkInp
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["emailAddress"] = this.emailAddress;
-        return data; 
+        return data;
     }
 }
 
@@ -14455,7 +14455,7 @@ export class ActivateEmailInput implements IActivateEmailInput {
         data["userId"] = this.userId;
         data["confirmationCode"] = this.confirmationCode;
         data["c"] = this.c;
-        return data; 
+        return data;
     }
 }
 
@@ -14496,7 +14496,7 @@ export class ImpersonateInput implements IImpersonateInput {
         data = typeof data === 'object' ? data : {};
         data["tenantId"] = this.tenantId;
         data["userId"] = this.userId;
-        return data; 
+        return data;
     }
 }
 
@@ -14536,7 +14536,7 @@ export class ImpersonateOutput implements IImpersonateOutput {
         data = typeof data === 'object' ? data : {};
         data["impersonationToken"] = this.impersonationToken;
         data["tenancyName"] = this.tenancyName;
-        return data; 
+        return data;
     }
 }
 
@@ -14573,7 +14573,7 @@ export class DelegatedImpersonateInput implements IDelegatedImpersonateInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["userDelegationId"] = this.userDelegationId;
-        return data; 
+        return data;
     }
 }
 
@@ -14612,7 +14612,7 @@ export class SwitchToLinkedAccountInput implements ISwitchToLinkedAccountInput {
         data = typeof data === 'object' ? data : {};
         data["targetTenantId"] = this.targetTenantId;
         data["targetUserId"] = this.targetUserId;
-        return data; 
+        return data;
     }
 }
 
@@ -14652,7 +14652,7 @@ export class SwitchToLinkedAccountOutput implements ISwitchToLinkedAccountOutput
         data = typeof data === 'object' ? data : {};
         data["switchAccountToken"] = this.switchAccountToken;
         data["tenancyName"] = this.tenancyName;
-        return data; 
+        return data;
     }
 }
 
@@ -14731,7 +14731,7 @@ export class AuditLogListDto implements IAuditLogListDto {
         data["exception"] = this.exception;
         data["customData"] = this.customData;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -14792,7 +14792,7 @@ export class PagedResultDtoOfAuditLogListDto implements IPagedResultDtoOfAuditLo
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -14835,7 +14835,7 @@ export class FileDto implements IFileDto {
         data["fileName"] = this.fileName;
         data["fileType"] = this.fileType;
         data["fileToken"] = this.fileToken;
-        return data; 
+        return data;
     }
 }
 
@@ -14876,7 +14876,7 @@ export class NameValueDto implements INameValueDto {
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
         data["value"] = this.value;
-        return data; 
+        return data;
     }
 }
 
@@ -14940,7 +14940,7 @@ export class EntityChangeListDto implements IEntityChangeListDto {
         data["changeTypeName"] = this.changeTypeName;
         data["entityChangeSetId"] = this.entityChangeSetId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -14994,7 +14994,7 @@ export class PagedResultDtoOfEntityChangeListDto implements IPagedResultDtoOfEnt
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15049,7 +15049,7 @@ export class EntityPropertyChangeDto implements IEntityPropertyChangeDto {
         data["propertyTypeFullName"] = this.propertyTypeFullName;
         data["tenantId"] = this.tenantId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -15091,7 +15091,7 @@ export class CacheDto implements ICacheDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
-        return data; 
+        return data;
     }
 }
 
@@ -15135,7 +15135,7 @@ export class ListResultDtoOfCacheDto implements IListResultDtoOfCacheDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15171,7 +15171,7 @@ export class EntityDtoOfString implements IEntityDtoOfString {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -15233,7 +15233,7 @@ export class FriendDto implements IFriendDto {
         data["unreadMessageCount"] = this.unreadMessageCount;
         data["isOnline"] = this.isOnline;
         data["state"] = this.state;
-        return data; 
+        return data;
     }
 }
 
@@ -15287,7 +15287,7 @@ export class GetUserChatFriendsWithSettingsOutput implements IGetUserChatFriends
             for (let item of this.friends)
                 data["friends"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15364,7 +15364,7 @@ export class ChatMessageDto implements IChatMessageDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["sharedMessageId"] = this.sharedMessageId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -15418,7 +15418,7 @@ export class ListResultDtoOfChatMessageDto implements IListResultDtoOfChatMessag
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15457,7 +15457,7 @@ export class MarkAllUnreadMessagesOfUserAsReadInput implements IMarkAllUnreadMes
         data = typeof data === 'object' ? data : {};
         data["tenantId"] = this.tenantId;
         data["userId"] = this.userId;
-        return data; 
+        return data;
     }
 }
 
@@ -15503,7 +15503,7 @@ export class SubscribableEditionComboboxItemDto implements ISubscribableEditionC
         data["value"] = this.value;
         data["displayText"] = this.displayText;
         data["isSelected"] = this.isSelected;
-        return data; 
+        return data;
     }
 }
 
@@ -15550,7 +15550,7 @@ export class ListResultDtoOfSubscribableEditionComboboxItemDto implements IListR
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15598,7 +15598,7 @@ export class FindUsersInput implements IFindUsersInput {
         data["maxResultCount"] = this.maxResultCount;
         data["skipCount"] = this.skipCount;
         data["filter"] = this.filter;
-        return data; 
+        return data;
     }
 }
 
@@ -15649,7 +15649,7 @@ export class PagedResultDtoOfNameValueDto implements IPagedResultDtoOfNameValueD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15686,7 +15686,7 @@ export class GetDefaultEditionNameOutput implements IGetDefaultEditionNameOutput
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
-        return data; 
+        return data;
     }
 }
 
@@ -15734,7 +15734,7 @@ export class Widget implements IWidget {
         data["width"] = this.width;
         data["positionX"] = this.positionX;
         data["positionY"] = this.positionY;
-        return data; 
+        return data;
     }
 }
 
@@ -15788,7 +15788,7 @@ export class Page implements IPage {
             for (let item of this.widgets)
                 data["widgets"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15837,7 +15837,7 @@ export class Dashboard implements IDashboard {
             for (let item of this.pages)
                 data["pages"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15888,7 +15888,7 @@ export class SavePageInput implements ISavePageInput {
             for (let item of this.pages)
                 data["pages"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -15935,7 +15935,7 @@ export class RenamePageInput implements IRenamePageInput {
         data["id"] = this.id;
         data["name"] = this.name;
         data["application"] = this.application;
-        return data; 
+        return data;
     }
 }
 
@@ -15980,7 +15980,7 @@ export class AddNewPageInput implements IAddNewPageInput {
         data["dashboardName"] = this.dashboardName;
         data["name"] = this.name;
         data["application"] = this.application;
-        return data; 
+        return data;
     }
 }
 
@@ -16018,7 +16018,7 @@ export class AddNewPageOutput implements IAddNewPageOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["pageId"] = this.pageId;
-        return data; 
+        return data;
     }
 }
 
@@ -16069,7 +16069,7 @@ export class AddWidgetInput implements IAddWidgetInput {
         data["width"] = this.width;
         data["height"] = this.height;
         data["application"] = this.application;
-        return data; 
+        return data;
     }
 }
 
@@ -16113,7 +16113,7 @@ export class WidgetFilterOutput implements IWidgetFilterOutput {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
         data["name"] = this.name;
-        return data; 
+        return data;
     }
 }
 
@@ -16167,7 +16167,7 @@ export class WidgetOutput implements IWidgetOutput {
             for (let item of this.filters)
                 data["filters"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16217,7 +16217,7 @@ export class DashboardOutput implements IDashboardOutput {
             for (let item of this.widgets)
                 data["widgets"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16254,7 +16254,7 @@ export class DateToStringOutput implements IDateToStringOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["dateString"] = this.dateString;
-        return data; 
+        return data;
     }
 }
 
@@ -16293,7 +16293,7 @@ export class NameValueOfString implements INameValueOfString {
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
         data["value"] = this.value;
-        return data; 
+        return data;
     }
 }
 
@@ -16330,7 +16330,7 @@ export class StringOutput implements IStringOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["output"] = this.output;
-        return data; 
+        return data;
     }
 }
 
@@ -16378,7 +16378,7 @@ export class DynamicEntityPropertyDto implements IDynamicEntityPropertyDto {
         data["dynamicPropertyId"] = this.dynamicPropertyId;
         data["tenantId"] = this.tenantId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -16426,7 +16426,7 @@ export class ListResultDtoOfDynamicEntityPropertyDto implements IListResultDtoOf
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16462,7 +16462,7 @@ export class GetAllEntitiesHasDynamicPropertyOutput implements IGetAllEntitiesHa
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["entityFullName"] = this.entityFullName;
-        return data; 
+        return data;
     }
 }
 
@@ -16506,7 +16506,7 @@ export class ListResultDtoOfGetAllEntitiesHasDynamicPropertyOutput implements IL
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16551,7 +16551,7 @@ export class DynamicEntityPropertyValueDto implements IDynamicEntityPropertyValu
         data["entityId"] = this.entityId;
         data["dynamicEntityPropertyId"] = this.dynamicEntityPropertyId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -16598,7 +16598,7 @@ export class ListResultDtoOfDynamicEntityPropertyValueDto implements IListResult
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16649,7 +16649,7 @@ export class IValueValidator implements IIValueValidator {
                     data["attributes"][key] = this.attributes[key];
             }
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16704,7 +16704,7 @@ export class IInputType implements IIInputType {
             }
         }
         data["validator"] = this.validator ? this.validator.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -16770,7 +16770,7 @@ export class GetAllDynamicEntityPropertyValuesOutputItem implements IGetAllDynam
             for (let item of this.allValuesInputTypeHas)
                 data["allValuesInputTypeHas"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16818,7 +16818,7 @@ export class GetAllDynamicEntityPropertyValuesOutput implements IGetAllDynamicEn
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16868,7 +16868,7 @@ export class InsertOrUpdateAllValuesInputItem implements IInsertOrUpdateAllValue
             for (let item of this.values)
                 data["values"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16914,7 +16914,7 @@ export class InsertOrUpdateAllValuesInput implements IInsertOrUpdateAllValuesInp
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -16953,7 +16953,7 @@ export class CleanValuesInput implements ICleanValuesInput {
         data = typeof data === 'object' ? data : {};
         data["dynamicEntityPropertyId"] = this.dynamicEntityPropertyId;
         data["entityId"] = this.entityId;
-        return data; 
+        return data;
     }
 }
 
@@ -17005,7 +17005,7 @@ export class DynamicPropertyDto implements IDynamicPropertyDto {
         data["permission"] = this.permission;
         data["tenantId"] = this.tenantId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -17054,7 +17054,7 @@ export class ListResultDtoOfDynamicPropertyDto implements IListResultDtoOfDynami
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -17099,7 +17099,7 @@ export class DynamicPropertyValueDto implements IDynamicPropertyValueDto {
         data["tenantId"] = this.tenantId;
         data["dynamicPropertyId"] = this.dynamicPropertyId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -17146,7 +17146,7 @@ export class ListResultDtoOfDynamicPropertyValueDto implements IListResultDtoOfD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -17209,7 +17209,7 @@ export class EditionListDto implements IEditionListDto {
         data["trialDayCount"] = this.trialDayCount;
         data["expiringEditionDisplayName"] = this.expiringEditionDisplayName;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -17262,7 +17262,7 @@ export class ListResultDtoOfEditionListDto implements IListResultDtoOfEditionLis
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -17304,7 +17304,7 @@ export class EditionEditDto implements IEditionEditDto {
         data["id"] = this.id;
         data["displayName"] = this.displayName;
         data["expiringEditionId"] = this.expiringEditionId;
-        return data; 
+        return data;
     }
 }
 
@@ -17345,7 +17345,7 @@ export class LocalizableComboboxItemDto implements ILocalizableComboboxItemDto {
         data = typeof data === 'object' ? data : {};
         data["value"] = this.value;
         data["displayText"] = this.displayText;
-        return data; 
+        return data;
     }
 }
 
@@ -17390,7 +17390,7 @@ export class LocalizableComboboxItemSourceDto implements ILocalizableComboboxIte
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -17447,7 +17447,7 @@ export class FeatureInputTypeDto implements IFeatureInputTypeDto {
         }
         data["validator"] = this.validator ? this.validator.toJSON() : <any>undefined;
         data["itemSource"] = this.itemSource ? this.itemSource.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -17501,7 +17501,7 @@ export class FlatFeatureDto implements IFlatFeatureDto {
         data["description"] = this.description;
         data["defaultValue"] = this.defaultValue;
         data["inputType"] = this.inputType ? this.inputType.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -17564,7 +17564,7 @@ export class GetEditionEditOutput implements IGetEditionEditOutput {
             for (let item of this.features)
                 data["features"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -17626,7 +17626,7 @@ export class EditionCreateDto implements IEditionCreateDto {
         data["trialDayCount"] = this.trialDayCount;
         data["waitingDayAfterExpire"] = this.waitingDayAfterExpire;
         data["expiringEditionId"] = this.expiringEditionId;
-        return data; 
+        return data;
     }
 }
 
@@ -17685,7 +17685,7 @@ export class CreateEditionDto implements ICreateEditionDto {
             for (let item of this.featureValues)
                 data["featureValues"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -17737,7 +17737,7 @@ export class UpdateEditionDto implements IUpdateEditionDto {
             for (let item of this.featureValues)
                 data["featureValues"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -17777,7 +17777,7 @@ export class MoveTenantsToAnotherEditionDto implements IMoveTenantsToAnotherEdit
         data = typeof data === 'object' ? data : {};
         data["sourceEditionId"] = this.sourceEditionId;
         data["targetEditionId"] = this.targetEditionId;
-        return data; 
+        return data;
     }
 }
 
@@ -17817,7 +17817,7 @@ export class CreateFriendshipRequestInput implements ICreateFriendshipRequestInp
         data = typeof data === 'object' ? data : {};
         data["userId"] = this.userId;
         data["tenantId"] = this.tenantId;
-        return data; 
+        return data;
     }
 }
 
@@ -17857,7 +17857,7 @@ export class CreateFriendshipRequestByUserNameInput implements ICreateFriendship
         data = typeof data === 'object' ? data : {};
         data["tenancyName"] = this.tenancyName;
         data["userName"] = this.userName;
-        return data; 
+        return data;
     }
 }
 
@@ -17897,7 +17897,7 @@ export class BlockUserInput implements IBlockUserInput {
         data = typeof data === 'object' ? data : {};
         data["userId"] = this.userId;
         data["tenantId"] = this.tenantId;
-        return data; 
+        return data;
     }
 }
 
@@ -17937,7 +17937,7 @@ export class UnblockUserInput implements IUnblockUserInput {
         data = typeof data === 'object' ? data : {};
         data["userId"] = this.userId;
         data["tenantId"] = this.tenantId;
-        return data; 
+        return data;
     }
 }
 
@@ -17977,7 +17977,7 @@ export class AcceptFriendshipRequestInput implements IAcceptFriendshipRequestInp
         data = typeof data === 'object' ? data : {};
         data["userId"] = this.userId;
         data["tenantId"] = this.tenantId;
-        return data; 
+        return data;
     }
 }
 
@@ -18023,7 +18023,7 @@ export class TopStatsData implements ITopStatsData {
         data["newSubscriptionAmount"] = this.newSubscriptionAmount;
         data["dashboardPlaceholder1"] = this.dashboardPlaceholder1;
         data["dashboardPlaceholder2"] = this.dashboardPlaceholder2;
-        return data; 
+        return data;
     }
 }
 
@@ -18068,7 +18068,7 @@ export class RecentTenant implements IRecentTenant {
         data["id"] = this.id;
         data["name"] = this.name;
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -18123,7 +18123,7 @@ export class GetRecentTenantsOutput implements IGetRecentTenantsOutput {
             for (let item of this.recentTenants)
                 data["recentTenants"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -18165,7 +18165,7 @@ export class ExpiringTenant implements IExpiringTenant {
         data = typeof data === 'object' ? data : {};
         data["tenantName"] = this.tenantName;
         data["remainingDayCount"] = this.remainingDayCount;
-        return data; 
+        return data;
     }
 }
 
@@ -18222,7 +18222,7 @@ export class GetExpiringTenantsOutput implements IGetExpiringTenantsOutput {
         data["maxExpiringTenantsShownCount"] = this.maxExpiringTenantsShownCount;
         data["subscriptionEndDateStart"] = this.subscriptionEndDateStart ? this.subscriptionEndDateStart.toString() : <any>undefined;
         data["subscriptionEndDateEnd"] = this.subscriptionEndDateEnd ? this.subscriptionEndDateEnd.toString() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -18274,7 +18274,7 @@ export class IncomeStastistic implements IIncomeStastistic {
         data["label"] = this.label;
         data["date"] = this.date ? this.date.toString() : <any>undefined;
         data["amount"] = this.amount;
-        return data; 
+        return data;
     }
 }
 
@@ -18320,7 +18320,7 @@ export class GetIncomeStatisticsDataOutput implements IGetIncomeStatisticsDataOu
             for (let item of this.incomeStatistics)
                 data["incomeStatistics"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -18359,7 +18359,7 @@ export class TenantEdition implements ITenantEdition {
         data = typeof data === 'object' ? data : {};
         data["label"] = this.label;
         data["value"] = this.value;
-        return data; 
+        return data;
     }
 }
 
@@ -18404,7 +18404,7 @@ export class GetEditionTenantStatisticsOutput implements IGetEditionTenantStatis
             for (let item of this.editionStatistics)
                 data["editionStatistics"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -18443,7 +18443,7 @@ export class GeneralSettingsEditDto implements IGeneralSettingsEditDto {
         data = typeof data === 'object' ? data : {};
         data["timezone"] = this.timezone;
         data["timezoneForComparison"] = this.timezoneForComparison;
-        return data; 
+        return data;
     }
 }
 
@@ -18489,7 +18489,7 @@ export class SessionTimeOutSettingsEditDto implements ISessionTimeOutSettingsEdi
         data["timeOutSecond"] = this.timeOutSecond;
         data["showTimeOutNotificationSecond"] = this.showTimeOutNotificationSecond;
         data["showLockScreenWhenTimedOut"] = this.showLockScreenWhenTimedOut;
-        return data; 
+        return data;
     }
 }
 
@@ -18546,7 +18546,7 @@ export class HostUserManagementSettingsEditDto implements IHostUserManagementSet
         data["useCaptchaOnLogin"] = this.useCaptchaOnLogin;
         data["allowUsingGravatarProfilePicture"] = this.allowUsingGravatarProfilePicture;
         data["sessionTimeOutSettings"] = this.sessionTimeOutSettings ? this.sessionTimeOutSettings.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -18612,7 +18612,7 @@ export class EmailSettingsEditDto implements IEmailSettingsEditDto {
         data["smtpDomain"] = this.smtpDomain;
         data["smtpEnableSsl"] = this.smtpEnableSsl;
         data["smtpUseDefaultCredentials"] = this.smtpUseDefaultCredentials;
-        return data; 
+        return data;
     }
 }
 
@@ -18665,7 +18665,7 @@ export class TenantManagementSettingsEditDto implements ITenantManagementSetting
         data["isNewRegisteredTenantActiveByDefault"] = this.isNewRegisteredTenantActiveByDefault;
         data["useCaptchaOnRegistration"] = this.useCaptchaOnRegistration;
         data["defaultEditionId"] = this.defaultEditionId;
-        return data; 
+        return data;
     }
 }
 
@@ -18716,7 +18716,7 @@ export class PasswordComplexitySetting implements IPasswordComplexitySetting {
         data["requireNonAlphanumeric"] = this.requireNonAlphanumeric;
         data["requireUppercase"] = this.requireUppercase;
         data["requiredLength"] = this.requiredLength;
-        return data; 
+        return data;
     }
 }
 
@@ -18762,7 +18762,7 @@ export class UserLockOutSettingsEditDto implements IUserLockOutSettingsEditDto {
         data["isEnabled"] = this.isEnabled;
         data["maxFailedAccessAttemptsBeforeLockout"] = this.maxFailedAccessAttemptsBeforeLockout;
         data["defaultAccountLockoutSeconds"] = this.defaultAccountLockoutSeconds;
-        return data; 
+        return data;
     }
 }
 
@@ -18815,7 +18815,7 @@ export class TwoFactorLoginSettingsEditDto implements ITwoFactorLoginSettingsEdi
         data["isSmsProviderEnabled"] = this.isSmsProviderEnabled;
         data["isRememberBrowserEnabled"] = this.isRememberBrowserEnabled;
         data["isGoogleAuthenticatorEnabled"] = this.isGoogleAuthenticatorEnabled;
-        return data; 
+        return data;
     }
 }
 
@@ -18871,7 +18871,7 @@ export class SecuritySettingsEditDto implements ISecuritySettingsEditDto {
         data["defaultPasswordComplexity"] = this.defaultPasswordComplexity ? this.defaultPasswordComplexity.toJSON() : <any>undefined;
         data["userLockOut"] = this.userLockOut ? this.userLockOut.toJSON() : <any>undefined;
         data["twoFactorLogin"] = this.twoFactorLogin ? this.twoFactorLogin.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -18915,7 +18915,7 @@ export class HostBillingSettingsEditDto implements IHostBillingSettingsEditDto {
         data = typeof data === 'object' ? data : {};
         data["legalName"] = this.legalName;
         data["address"] = this.address;
-        return data; 
+        return data;
     }
 }
 
@@ -18952,7 +18952,7 @@ export class OtherSettingsEditDto implements IOtherSettingsEditDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["isQuickThemeSelectEnabled"] = this.isQuickThemeSelectEnabled;
-        return data; 
+        return data;
     }
 }
 
@@ -18991,7 +18991,7 @@ export class FacebookExternalLoginProviderSettings implements IFacebookExternalL
         data = typeof data === 'object' ? data : {};
         data["appId"] = this.appId;
         data["appSecret"] = this.appSecret;
-        return data; 
+        return data;
     }
 }
 
@@ -19034,7 +19034,7 @@ export class GoogleExternalLoginProviderSettings implements IGoogleExternalLogin
         data["clientId"] = this.clientId;
         data["clientSecret"] = this.clientSecret;
         data["userInfoEndpoint"] = this.userInfoEndpoint;
-        return data; 
+        return data;
     }
 }
 
@@ -19075,7 +19075,7 @@ export class TwitterExternalLoginProviderSettings implements ITwitterExternalLog
         data = typeof data === 'object' ? data : {};
         data["consumerKey"] = this.consumerKey;
         data["consumerSecret"] = this.consumerSecret;
-        return data; 
+        return data;
     }
 }
 
@@ -19115,7 +19115,7 @@ export class MicrosoftExternalLoginProviderSettings implements IMicrosoftExterna
         data = typeof data === 'object' ? data : {};
         data["clientId"] = this.clientId;
         data["clientSecret"] = this.clientSecret;
-        return data; 
+        return data;
     }
 }
 
@@ -19164,7 +19164,7 @@ export class OpenIdConnectExternalLoginProviderSettings implements IOpenIdConnec
         data["authority"] = this.authority;
         data["loginUrl"] = this.loginUrl;
         data["validateIssuer"] = this.validateIssuer;
-        return data; 
+        return data;
     }
 }
 
@@ -19207,7 +19207,7 @@ export class JsonClaimMapDto implements IJsonClaimMapDto {
         data = typeof data === 'object' ? data : {};
         data["claim"] = this.claim;
         data["key"] = this.key;
-        return data; 
+        return data;
     }
 }
 
@@ -19256,7 +19256,7 @@ export class WsFederationExternalLoginProviderSettings implements IWsFederationE
         data["metaDataAddress"] = this.metaDataAddress;
         data["wtrealm"] = this.wtrealm;
         data["authority"] = this.authority;
-        return data; 
+        return data;
     }
 }
 
@@ -19351,7 +19351,7 @@ export class ExternalLoginProviderSettingsEditDto implements IExternalLoginProvi
             for (let item of this.wsFederationClaimsMapping)
                 data["wsFederationClaimsMapping"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -19428,7 +19428,7 @@ export class HostSettingsEditDto implements IHostSettingsEditDto {
         data["billing"] = this.billing ? this.billing.toJSON() : <any>undefined;
         data["otherSettings"] = this.otherSettings ? this.otherSettings.toJSON() : <any>undefined;
         data["externalLoginProviderSettings"] = this.externalLoginProviderSettings ? this.externalLoginProviderSettings.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -19471,7 +19471,7 @@ export class SendTestEmailInput implements ISendTestEmailInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["emailAddress"] = this.emailAddress;
-        return data; 
+        return data;
     }
 }
 
@@ -19515,7 +19515,7 @@ export class ExternalLoginSettingsDto implements IExternalLoginSettingsDto {
             for (let item of this.enabledSocialLoginSettings)
                 data["enabledSocialLoginSettings"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -19569,7 +19569,7 @@ export class InstallDto implements IInstallDto {
         data["defaultLanguage"] = this.defaultLanguage;
         data["smtpSettings"] = this.smtpSettings ? this.smtpSettings.toJSON() : <any>undefined;
         data["billInfo"] = this.billInfo ? this.billInfo.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -19614,7 +19614,7 @@ export class NameValue implements INameValue {
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
         data["value"] = this.value;
-        return data; 
+        return data;
     }
 }
 
@@ -19665,7 +19665,7 @@ export class AppSettingsJsonDto implements IAppSettingsJsonDto {
             for (let item of this.languages)
                 data["languages"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -19703,7 +19703,7 @@ export class CheckDatabaseOutput implements ICheckDatabaseOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["isDatabaseExist"] = this.isDatabaseExist;
-        return data; 
+        return data;
     }
 }
 
@@ -19779,7 +19779,7 @@ export class InvoiceDto implements IInvoiceDto {
             for (let item of this.hostAddress)
                 data["hostAddress"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -19823,7 +19823,7 @@ export class CreateInvoiceDto implements ICreateInvoiceDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["subscriptionPaymentId"] = this.subscriptionPaymentId;
-        return data; 
+        return data;
     }
 }
 
@@ -19895,7 +19895,7 @@ export class ApplicationLanguageListDto implements IApplicationLanguageListDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -19954,7 +19954,7 @@ export class GetLanguagesOutput implements IGetLanguagesOutput {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20000,7 +20000,7 @@ export class ApplicationLanguageEditDto implements IApplicationLanguageEditDto {
         data["name"] = this.name;
         data["icon"] = this.icon;
         data["isEnabled"] = this.isEnabled;
-        return data; 
+        return data;
     }
 }
 
@@ -20045,7 +20045,7 @@ export class ComboboxItemDto implements IComboboxItemDto {
         data["value"] = this.value;
         data["displayText"] = this.displayText;
         data["isSelected"] = this.isSelected;
-        return data; 
+        return data;
     }
 }
 
@@ -20105,7 +20105,7 @@ export class GetLanguageForEditOutput implements IGetLanguageForEditOutput {
             for (let item of this.flags)
                 data["flags"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20146,7 +20146,7 @@ export class CreateOrUpdateLanguageInput implements ICreateOrUpdateLanguageInput
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["language"] = this.language ? this.language.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -20182,7 +20182,7 @@ export class SetDefaultLanguageInput implements ISetDefaultLanguageInput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
-        return data; 
+        return data;
     }
 }
 
@@ -20224,7 +20224,7 @@ export class LanguageTextListDto implements ILanguageTextListDto {
         data["key"] = this.key;
         data["baseValue"] = this.baseValue;
         data["targetValue"] = this.targetValue;
-        return data; 
+        return data;
     }
 }
 
@@ -20273,7 +20273,7 @@ export class PagedResultDtoOfLanguageTextListDto implements IPagedResultDtoOfLan
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20319,7 +20319,7 @@ export class UpdateLanguageTextInput implements IUpdateLanguageTextInput {
         data["sourceName"] = this.sourceName;
         data["key"] = this.key;
         data["value"] = this.value;
-        return data; 
+        return data;
     }
 }
 
@@ -20378,7 +20378,7 @@ export class NotificationData implements INotificationData {
                     data["properties"][key] = this.properties[key];
             }
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20447,7 +20447,7 @@ export class TenantNotification implements ITenantNotification {
         data["severity"] = this.severity;
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -20503,7 +20503,7 @@ export class UserNotification implements IUserNotification {
         data["state"] = this.state;
         data["notification"] = this.notification ? this.notification.toJSON() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -20557,7 +20557,7 @@ export class GetNotificationsOutput implements IGetNotificationsOutput {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20595,7 +20595,7 @@ export class EntityDtoOfGuid implements IEntityDtoOfGuid {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -20640,7 +20640,7 @@ export class NotificationSubscriptionWithDisplayNameDto implements INotification
         data["description"] = this.description;
         data["name"] = this.name;
         data["isSubscribed"] = this.isSubscribed;
-        return data; 
+        return data;
     }
 }
 
@@ -20690,7 +20690,7 @@ export class GetNotificationSettingsOutput implements IGetNotificationSettingsOu
             for (let item of this.notifications)
                 data["notifications"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20730,7 +20730,7 @@ export class NotificationSubscriptionDto implements INotificationSubscriptionDto
         data = typeof data === 'object' ? data : {};
         data["name"] = this.name;
         data["isSubscribed"] = this.isSubscribed;
-        return data; 
+        return data;
     }
 }
 
@@ -20778,7 +20778,7 @@ export class UpdateNotificationSettingsInput implements IUpdateNotificationSetti
             for (let item of this.notifications)
                 data["notifications"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20842,7 +20842,7 @@ export class OrganizationUnitDto implements IOrganizationUnitDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -20895,7 +20895,7 @@ export class ListResultDtoOfOrganizationUnitDto implements IListResultDtoOfOrgan
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -20949,7 +20949,7 @@ export class OrganizationUnitUserListDto implements IOrganizationUnitUserListDto
         data["profilePictureId"] = this.profilePictureId;
         data["addedTime"] = this.addedTime ? this.addedTime.toString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -21002,7 +21002,7 @@ export class PagedResultDtoOfOrganizationUnitUserListDto implements IPagedResult
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -21048,7 +21048,7 @@ export class OrganizationUnitRoleListDto implements IOrganizationUnitRoleListDto
         data["name"] = this.name;
         data["addedTime"] = this.addedTime ? this.addedTime.toString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -21098,7 +21098,7 @@ export class PagedResultDtoOfOrganizationUnitRoleListDto implements IPagedResult
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -21138,7 +21138,7 @@ export class CreateOrganizationUnitInput implements ICreateOrganizationUnitInput
         data = typeof data === 'object' ? data : {};
         data["parentId"] = this.parentId;
         data["displayName"] = this.displayName;
-        return data; 
+        return data;
     }
 }
 
@@ -21178,7 +21178,7 @@ export class UpdateOrganizationUnitInput implements IUpdateOrganizationUnitInput
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
         data["displayName"] = this.displayName;
-        return data; 
+        return data;
     }
 }
 
@@ -21218,7 +21218,7 @@ export class MoveOrganizationUnitInput implements IMoveOrganizationUnitInput {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
         data["newParentId"] = this.newParentId;
-        return data; 
+        return data;
     }
 }
 
@@ -21266,7 +21266,7 @@ export class UsersToOrganizationUnitInput implements IUsersToOrganizationUnitInp
                 data["userIds"].push(item);
         }
         data["organizationUnitId"] = this.organizationUnitId;
-        return data; 
+        return data;
     }
 }
 
@@ -21314,7 +21314,7 @@ export class RolesToOrganizationUnitInput implements IRolesToOrganizationUnitInp
                 data["roleIds"].push(item);
         }
         data["organizationUnitId"] = this.organizationUnitId;
-        return data; 
+        return data;
     }
 }
 
@@ -21360,7 +21360,7 @@ export class FindOrganizationUnitUsersInput implements IFindOrganizationUnitUser
         data["maxResultCount"] = this.maxResultCount;
         data["skipCount"] = this.skipCount;
         data["filter"] = this.filter;
-        return data; 
+        return data;
     }
 }
 
@@ -21408,7 +21408,7 @@ export class FindOrganizationUnitRolesInput implements IFindOrganizationUnitRole
         data["maxResultCount"] = this.maxResultCount;
         data["skipCount"] = this.skipCount;
         data["filter"] = this.filter;
-        return data; 
+        return data;
     }
 }
 
@@ -21480,7 +21480,7 @@ export class EditionSelectDto implements IEditionSelectDto {
         data["waitingDayAfterExpire"] = this.waitingDayAfterExpire;
         data["isFree"] = this.isFree;
         data["additionalData"] = this.additionalData ? this.additionalData.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -21530,7 +21530,7 @@ export class PaymentInfoDto implements IPaymentInfoDto {
         data = typeof data === 'object' ? data : {};
         data["edition"] = this.edition ? this.edition.toJSON() : <any>undefined;
         data["additionalPrice"] = this.additionalPrice;
-        return data; 
+        return data;
     }
 }
 
@@ -21604,7 +21604,7 @@ export class CreatePaymentDto implements ICreatePaymentDto {
         data["recurringPaymentEnabled"] = this.recurringPaymentEnabled;
         data["successUrl"] = this.successUrl;
         data["errorUrl"] = this.errorUrl;
-        return data; 
+        return data;
     }
 }
 
@@ -21649,7 +21649,7 @@ export class CancelPaymentDto implements ICancelPaymentDto {
         data = typeof data === 'object' ? data : {};
         data["paymentId"] = this.paymentId;
         data["gateway"] = this.gateway;
-        return data; 
+        return data;
     }
 }
 
@@ -21731,7 +21731,7 @@ export class SubscriptionPaymentListDto implements ISubscriptionPaymentListDto {
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["creatorUserId"] = this.creatorUserId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -21793,7 +21793,7 @@ export class PagedResultDtoOfSubscriptionPaymentListDto implements IPagedResultD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -21833,7 +21833,7 @@ export class PaymentGatewayModel implements IPaymentGatewayModel {
         data = typeof data === 'object' ? data : {};
         data["gatewayType"] = this.gatewayType;
         data["supportsRecurringPayments"] = this.supportsRecurringPayments;
-        return data; 
+        return data;
     }
 }
 
@@ -21929,7 +21929,7 @@ export class SubscriptionPaymentDto implements ISubscriptionPaymentDto {
         data["errorUrl"] = this.errorUrl;
         data["editionPaymentType"] = this.editionPaymentType;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -21988,7 +21988,7 @@ export class PayPalConfigurationDto implements IPayPalConfigurationDto {
         data["clientId"] = this.clientId;
         data["demoUsername"] = this.demoUsername;
         data["demoPassword"] = this.demoPassword;
-        return data; 
+        return data;
     }
 }
 
@@ -22041,7 +22041,7 @@ export class FlatPermissionWithLevelDto implements IFlatPermissionWithLevelDto {
         data["displayName"] = this.displayName;
         data["description"] = this.description;
         data["isGrantedByDefault"] = this.isGrantedByDefault;
-        return data; 
+        return data;
     }
 }
 
@@ -22090,7 +22090,7 @@ export class ListResultDtoOfFlatPermissionWithLevelDto implements IListResultDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -22150,7 +22150,7 @@ export class CurrentUserProfileEditDto implements ICurrentUserProfileEditDto {
         data["timezone"] = this.timezone;
         data["qrCodeSetupImageUrl"] = this.qrCodeSetupImageUrl;
         data["isGoogleAuthenticatorEnabled"] = this.isGoogleAuthenticatorEnabled;
-        return data; 
+        return data;
     }
 }
 
@@ -22194,7 +22194,7 @@ export class UpdateGoogleAuthenticatorKeyOutput implements IUpdateGoogleAuthenti
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["qrCodeSetupImageUrl"] = this.qrCodeSetupImageUrl;
-        return data; 
+        return data;
     }
 }
 
@@ -22230,7 +22230,7 @@ export class SendVerificationSmsInputDto implements ISendVerificationSmsInputDto
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["phoneNumber"] = this.phoneNumber;
-        return data; 
+        return data;
     }
 }
 
@@ -22269,7 +22269,7 @@ export class VerifySmsCodeInputDto implements IVerifySmsCodeInputDto {
         data = typeof data === 'object' ? data : {};
         data["code"] = this.code;
         data["phoneNumber"] = this.phoneNumber;
-        return data; 
+        return data;
     }
 }
 
@@ -22309,7 +22309,7 @@ export class ChangePasswordInput implements IChangePasswordInput {
         data = typeof data === 'object' ? data : {};
         data["currentPassword"] = this.currentPassword;
         data["newPassword"] = this.newPassword;
-        return data; 
+        return data;
     }
 }
 
@@ -22361,7 +22361,7 @@ export class UpdateProfilePictureInput implements IUpdateProfilePictureInput {
         data["width"] = this.width;
         data["height"] = this.height;
         data["useGravatarProfilePicture"] = this.useGravatarProfilePicture;
-        return data; 
+        return data;
     }
 }
 
@@ -22402,7 +22402,7 @@ export class GetPasswordComplexitySettingOutput implements IGetPasswordComplexit
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["setting"] = this.setting ? this.setting.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -22438,7 +22438,7 @@ export class GetProfilePictureOutput implements IGetProfilePictureOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["profilePicture"] = this.profilePicture;
-        return data; 
+        return data;
     }
 }
 
@@ -22474,7 +22474,7 @@ export class ChangeUserLanguageDto implements IChangeUserLanguageDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["languageName"] = this.languageName;
-        return data; 
+        return data;
     }
 }
 
@@ -22518,7 +22518,7 @@ export class GetRolesInput implements IGetRolesInput {
             for (let item of this.permissions)
                 data["permissions"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -22569,7 +22569,7 @@ export class RoleListDto implements IRoleListDto {
         data["isDefault"] = this.isDefault;
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -22618,7 +22618,7 @@ export class ListResultDtoOfRoleListDto implements IListResultDtoOfRoleListDto {
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -22660,7 +22660,7 @@ export class RoleEditDto implements IRoleEditDto {
         data["id"] = this.id;
         data["displayName"] = this.displayName;
         data["isDefault"] = this.isDefault;
-        return data; 
+        return data;
     }
 }
 
@@ -22710,7 +22710,7 @@ export class FlatPermissionDto implements IFlatPermissionDto {
         data["displayName"] = this.displayName;
         data["description"] = this.description;
         data["isGrantedByDefault"] = this.isGrantedByDefault;
-        return data; 
+        return data;
     }
 }
 
@@ -22772,7 +22772,7 @@ export class GetRoleForEditOutput implements IGetRoleForEditOutput {
             for (let item of this.grantedPermissionNames)
                 data["grantedPermissionNames"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -22825,7 +22825,7 @@ export class CreateOrUpdateRoleInput implements ICreateOrUpdateRoleInput {
             for (let item of this.grantedPermissionNames)
                 data["grantedPermissionNames"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -22877,7 +22877,7 @@ export class UserLoginInfoDto implements IUserLoginInfoDto {
         data["emailAddress"] = this.emailAddress;
         data["profilePictureId"] = this.profilePictureId;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -22942,7 +22942,7 @@ export class EditionInfoDto implements IEditionInfoDto {
         data["isHighestEdition"] = this.isHighestEdition;
         data["isFree"] = this.isFree;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -23023,7 +23023,7 @@ export class TenantLoginInfoDto implements ITenantLoginInfoDto {
         data["subscriptionDateString"] = this.subscriptionDateString;
         data["creationTimeString"] = this.creationTimeString;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -23102,7 +23102,7 @@ export class ApplicationInfoDto implements IApplicationInfoDto {
                     data["features"][key] = this.features[key];
             }
         }
-        return data; 
+        return data;
     }
 }
 
@@ -23144,7 +23144,7 @@ export class ThemeLayoutSettingsDto implements IThemeLayoutSettingsDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["layoutType"] = this.layoutType;
-        return data; 
+        return data;
     }
 }
 
@@ -23189,7 +23189,7 @@ export class ThemeHeaderSettingsDto implements IThemeHeaderSettingsDto {
         data["mobileFixedHeader"] = this.mobileFixedHeader;
         data["headerSkin"] = this.headerSkin;
         data["minimizeDesktopHeaderType"] = this.minimizeDesktopHeaderType;
-        return data; 
+        return data;
     }
 }
 
@@ -23240,7 +23240,7 @@ export class ThemeSubHeaderSettingsDto implements IThemeSubHeaderSettingsDto {
         data["subheaderSize"] = this.subheaderSize;
         data["titleStlye"] = this.titleStlye;
         data["containerStyle"] = this.containerStyle;
-        return data; 
+        return data;
     }
 }
 
@@ -23304,7 +23304,7 @@ export class ThemeMenuSettingsDto implements IThemeMenuSettingsDto {
         data["searchActive"] = this.searchActive;
         data["enableSecondary"] = this.enableSecondary;
         data["hoverableAside"] = this.hoverableAside;
-        return data; 
+        return data;
     }
 }
 
@@ -23348,7 +23348,7 @@ export class ThemeFooterSettingsDto implements IThemeFooterSettingsDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["fixedFooter"] = this.fixedFooter;
-        return data; 
+        return data;
     }
 }
 
@@ -23399,7 +23399,7 @@ export class ThemeSettingsDto implements IThemeSettingsDto {
         data["subHeader"] = this.subHeader ? this.subHeader.toJSON() : <any>undefined;
         data["menu"] = this.menu ? this.menu.toJSON() : <any>undefined;
         data["footer"] = this.footer ? this.footer.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -23452,7 +23452,7 @@ export class UiCustomizationSettingsDto implements IUiCustomizationSettingsDto {
         data["isTopMenuUsed"] = this.isTopMenuUsed;
         data["isTabMenuUsed"] = this.isTabMenuUsed;
         data["allowMenuScroll"] = this.allowMenuScroll;
-        return data; 
+        return data;
     }
 }
 
@@ -23507,7 +23507,7 @@ export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInform
         data["impersonatorTenant"] = this.impersonatorTenant ? this.impersonatorTenant.toJSON() : <any>undefined;
         data["application"] = this.application ? this.application.toJSON() : <any>undefined;
         data["theme"] = this.theme ? this.theme.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -23554,7 +23554,7 @@ export class UpdateUserSignInTokenOutput implements IUpdateUserSignInTokenOutput
         data["signInToken"] = this.signInToken;
         data["encodedUserId"] = this.encodedUserId;
         data["encodedTenantId"] = this.encodedTenantId;
-        return data; 
+        return data;
     }
 }
 
@@ -23592,7 +23592,7 @@ export class StripeConfigurationDto implements IStripeConfigurationDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["publishableKey"] = this.publishableKey;
-        return data; 
+        return data;
     }
 }
 
@@ -23634,7 +23634,7 @@ export class StripeCreatePaymentSessionInput implements IStripeCreatePaymentSess
         data["paymentId"] = this.paymentId;
         data["successUrl"] = this.successUrl;
         data["cancelUrl"] = this.cancelUrl;
-        return data; 
+        return data;
     }
 }
 
@@ -23672,7 +23672,7 @@ export class StripePaymentResultOutput implements IStripePaymentResultOutput {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["paymentDone"] = this.paymentDone;
-        return data; 
+        return data;
     }
 }
 
@@ -23735,7 +23735,7 @@ export class TenantListDto implements ITenantListDto {
         data["editionId"] = this.editionId;
         data["isInTrialPeriod"] = this.isInTrialPeriod;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -23791,7 +23791,7 @@ export class PagedResultDtoOfTenantListDto implements IPagedResultDtoOfTenantLis
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -23858,7 +23858,7 @@ export class CreateTenantInput implements ICreateTenantInput {
         data["isActive"] = this.isActive;
         data["subscriptionEndDateUtc"] = this.subscriptionEndDateUtc ? this.subscriptionEndDateUtc.toString() : <any>undefined;
         data["isInTrialPeriod"] = this.isInTrialPeriod;
-        return data; 
+        return data;
     }
 }
 
@@ -23925,7 +23925,7 @@ export class TenantEditDto implements ITenantEditDto {
         data["subscriptionEndDateUtc"] = this.subscriptionEndDateUtc ? this.subscriptionEndDateUtc.toString() : <any>undefined;
         data["isInTrialPeriod"] = this.isInTrialPeriod;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -23987,7 +23987,7 @@ export class GetTenantFeaturesEditOutput implements IGetTenantFeaturesEditOutput
             for (let item of this.features)
                 data["features"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24038,7 +24038,7 @@ export class UpdateTenantFeaturesInput implements IUpdateTenantFeaturesInput {
             for (let item of this.featureValues)
                 data["featureValues"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24075,7 +24075,7 @@ export class EntityDto implements IEntityDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -24123,7 +24123,7 @@ export class MemberActivity implements IMemberActivity {
         data["cases"] = this.cases;
         data["closed"] = this.closed;
         data["rate"] = this.rate;
-        return data; 
+        return data;
     }
 }
 
@@ -24171,7 +24171,7 @@ export class GetMemberActivityOutput implements IGetMemberActivityOutput {
             for (let item of this.memberActivities)
                 data["memberActivities"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24219,7 +24219,7 @@ export class SalesSummaryData implements ISalesSummaryData {
         data["period"] = this.period;
         data["sales"] = this.sales;
         data["profit"] = this.profit;
-        return data; 
+        return data;
     }
 }
 
@@ -24320,7 +24320,7 @@ export class GetDashboardDataOutput implements IGetDashboardDataOutput {
             for (let item of this.profitShares)
                 data["profitShares"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24378,7 +24378,7 @@ export class GetTopStatsOutput implements IGetTopStatsOutput {
         data["newFeedbacks"] = this.newFeedbacks;
         data["newOrders"] = this.newOrders;
         data["newUsers"] = this.newUsers;
-        return data; 
+        return data;
     }
 }
 
@@ -24425,7 +24425,7 @@ export class GetProfitShareOutput implements IGetProfitShareOutput {
             for (let item of this.profitShares)
                 data["profitShares"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24469,7 +24469,7 @@ export class GetDailySalesOutput implements IGetDailySalesOutput {
             for (let item of this.dailySales)
                 data["dailySales"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24525,7 +24525,7 @@ export class GetSalesSummaryOutput implements IGetSalesSummaryOutput {
             for (let item of this.salesSummary)
                 data["salesSummary"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24585,7 +24585,7 @@ export class RegionalStatCountry implements IRegionalStatCountry {
         }
         data["averagePrice"] = this.averagePrice;
         data["totalPrice"] = this.totalPrice;
-        return data; 
+        return data;
     }
 }
 
@@ -24633,7 +24633,7 @@ export class GetRegionalStatsOutput implements IGetRegionalStatsOutput {
             for (let item of this.stats)
                 data["stats"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24675,7 +24675,7 @@ export class GetGeneralStatsOutput implements IGetGeneralStatsOutput {
         data["transactionPercent"] = this.transactionPercent;
         data["newVisitPercent"] = this.newVisitPercent;
         data["bouncePercent"] = this.bouncePercent;
-        return data; 
+        return data;
     }
 }
 
@@ -24737,7 +24737,7 @@ export class RegisterTenantInput implements IRegisterTenantInput {
         data["captchaResponse"] = this.captchaResponse;
         data["subscriptionStartType"] = this.subscriptionStartType;
         data["editionId"] = this.editionId;
-        return data; 
+        return data;
     }
 }
 
@@ -24800,7 +24800,7 @@ export class RegisterTenantOutput implements IRegisterTenantOutput {
         data["isTenantActive"] = this.isTenantActive;
         data["isActive"] = this.isActive;
         data["isEmailConfirmationRequired"] = this.isEmailConfirmationRequired;
-        return data; 
+        return data;
     }
 }
 
@@ -24861,7 +24861,7 @@ export class FlatFeatureSelectDto implements IFlatFeatureSelectDto {
         data["defaultValue"] = this.defaultValue;
         data["inputType"] = this.inputType ? this.inputType.toJSON() : <any>undefined;
         data["textHtmlColor"] = this.textHtmlColor;
-        return data; 
+        return data;
     }
 }
 
@@ -24914,7 +24914,7 @@ export class EditionWithFeaturesDto implements IEditionWithFeaturesDto {
             for (let item of this.featureValues)
                 data["featureValues"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -24970,7 +24970,7 @@ export class EditionsSelectOutput implements IEditionsSelectOutput {
             for (let item of this.editionsWithFeatures)
                 data["editionsWithFeatures"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -25031,7 +25031,7 @@ export class TenantUserManagementSettingsEditDto implements ITenantUserManagemen
         data["isQuickThemeSelectEnabled"] = this.isQuickThemeSelectEnabled;
         data["allowUsingGravatarProfilePicture"] = this.allowUsingGravatarProfilePicture;
         data["sessionTimeOutSettings"] = this.sessionTimeOutSettings ? this.sessionTimeOutSettings.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -25102,7 +25102,7 @@ export class TenantEmailSettingsEditDto implements ITenantEmailSettingsEditDto {
         data["smtpDomain"] = this.smtpDomain;
         data["smtpEnableSsl"] = this.smtpEnableSsl;
         data["smtpUseDefaultCredentials"] = this.smtpUseDefaultCredentials;
-        return data; 
+        return data;
     }
 }
 
@@ -25159,7 +25159,7 @@ export class LdapSettingsEditDto implements ILdapSettingsEditDto {
         data["domain"] = this.domain;
         data["userName"] = this.userName;
         data["password"] = this.password;
-        return data; 
+        return data;
     }
 }
 
@@ -25205,7 +25205,7 @@ export class TenantBillingSettingsEditDto implements ITenantBillingSettingsEditD
         data["legalName"] = this.legalName;
         data["address"] = this.address;
         data["taxVatNo"] = this.taxVatNo;
-        return data; 
+        return data;
     }
 }
 
@@ -25243,7 +25243,7 @@ export class TenantOtherSettingsEditDto implements ITenantOtherSettingsEditDto {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["isQuickThemeSelectEnabled"] = this.isQuickThemeSelectEnabled;
-        return data; 
+        return data;
     }
 }
 
@@ -25304,7 +25304,7 @@ export class TenantSettingsEditDto implements ITenantSettingsEditDto {
         data["billing"] = this.billing ? this.billing.toJSON() : <any>undefined;
         data["otherSettings"] = this.otherSettings ? this.otherSettings.toJSON() : <any>undefined;
         data["externalLoginProviderSettings"] = this.externalLoginProviderSettings ? this.externalLoginProviderSettings.toJSON() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -25362,7 +25362,7 @@ export class ListResultDtoOfNameValueDto implements IListResultDtoOfNameValueDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -25419,7 +25419,7 @@ export class AuthenticateModel implements IAuthenticateModel {
         data["singleSignIn"] = this.singleSignIn;
         data["returnUrl"] = this.returnUrl;
         data["captchaResponse"] = this.captchaResponse;
-        return data; 
+        return data;
     }
 }
 
@@ -25503,7 +25503,7 @@ export class AuthenticateResultModel implements IAuthenticateResultModel {
         data["returnUrl"] = this.returnUrl;
         data["refreshToken"] = this.refreshToken;
         data["refreshTokenExpireInSeconds"] = this.refreshTokenExpireInSeconds;
-        return data; 
+        return data;
     }
 }
 
@@ -25556,7 +25556,7 @@ export class RefreshTokenResult implements IRefreshTokenResult {
         data["accessToken"] = this.accessToken;
         data["encryptedAccessToken"] = this.encryptedAccessToken;
         data["expireInSeconds"] = this.expireInSeconds;
-        return data; 
+        return data;
     }
 }
 
@@ -25597,7 +25597,7 @@ export class SendTwoFactorAuthCodeModel implements ISendTwoFactorAuthCodeModel {
         data = typeof data === 'object' ? data : {};
         data["userId"] = this.userId;
         data["provider"] = this.provider;
-        return data; 
+        return data;
     }
 }
 
@@ -25640,7 +25640,7 @@ export class ImpersonatedAuthenticateResultModel implements IImpersonatedAuthent
         data["accessToken"] = this.accessToken;
         data["encryptedAccessToken"] = this.encryptedAccessToken;
         data["expireInSeconds"] = this.expireInSeconds;
-        return data; 
+        return data;
     }
 }
 
@@ -25684,7 +25684,7 @@ export class SwitchedAccountAuthenticateResultModel implements ISwitchedAccountA
         data["accessToken"] = this.accessToken;
         data["encryptedAccessToken"] = this.encryptedAccessToken;
         data["expireInSeconds"] = this.expireInSeconds;
-        return data; 
+        return data;
     }
 }
 
@@ -25740,7 +25740,7 @@ export class ExternalLoginProviderInfoModel implements IExternalLoginProviderInf
                     data["additionalParams"][key] = this.additionalParams[key];
             }
         }
-        return data; 
+        return data;
     }
 }
 
@@ -25790,7 +25790,7 @@ export class ExternalAuthenticateModel implements IExternalAuthenticateModel {
         data["providerAccessCode"] = this.providerAccessCode;
         data["returnUrl"] = this.returnUrl;
         data["singleSignIn"] = this.singleSignIn;
-        return data; 
+        return data;
     }
 }
 
@@ -25848,7 +25848,7 @@ export class ExternalAuthenticateResultModel implements IExternalAuthenticateRes
         data["returnUrl"] = this.returnUrl;
         data["refreshToken"] = this.refreshToken;
         data["refreshTokenExpireInSeconds"] = this.refreshTokenExpireInSeconds;
-        return data; 
+        return data;
     }
 }
 
@@ -25899,7 +25899,7 @@ export class TwitterGetRequestTokenResponse implements ITwitterGetRequestTokenRe
         data["secret"] = this.secret;
         data["confirmed"] = this.confirmed;
         data["redirectUrl"] = this.redirectUrl;
-        return data; 
+        return data;
     }
 }
 
@@ -25947,7 +25947,7 @@ export class TwitterGetAccessTokenResponse implements ITwitterGetAccessTokenResp
         data["accessTokenSecret"] = this.accessTokenSecret;
         data["userId"] = this.userId;
         data["userName"] = this.userName;
-        return data; 
+        return data;
     }
 }
 
@@ -26012,7 +26012,7 @@ export class GetUsersInput implements IGetUsersInput {
         data["sorting"] = this.sorting;
         data["maxResultCount"] = this.maxResultCount;
         data["skipCount"] = this.skipCount;
-        return data; 
+        return data;
     }
 }
 
@@ -26057,7 +26057,7 @@ export class UserListRoleDto implements IUserListRoleDto {
         data = typeof data === 'object' ? data : {};
         data["roleId"] = this.roleId;
         data["roleName"] = this.roleName;
-        return data; 
+        return data;
     }
 }
 
@@ -26132,7 +26132,7 @@ export class UserListDto implements IUserListDto {
         data["isActive"] = this.isActive;
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -26189,7 +26189,7 @@ export class PagedResultDtoOfUserListDto implements IPagedResultDtoOfUserListDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26256,7 +26256,7 @@ export class UserEditDto implements IUserEditDto {
         data["shouldChangePasswordOnNextLogin"] = this.shouldChangePasswordOnNextLogin;
         data["isTwoFactorEnabled"] = this.isTwoFactorEnabled;
         data["isLockoutEnabled"] = this.isLockoutEnabled;
-        return data; 
+        return data;
     }
 }
 
@@ -26314,7 +26314,7 @@ export class UserRoleDto implements IUserRoleDto {
         data["roleDisplayName"] = this.roleDisplayName;
         data["isAssigned"] = this.isAssigned;
         data["inheritedFromOrganizationUnit"] = this.inheritedFromOrganizationUnit;
-        return data; 
+        return data;
     }
 }
 
@@ -26390,7 +26390,7 @@ export class GetUserForEditOutput implements IGetUserForEditOutput {
             for (let item of this.memberedOrganizationUnits)
                 data["memberedOrganizationUnits"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26449,7 +26449,7 @@ export class GetUserPermissionsForEditOutput implements IGetUserPermissionsForEd
             for (let item of this.grantedPermissionNames)
                 data["grantedPermissionNames"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26486,7 +26486,7 @@ export class EntityDtoOfInt64 implements IEntityDtoOfInt64 {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -26536,7 +26536,7 @@ export class UpdateUserPermissionsInput implements IUpdateUserPermissionsInput {
             for (let item of this.grantedPermissionNames)
                 data["grantedPermissionNames"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26605,7 +26605,7 @@ export class CreateOrUpdateUserInput implements ICreateOrUpdateUserInput {
             for (let item of this.organizationUnits)
                 data["organizationUnits"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26654,7 +26654,7 @@ export class UserDelegationDto implements IUserDelegationDto {
         data["startTime"] = this.startTime ? this.startTime.toString() : <any>undefined;
         data["endTime"] = this.endTime ? this.endTime.toString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -26704,7 +26704,7 @@ export class PagedResultDtoOfUserDelegationDto implements IPagedResultDtoOfUserD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26747,7 +26747,7 @@ export class CreateUserDelegationDto implements ICreateUserDelegationDto {
         data["targetUserId"] = this.targetUserId;
         data["startTime"] = this.startTime ? this.startTime.toString() : <any>undefined;
         data["endTime"] = this.endTime ? this.endTime.toString() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -26791,7 +26791,7 @@ export class LinkToUserInput implements ILinkToUserInput {
         data["tenancyName"] = this.tenancyName;
         data["usernameOrEmailAddress"] = this.usernameOrEmailAddress;
         data["password"] = this.password;
-        return data; 
+        return data;
     }
 }
 
@@ -26838,7 +26838,7 @@ export class LinkedUserDto implements ILinkedUserDto {
         data["tenancyName"] = this.tenancyName;
         data["username"] = this.username;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -26888,7 +26888,7 @@ export class PagedResultDtoOfLinkedUserDto implements IPagedResultDtoOfLinkedUse
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26933,7 +26933,7 @@ export class ListResultDtoOfLinkedUserDto implements IListResultDtoOfLinkedUserD
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -26972,7 +26972,7 @@ export class UnlinkUserInput implements IUnlinkUserInput {
         data = typeof data === 'object' ? data : {};
         data["tenantId"] = this.tenantId;
         data["userId"] = this.userId;
-        return data; 
+        return data;
     }
 }
 
@@ -27027,7 +27027,7 @@ export class UserLoginAttemptDto implements IUserLoginAttemptDto {
         data["browserInfo"] = this.browserInfo;
         data["result"] = this.result;
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -27077,7 +27077,7 @@ export class ListResultDtoOfUserLoginAttemptDto implements IListResultDtoOfUserL
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -27131,7 +27131,7 @@ export class WebhookEvent implements IWebhookEvent {
         data["isDeleted"] = this.isDeleted;
         data["deletionTime"] = this.deletionTime ? this.deletionTime.toString() : <any>undefined;
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -27255,7 +27255,7 @@ export class GetAllSendAttemptsOutput implements IGetAllSendAttemptsOutput {
         data["response"] = this.response;
         data["responseStatusCode"] = this.responseStatusCode;
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -27308,7 +27308,7 @@ export class PagedResultDtoOfGetAllSendAttemptsOutput implements IPagedResultDto
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -27363,7 +27363,7 @@ export class GetAllSendAttemptsOfWebhookEventOutput implements IGetAllSendAttemp
         data["responseStatusCode"] = this.responseStatusCode;
         data["creationTime"] = this.creationTime ? this.creationTime.toString() : <any>undefined;
         data["lastModificationTime"] = this.lastModificationTime ? this.lastModificationTime.toString() : <any>undefined;
-        return data; 
+        return data;
     }
 }
 
@@ -27413,7 +27413,7 @@ export class ListResultDtoOfGetAllSendAttemptsOfWebhookEventOutput implements IL
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -27466,7 +27466,7 @@ export class GetAllSubscriptionsOutput implements IGetAllSubscriptionsOutput {
                 data["webhooks"].push(item);
         }
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -27513,7 +27513,7 @@ export class ListResultDtoOfGetAllSubscriptionsOutput implements IListResultDtoO
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -27587,7 +27587,7 @@ export class WebhookSubscription implements IWebhookSubscription {
             }
         }
         data["id"] = this.id;
-        return data; 
+        return data;
     }
 }
 
@@ -27632,7 +27632,7 @@ export class ActivateWebhookSubscriptionInput implements IActivateWebhookSubscri
         data = typeof data === 'object' ? data : {};
         data["subscriptionId"] = this.subscriptionId;
         data["isActive"] = this.isActive;
-        return data; 
+        return data;
     }
 }
 
@@ -27675,7 +27675,7 @@ export class GetAllAvailableWebhooksOutput implements IGetAllAvailableWebhooksOu
         data["name"] = this.name;
         data["displayName"] = this.displayName;
         data["description"] = this.description;
-        return data; 
+        return data;
     }
 }
 
@@ -27721,7 +27721,7 @@ export class ListResultDtoOfGetAllAvailableWebhooksOutput implements IListResult
             for (let item of this.items)
                 data["items"].push(item.toJSON());
         }
-        return data; 
+        return data;
     }
 }
 
@@ -27765,7 +27765,7 @@ export class GetLatestWebLogsOutput implements IGetLatestWebLogsOutput {
             for (let item of this.latestWebLogLines)
                 data["latestWebLogLines"].push(item);
         }
-        return data; 
+        return data;
     }
 }
 
@@ -27828,7 +27828,7 @@ export class AdditionalData implements IAdditionalData {
                     data["Stripe"][key] = this.stripe[key];
             }
         }
-        return data; 
+        return data;
     }
 }
 
@@ -27882,4 +27882,16 @@ function blobToText(blob: any): Observable<string> {
             reader.readAsText(blob);
         }
     });
+}
+
+@Injectable()
+export class TasksServiceProxy {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
+    }
 }

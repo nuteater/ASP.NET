@@ -40,6 +40,7 @@ import { TasksComponent } from "@app/admin/tasks/tasks.component";
                     { path: 'editions', component: EditionsComponent, data: { permission: 'Pages.Editions' } },
                     { path: 'languages', component: LanguagesComponent, data: { permission: 'Pages.Administration.Languages' } },
                     { path: 'languages/:name/texts', component: LanguageTextsComponent, data: { permission: 'Pages.Administration.Languages.ChangeTexts' } },
+                    { path: 'tasks', component: TasksComponent, data: { permission: 'Pages.Editions' } },
                     { path: 'tenants', component: TenantsComponent, data: { permission: 'Pages.Tenants' } },
                     { path: 'organization-units', component: OrganizationUnitsComponent, data: { permission: 'Pages.Administration.OrganizationUnits' } },
                     { path: 'subscription-management', component: SubscriptionManagementComponent, data: { permission: 'Pages.Administration.Tenant.SubscriptionManagement' } },
@@ -56,7 +57,6 @@ import { TasksComponent } from "@app/admin/tasks/tasks.component";
                     { path: 'dynamic-entity-property/:entityFullName', component: DynamicEntityPropertyComponent, data: { permission: 'Pages.Administration.DynamicEntityProperties' } },
                     { path: 'dynamic-entity-property-value/manage-all/:entityFullName/:rowId', component: DynamicEntityPropertyValueComponent, data: { permission: 'Pages.Administration.DynamicEntityProperties' } },
                     { path: '', redirectTo: 'hostDashboard', pathMatch: 'full' },
-                    { path: 'tasks', component: TasksComponent, data: { permission: 'Pages.Editions' } },
                     { path: '**', redirectTo: 'hostDashboard' }
                     ]
             }
