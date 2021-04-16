@@ -486,7 +486,9 @@
       "input": [
         "node_modules/morris.js/morris.css",
         "wwwroot/view-resources/Areas/App/Views/CustomizableDashboard/Index.css",
-        "node_modules/gridstack/dist/gridstack.css"
+        "node_modules/gridstack/dist/gridstack.css",
+        "node_modules/devextreme/dist/css/dx.common.css",
+        "node_modules/devextreme/dist/css/dx.light.css"
       ]
     },
     {

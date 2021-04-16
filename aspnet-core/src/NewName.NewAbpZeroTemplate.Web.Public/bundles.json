@@ -62,7 +62,7 @@
       ]
     }
   ],
-  "styles": [
+    "styles": [
     {
       "output": "Common/_Bundles/common-styles.min.css",
       "input": [

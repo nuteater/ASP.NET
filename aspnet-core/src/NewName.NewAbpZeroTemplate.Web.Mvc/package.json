@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "abpzerotemplate",
   "scripts": {
     "create-bundles": "yarn && gulp buildDev",
@@ -38,6 +38,8 @@
     "datatables.net-select": "^1.3.0",
     "detect-zoom": "^1.0.2",
     "dropzone": "^5.5.1",
+    "devextreme": "20.2.6-",
+    "devextreme-angular": "20.2.6-",
     "easy-pie-chart": "^2.1.7",
     "famfamfam-flags": "^1.0.0",
     "flot": "^0.8.0-alpha",

@@ -106,6 +106,14 @@ import {DynamicEntityPropertyListComponent} from '@app/admin/dynamic-properties/
 import {ManageValuesModalComponent} from '@app/admin/dynamic-properties/dynamic-entity-properties/value/manage-values-modal.component';
 import {ManagerComponent} from '@app/admin/dynamic-properties/dynamic-entity-properties/value/manager.component';
 import {SelectAnEntityModalComponent} from '@app/admin/dynamic-properties/select-an-entity-modal.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {DevExtremeModule} from "@node_modules/devextreme-angular";
+
+import {MatOptionModule} from "@angular/material/core";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatSelectModule} from "@angular/material/select";
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -141,7 +149,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         ImageCropperModule,
         PerfectScrollbarModule,
         DropdownModule,
-        AppBsModalModule
+        AppBsModalModule,
+        MatTabsModule,
+        DevExtremeModule,
+        MatOptionModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatSelectModule
     ],
     declarations: [
         UsersComponent,

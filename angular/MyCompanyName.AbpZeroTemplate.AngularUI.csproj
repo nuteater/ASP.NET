@@ -26,4 +26,8 @@
     <None Remove="yarn.lock" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="src\app\school" />
+  </ItemGroup>
+
 </Project>

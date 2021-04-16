@@ -157,3 +157,6 @@ ngx-spinner .loading-text {
     color: white;
     font-size: 1.3em;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

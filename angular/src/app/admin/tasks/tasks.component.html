@@ -1,26 +1,78 @@
-﻿
-<div [@routerTransition] >
+﻿<div [@routerTransition] >
+    <div class="content d-flex flex-column flex-column-fluid left">
+        <sub-header [title]="'Tasks' | localize" [description]="'TasksHeadInfo' | localize"></sub-header>
 
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Disabled</a>
-        </li>
-    </ul>
+        <div [class]="containerClass">
+            <div class="card card-custom gutter-b">
+                <div class="card-body">
+                    <div class="container left">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
+                                <button mat-mini-fab color="primary" >
+                                    <mat-icon>plus_one</mat-icon>
+                                </button>
 
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="Active">Some content</div>
-        <div role="tabpanel" class="tab-pane" id="Link1">Some content</div>
-        <div role="tabpanel" class="tab-pane" id="Link2">Some content</div>
-        <div role="tabpanel" class="tab-pane" id="Disabled">Some content</div>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Favorite food</mat-label>
+                                    <mat-select matNativeControl="true">
+                                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                                            {{food.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-5 col-md-5 col-lg-5 col-xs-5">
+                                <mat-tab-group>
+                                    <mat-tab label="Description">
+
+                                    </mat-tab>
+
+                                    <mat-tab label="Sabtasks"> Field vith subtasks </mat-tab>
+
+                                    <mat-tab label="History">
+                                        <dx-data-grid id="gridContainer">
+                                            [dataSource]="dataSource"
+                                            [remoteOerations]="false"
+                                            [allowColumnReordering]="true"
+                                            [rowAlternationEnabled]="true"
+                                            [showBorders]="true"
+                                            (onContentReady)="contentReady($event)">
+
+                                            <dxo-paging [pageSize]="10"></dxo-paging>
+
+                                            <dxo-pager>
+                                                [showPageSizeSelector]="true"
+                                                [allowedPageSize]="[10, 25, 50, 100]"
+                                            </dxo-pager>
+
+
+                                            <dxo-search-panel
+                                                [visible]="true"
+                                                [highlightCaseSensitive]="true"
+                                            ></dxo-search-panel>
+
+                                            <dxo-group-panel
+                                                [visible]="true"
+                                            ></dxo-group-panel>
+
+
+                                            <dxo-grouping
+                                                [autoExpandAll]="false"
+                                            ></dxo-grouping>
+
+                                            <dxi-column dataField="Product" [groupIndex]="0"></dxi-column>
+
+                                        </dx-data-grid>
+                                    </mat-tab>
+                                </mat-tab-group>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
+
+
