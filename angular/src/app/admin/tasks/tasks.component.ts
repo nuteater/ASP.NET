@@ -1,39 +1,63 @@
 ﻿import { NgModule, Component, Injector, Pipe, PipeTransform, enableProdMode } from '@angular/core';
+import { NgModel } from "@angular/forms";
+import {TasksServiceProxy, UserServiceProxy} from "@shared/service-proxies/service-proxies";
 //import { Component, Injector, ViewChild } from '@angular/core';
 import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { AppComponentBase } from '@shared/common/app-component-base';
-import { BrowserModule } from '@angular/platform-browser';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { DxDataGridModule,
-    DxBulletModule,
-    DxTemplateModule } from 'devextreme-angular';
-import DataSource from 'devextreme/data/data_source';
 
-interface Food {
-    value: string;
-    viewValue: string;
-}
 
 @Component({
     templateUrl: './tasks.component.html',
-    animations: [appModuleAnimation()]
+    providers: [
+        UserServiceProxy
+    ]
 })
 export class TasksComponent extends AppComponentBase {
     constructor(
-        injector: Injector
+        injector: Injector,
+        providers:[
+            TasksServiceProxy
+        ]
     ) {
         super(injector);
     }
 
-    activeClassTab(){
+    addTaskIdName(): void{
 
     }
 
-    foods: Food[] = [
-        {value: 'steak-0', viewValue: 'Steak'},
-        {value: 'pizza-1', viewValue: 'Pizza'},
-        {value: 'tacos-2', viewValue: 'Tacos'}
-    ];
 
 
+
+
+
+
+
+
+
+
+
+
+
+    activeClassTab(){
+
+    }
+    // Add new task in list.
+    /*
+    idTask=0;
+    colTas=0;
+    Tasks: string[] = [];
+    addTask(){
+        this.Tasks[this.colTas++]='Task #'+this.idTask++;
+    }
+    // Delete task from list.
+    dellTask(){
+
+    }
+    */
 }
+
+
+
+
+

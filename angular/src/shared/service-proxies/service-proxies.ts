@@ -27894,4 +27894,93 @@ export class TasksServiceProxy {
         this.http = http;
         this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
     }
+
+
+    getTasks(): Observable<TaskNameAndIdEditDto> {
+        let url_ = this.baseUrl + "/api/services/app/WebLog/GetLatestWebLogs";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetTasks(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetTasks(<any>response_);
+                } catch (e) {
+                    return <Observable<TaskNameAndIdEditDto>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<TaskNameAndIdEditDto>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processGetTasks(response: HttpResponseBase): Observable<TaskNameAndIdEditDto> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+                (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+                let result200: any = null;
+                let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+                result200 = TaskNameAndIdEditDto.fromJS(resultData200);
+                return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+                return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<TaskNameAndIdEditDto>(<any>null);
+    }
+}
+
+export class TaskNameAndIdEditDto implements ITaskNameAndIdEditDto {
+    id: number;
+    name: string;
+
+    constructor(data?: ITaskNameAndIdEditDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.id = _data["id"];
+            this.name = _data["name"];
+        }
+    }
+
+    static fromJS(data: any): TaskNameAndIdEditDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new TaskNameAndIdEditDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["id"] = this.id;
+        data["name"] = this.name;
+        return data;
+    }
+}
+
+export interface ITaskNameAndIdEditDto {
+    id: number | undefined;
+    name: string;
 }
