@@ -1,8 +1,8 @@
 ﻿{
   "CompanyName": "NewName",
   "ProjectName": "NewAbpZeroTemplate",
-  "ProjectType": "ProjectType",
-  "ProjectVersion":"ProjectVersion",
+  "ProjectType": "Angular",
+  "ProjectVersion":"v10.1.0",
   "ApplicationAreaName": "App",
   "LicenseCode": "LicenseCodePlaceHolderToReplace",
   "AngularSrcPath": "\\..\\..\\angular\\src\\",

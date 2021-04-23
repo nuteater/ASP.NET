@@ -10,10 +10,9 @@
                             <div class="col-sm-5 col-md-5 col-lg-5 col-xs-5">
                                 <button mat-raised-button color="primary" class="mr-3" (click)="addTask()">Add task</button>
 
-                                <mat-selection-list #tasks>
-                                    <mat-list-item *ngFor="let tasks of Tasks">
-                                        {{tasks}}
-                                        <button mat-raised-button color="primary" class="ml-25">Dellete task</button>
+                                <mat-selection-list #tasksList>
+                                    <mat-list-item *ngFor="let task of tasks">
+                                        <div (click)="tabsInit(task.id)">{{ task.name }}</div>
                                     </mat-list-item>
                                 </mat-selection-list>
 

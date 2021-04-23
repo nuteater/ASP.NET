@@ -19,8 +19,8 @@
 					},
 					{
 					"type" : "DateTime",
-					"content" : "    max{{Property_Name_Here}}Filter : {{Get_Date_Here}};
-		min{{Property_Name_Here}}Filter : {{Get_Date_Here}};
+					"content" : "    max{{Property_Name_Here}}Filter : moment.Moment;
+		min{{Property_Name_Here}}Filter : moment.Moment;
 "
 					},
 					{
@@ -139,7 +139,7 @@ import { EntityTypeHistoryModalComponent } from '@app/shared/common/entityHistor
 
     private setIsEntityHistoryEnabled(): boolean {
         let customSettings = (abp as any).custom;
-        return this.isGrantedAny('Pages.Administration.AuditLogs') && customSettings.EntityHistory && customSettings.EntityHistory.isEnabled && {{Use_Lodash_Filter_Here}}(customSettings.EntityHistory.enabledEntities, entityType => entityType === this._entityTypeFullName).length === 1;
+        return this.isGrantedAny('Pages.Administration.AuditLogs') && customSettings.EntityHistory && customSettings.EntityHistory.isEnabled && _.filter(customSettings.EntityHistory.enabledEntities, entityType => entityType === this._entityTypeFullName).length === 1;
     }
 "
 		},
@@ -266,58 +266,6 @@ import { LazyLoadEvent } from 'primeng/public_api';"
 			"condition": "{{Is_Non_Modal_CRUD_Page}} == true",
 			"content": ",
 			private _router: Router"
-		},
-		{
-             "placeholder" : "{{Import_Lodash_Filter_Here}}",
-             "condition": "{{Project_Version_Here}} < 100000",
-             "content" : "import * as _ from 'lodash';"
-        },
-        {
-             "placeholder" : "{{Import_Lodash_Filter_Here}}",
-             "condition": "{{Project_Version_Here}} >= 100000",
-             "content" : "import { filter as _filter } from 'lodash-es';"
-        },
-        {
-             "placeholder" : "{{Use_Lodash_Filter_Here}}",
-             "condition": "{{Project_Version_Here}} < 100000",
-             "content" : "_.filter"
-        },
-        {
-             "placeholder" : "{{Use_Lodash_Filter_Here}}",
-             "condition": "{{Project_Version_Here}} >= 100000",
-             "content" : "_filter"
-        },
-        {
-             "placeholder" : "{{Import_Datetime_Here}}",
-             "condition": "{{Project_Version_Here}} < 100000",
-             "content" : "import * as moment from 'moment';"
-        },
-        {
-             "placeholder" : "{{Import_Datetime_Here}}",
-             "condition": "{{Project_Version_Here}} >= 100000",
-             "content" : "import { DateTime } from 'luxon';"
-        },
-        {
-             "placeholder" : "{{Import_DateTime_Service_Here}}",
-             "condition": "{{Project_Version_Here}} >= 100000",
-             "content" : "
-             import { DateTimeService } from '@app/shared/common/timing/date-time.service';"
-        },
-        {
-             "placeholder" : "{{Get_DateTime_Service_Here}}",
-             "condition": "{{Project_Version_Here}} >= 100000",
-             "content" : ",
-             private _dateTimeService: DateTimeService"
-        },
-        {
-             "placeholder" : "{{Get_Date_Here}}",
-             "condition": "{{Project_Version_Here}} >= 100000",
-             "content" : "DateTime"
-        },
-        {
-             "placeholder" : "{{Get_Date_Here}}",
-             "condition": "{{Project_Version_Here}} < 100000",
-             "content" : "moment.Moment"
-        },
+		}
 	]
 }

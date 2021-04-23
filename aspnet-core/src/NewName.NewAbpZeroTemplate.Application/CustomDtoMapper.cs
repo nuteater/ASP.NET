@@ -1,4 +1,6 @@
-﻿using Abp.Application.Editions;
+﻿using NewName.NewAbpZeroTemplate.TasksNamespace.Dtos;
+using NewName.NewAbpZeroTemplate.TasksNamespace;
+using Abp.Application.Editions;
 using Abp.Application.Features;
 using Abp.Auditing;
 using Abp.Authorization;
@@ -47,6 +49,22 @@ namespace NewName.NewAbpZeroTemplate
     {
         public static void CreateMappings(IMapperConfigurationExpression configuration)
         {
+            configuration.CreateMap<CreateOrEditTask_TaskTopicDto, Task_TaskTopic>().ReverseMap();
+            configuration.CreateMap<Task_TaskTopicDto, Task_TaskTopic>().ReverseMap();
+            configuration.CreateMap<CreateOrEditTasks_UserDto, Tasks_User>().ReverseMap();
+            configuration.CreateMap<Tasks_UserDto, Tasks_User>().ReverseMap();
+            configuration.CreateMap<CreateOrEditTaskHistoryDto, TaskHistory>().ReverseMap();
+            configuration.CreateMap<TaskHistoryDto, TaskHistory>().ReverseMap();
+            configuration.CreateMap<CreateOrEditSubtasksDto, Subtasks>().ReverseMap();
+            configuration.CreateMap<SubtasksDto, Subtasks>().ReverseMap();
+            configuration.CreateMap<CreateOrEditTaskTopicDto, TaskTopic>().ReverseMap();
+            configuration.CreateMap<TaskTopicDto, TaskTopic>().ReverseMap();
+            configuration.CreateMap<CreateOrEditTaskPriorityDto, TaskPriority>().ReverseMap();
+            configuration.CreateMap<TaskPriorityDto, TaskPriority>().ReverseMap();
+            configuration.CreateMap<CreateOrEditTaskTypeDto, TaskType>().ReverseMap();
+            configuration.CreateMap<TaskTypeDto, TaskType>().ReverseMap();
+            configuration.CreateMap<CreateOrEditTTTaskDto, TTTask>().ReverseMap();
+            configuration.CreateMap<TTTaskDto, TTTask>().ReverseMap();
             //Inputs
             configuration.CreateMap<CheckboxInputType, FeatureInputTypeDto>();
             configuration.CreateMap<SingleLineStringInputType, FeatureInputTypeDto>();

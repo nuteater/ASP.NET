@@ -1,4 +1,4 @@
-﻿import { NgModule, Component, Injector, Pipe, PipeTransform, enableProdMode } from '@angular/core';
+﻿import {NgModule, Component, Injector, Pipe, PipeTransform, enableProdMode, OnInit} from '@angular/core';
 import { NgModel } from "@angular/forms";
 import {TasksServiceProxy, UserServiceProxy} from "@shared/service-proxies/service-proxies";
 //import { Component, Injector, ViewChild } from '@angular/core';
@@ -9,20 +9,33 @@ import { AppComponentBase } from '@shared/common/app-component-base';
 @Component({
     templateUrl: './tasks.component.html',
     providers: [
-        UserServiceProxy
+        TasksServiceProxy
     ]
 })
-export class TasksComponent extends AppComponentBase {
+export class TasksComponent extends AppComponentBase implements OnInit{
+
+
+    _taskService: TasksServiceProxy;
+
+    tasks: any;
+
     constructor(
         injector: Injector,
-        providers:[
-            TasksServiceProxy
-        ]
+        taskService: TasksServiceProxy
     ) {
         super(injector);
+        this._taskService = taskService;
+    }
+
+    ngOnInit(): void {
+        this._taskService.getTasks().subscribe((data) => this.tasks = data.items);
     }
 
     addTaskIdName(): void{
+
+    }
+
+    tabsInit(taskId){
 
     }
 

@@ -3,8 +3,7 @@
 import { finalize } from 'rxjs/operators';
 import { {{Entity_Name_Plural_Here}}ServiceProxy, CreateOrEdit{{Entity_Name_Here}}Dto {{NP_Looped_Import_Dropdown_LookupTableDto_Here}}} from '@shared/service-proxies/service-proxies';
 import { AppComponentBase } from '@shared/common/app-component-base';
-{{Import_Datetime_Here}}
-{{Import_DateTime_Service_Here}}{{NP_Looped_Lookup_Component_Import_Here}}
+import * as moment from 'moment';{{NP_Looped_Lookup_Component_Import_Here}}
 
 @Component({
     selector: '{{master_Detail_Child_Prefix_Here}}createOrEdit{{Entity_Name_Here}}Modal',
@@ -25,7 +24,7 @@ export class {{Master_Detail_Child_Prefix_Here}}CreateOrEdit{{Entity_Name_Here}}
 {{NP_Looped_Dropdown_Property_Here}}
     constructor(
         injector: Injector,
-        private _{{entity_Name_Plural_Here}}ServiceProxy: {{Entity_Name_Plural_Here}}ServiceProxy{{Get_DateTime_Service_Here}}
+        private _{{entity_Name_Plural_Here}}ServiceProxy: {{Entity_Name_Plural_Here}}ServiceProxy
     ) {
         super(injector);
     }

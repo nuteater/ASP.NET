@@ -1,4 +1,5 @@
-﻿using Abp.IdentityServer4vNext;
+﻿using NewName.NewAbpZeroTemplate.TasksNamespace;
+using Abp.IdentityServer4vNext;
 using Abp.Zero.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NewName.NewAbpZeroTemplate.Authorization.Delegation;
@@ -16,6 +17,22 @@ namespace NewName.NewAbpZeroTemplate.EntityFrameworkCore
 {
     public class NewAbpZeroTemplateDbContext : AbpZeroDbContext<Tenant, Role, User, NewAbpZeroTemplateDbContext>, IAbpPersistedGrantDbContext
     {
+        public virtual DbSet<Task_TaskTopic> Task_TaskTopics { get; set; }
+
+        public virtual DbSet<Tasks_User> Tasks_Users { get; set; }
+
+        public virtual DbSet<TaskHistory> TaskHistories { get; set; }
+
+        public virtual DbSet<Subtasks> Subtaskses { get; set; }
+
+        public virtual DbSet<TaskTopic> TaskTopics { get; set; }
+
+        public virtual DbSet<TaskPriority> TaskPriorities { get; set; }
+
+        public virtual DbSet<TaskType> TaskTypes { get; set; }
+
+        public virtual DbSet<TTTask> TTTasks { get; set; }
+
         /* Define an IDbSet for each entity of the application */
 
         public virtual DbSet<BinaryObject> BinaryObjects { get; set; }
@@ -46,7 +63,47 @@ namespace NewName.NewAbpZeroTemplate.EntityFrameworkCore
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<BinaryObject>(b =>
+           
+           
+           
+           
+           
+           
+           
+           
+            modelBuilder.Entity<Task_TaskTopic>(t =>
+            {
+                t.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<Tasks_User>(t =>
+            {
+                t.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<TaskHistory>(t =>
+            {
+                t.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<Subtasks>(s =>
+            {
+                s.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<TaskTopic>(t =>
+            {
+                t.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<TaskPriority>(t =>
+            {
+                t.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<TaskType>(t =>
+            {
+                t.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<TTTask>(t =>
+            {
+                t.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<BinaryObject>(b =>
             {
                 b.HasIndex(e => new { e.TenantId });
             });

@@ -3,12 +3,11 @@
 import { finalize } from 'rxjs/operators';
 import { {{Entity_Name_Plural_Here}}ServiceProxy, CreateOrEdit{{Entity_Name_Here}}Dto {{NP_Looped_Import_Dropdown_LookupTableDto_Here}}} from '@shared/service-proxies/service-proxies';
 import { AppComponentBase } from '@shared/common/app-component-base';
-{{Import_Datetime_Here}}{{NP_Looped_Lookup_Component_Import_Here}}
+import * as moment from 'moment';{{NP_Looped_Lookup_Component_Import_Here}}
 import { ActivatedRoute, Router } from '@angular/router';
 import { appModuleAnimation } from '@shared/animations/routerTransition';
 import {Observable} from "@node_modules/rxjs";
 {{Import_Breadcrumb_Here}}
-{{Import_DateTime_Service_Here}}
 
 @Component({
     templateUrl: './create-or-edit-{{entity_Name_Here}}.component.html',
@@ -27,7 +26,7 @@ export class CreateOrEdit{{Entity_Name_Here}}Component extends AppComponentBase 
         injector: Injector,
         private _activatedRoute: ActivatedRoute,        
         private _{{entity_Name_Plural_Here}}ServiceProxy: {{Entity_Name_Plural_Here}}ServiceProxy,
-        private _router: Router{{Get_DateTime_Service_Here}}
+        private _router: Router
     ) {
         super(injector);
     }

@@ -1,0 +1,50 @@
+{
+  "IsRegenerate": false,
+  "MenuPosition": null,
+  "RelativeNamespace": "TasksNamespace",
+  "EntityName": "Task_TaskTopic",
+  "EntityNamePlural": "Task_TaskTopics",
+  "TableName": "Task_TaskTopics",
+  "PrimaryKeyType": "int",
+  "BaseClass": "Entity",
+  "EntityHistory": false,
+  "AutoMigration": true,
+  "UpdateDatabase": true,
+  "CreateUserInterface": false,
+  "CreateViewOnly": true,
+  "CreateExcelExport": false,
+  "IsNonModalCRUDPage": false,
+  "IsMasterDetailPage": false,
+  "PagePermission": {
+    "Host": true,
+    "Tenant": true
+  },
+  "Properties": [],
+  "NavigationProperties": [
+    {
+      "Namespace": "NewName.NewAbpZeroTemplate.TasksNamespace",
+      "ForeignEntityName": "TaskTopic",
+      "IdType": "int",
+      "IsNullable": true,
+      "PropertyName": "TaskTopicId",
+      "DisplayPropertyName": "Name",
+      "DuplicationNumber": 0,
+      "RelationType": "single",
+      "ViewType": "LookupTable"
+    },
+    {
+      "Namespace": "NewName.NewAbpZeroTemplate.TasksNamespace",
+      "ForeignEntityName": "TTTask",
+      "IdType": "int",
+      "IsNullable": true,
+      "PropertyName": "TTTaskId",
+      "DisplayPropertyName": "Name",
+      "DuplicationNumber": 0,
+      "RelationType": "single",
+      "ViewType": "LookupTable"
+    }
+  ],
+  "NavigationPropertyOneToManyTables": [],
+  "EnumDefinitions": [],
+  "DbContext": null
+}

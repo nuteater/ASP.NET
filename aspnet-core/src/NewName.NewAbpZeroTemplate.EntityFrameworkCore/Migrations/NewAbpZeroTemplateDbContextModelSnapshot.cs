@@ -1991,6 +1991,203 @@ namespace NewName.NewAbpZeroTemplate.Migrations
                     b.ToTable("AppBinaryObjects");
                 });
 
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.Subtasks", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("Subtaskses");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.TTTask", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("SubtasksId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TaskHistoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TaskPriorityId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TaskTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubtasksId");
+
+                    b.HasIndex("TaskHistoryId");
+
+                    b.HasIndex("TaskPriorityId");
+
+                    b.HasIndex("TaskTypeId");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("TTTasks");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.TaskHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("TaskHistories");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.TaskPriority", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("TaskPriorities");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.TaskTopic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("TaskTopics");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.TaskType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("TaskTypes");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.Task_TaskTopic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("TTTaskId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TaskTopicId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TTTaskId");
+
+                    b.HasIndex("TaskTopicId");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("Task_TaskTopics");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.Tasks_User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int?>("TTTaskId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TTTaskId");
+
+                    b.HasIndex("TenantId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Tasks_Users");
+                });
+
             modelBuilder.Entity("NewName.NewAbpZeroTemplate.Editions.SubscribableEdition", b =>
                 {
                     b.HasBaseType("Abp.Application.Editions.Edition");
@@ -2284,6 +2481,63 @@ namespace NewName.NewAbpZeroTemplate.Migrations
                     b.Navigation("Edition");
 
                     b.Navigation("LastModifierUser");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.TTTask", b =>
+                {
+                    b.HasOne("NewName.NewAbpZeroTemplate.TasksNamespace.Subtasks", "SubtasksFk")
+                        .WithMany()
+                        .HasForeignKey("SubtasksId");
+
+                    b.HasOne("NewName.NewAbpZeroTemplate.TasksNamespace.TaskHistory", "TaskHistoryFk")
+                        .WithMany()
+                        .HasForeignKey("TaskHistoryId");
+
+                    b.HasOne("NewName.NewAbpZeroTemplate.TasksNamespace.TaskPriority", "TaskPriorityFk")
+                        .WithMany()
+                        .HasForeignKey("TaskPriorityId");
+
+                    b.HasOne("NewName.NewAbpZeroTemplate.TasksNamespace.TaskType", "TaskTypeFk")
+                        .WithMany()
+                        .HasForeignKey("TaskTypeId");
+
+                    b.Navigation("SubtasksFk");
+
+                    b.Navigation("TaskHistoryFk");
+
+                    b.Navigation("TaskPriorityFk");
+
+                    b.Navigation("TaskTypeFk");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.Task_TaskTopic", b =>
+                {
+                    b.HasOne("NewName.NewAbpZeroTemplate.TasksNamespace.TTTask", "TTTaskFk")
+                        .WithMany()
+                        .HasForeignKey("TTTaskId");
+
+                    b.HasOne("NewName.NewAbpZeroTemplate.TasksNamespace.TaskTopic", "TaskTopicFk")
+                        .WithMany()
+                        .HasForeignKey("TaskTopicId");
+
+                    b.Navigation("TaskTopicFk");
+
+                    b.Navigation("TTTaskFk");
+                });
+
+            modelBuilder.Entity("NewName.NewAbpZeroTemplate.TasksNamespace.Tasks_User", b =>
+                {
+                    b.HasOne("NewName.NewAbpZeroTemplate.TasksNamespace.TTTask", "TTTaskFk")
+                        .WithMany()
+                        .HasForeignKey("TTTaskId");
+
+                    b.HasOne("NewName.NewAbpZeroTemplate.Authorization.Users.User", "UserFk")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("TTTaskFk");
+
+                    b.Navigation("UserFk");
                 });
 
             modelBuilder.Entity("Abp.Application.Features.EditionFeatureSetting", b =>

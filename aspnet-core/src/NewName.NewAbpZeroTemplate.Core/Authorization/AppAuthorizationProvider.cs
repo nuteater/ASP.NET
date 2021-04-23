@@ -29,6 +29,62 @@ namespace NewName.NewAbpZeroTemplate.Authorization
             //COMMON PERMISSIONS (FOR BOTH OF TENANTS AND HOST)
 
             var pages = context.GetPermissionOrNull(AppPermissions.Pages) ?? context.CreatePermission(AppPermissions.Pages, L("Pages"));
+
+            var task_TaskTopics = pages.CreateChildPermission(AppPermissions.Pages_Task_TaskTopics, L("Task_TaskTopics"));
+            task_TaskTopics.CreateChildPermission(AppPermissions.Pages_Task_TaskTopics_Create, L("CreateNewTask_TaskTopic"));
+            task_TaskTopics.CreateChildPermission(AppPermissions.Pages_Task_TaskTopics_Edit, L("EditTask_TaskTopic"));
+            task_TaskTopics.CreateChildPermission(AppPermissions.Pages_Task_TaskTopics_Delete, L("DeleteTask_TaskTopic"));
+
+
+
+            var tasks_Users = pages.CreateChildPermission(AppPermissions.Pages_Tasks_Users, L("Tasks_Users"));
+            tasks_Users.CreateChildPermission(AppPermissions.Pages_Tasks_Users_Create, L("CreateNewTasks_User"));
+            tasks_Users.CreateChildPermission(AppPermissions.Pages_Tasks_Users_Edit, L("EditTasks_User"));
+            tasks_Users.CreateChildPermission(AppPermissions.Pages_Tasks_Users_Delete, L("DeleteTasks_User"));
+
+
+
+            var taskHistories = pages.CreateChildPermission(AppPermissions.Pages_TaskHistories, L("TaskHistories"));
+            taskHistories.CreateChildPermission(AppPermissions.Pages_TaskHistories_Create, L("CreateNewTaskHistory"));
+            taskHistories.CreateChildPermission(AppPermissions.Pages_TaskHistories_Edit, L("EditTaskHistory"));
+            taskHistories.CreateChildPermission(AppPermissions.Pages_TaskHistories_Delete, L("DeleteTaskHistory"));
+
+
+
+            var subtaskses = pages.CreateChildPermission(AppPermissions.Pages_Subtaskses, L("Subtaskses"));
+            subtaskses.CreateChildPermission(AppPermissions.Pages_Subtaskses_Create, L("CreateNewSubtasks"));
+            subtaskses.CreateChildPermission(AppPermissions.Pages_Subtaskses_Edit, L("EditSubtasks"));
+            subtaskses.CreateChildPermission(AppPermissions.Pages_Subtaskses_Delete, L("DeleteSubtasks"));
+
+
+
+            var taskTopics = pages.CreateChildPermission(AppPermissions.Pages_TaskTopics, L("TaskTopics"));
+            taskTopics.CreateChildPermission(AppPermissions.Pages_TaskTopics_Create, L("CreateNewTaskTopic"));
+            taskTopics.CreateChildPermission(AppPermissions.Pages_TaskTopics_Edit, L("EditTaskTopic"));
+            taskTopics.CreateChildPermission(AppPermissions.Pages_TaskTopics_Delete, L("DeleteTaskTopic"));
+
+
+
+            var taskPriorities = pages.CreateChildPermission(AppPermissions.Pages_TaskPriorities, L("TaskPriorities"));
+            taskPriorities.CreateChildPermission(AppPermissions.Pages_TaskPriorities_Create, L("CreateNewTaskPriority"));
+            taskPriorities.CreateChildPermission(AppPermissions.Pages_TaskPriorities_Edit, L("EditTaskPriority"));
+            taskPriorities.CreateChildPermission(AppPermissions.Pages_TaskPriorities_Delete, L("DeleteTaskPriority"));
+
+
+
+            var taskTypes = pages.CreateChildPermission(AppPermissions.Pages_TaskTypes, L("TaskTypes"));
+            taskTypes.CreateChildPermission(AppPermissions.Pages_TaskTypes_Create, L("CreateNewTaskType"));
+            taskTypes.CreateChildPermission(AppPermissions.Pages_TaskTypes_Edit, L("EditTaskType"));
+            taskTypes.CreateChildPermission(AppPermissions.Pages_TaskTypes_Delete, L("DeleteTaskType"));
+
+
+
+            var ttTasks = pages.CreateChildPermission(AppPermissions.Pages_TTTasks, L("TTTasks"));
+            ttTasks.CreateChildPermission(AppPermissions.Pages_TTTasks_Create, L("CreateNewTTTask"));
+            ttTasks.CreateChildPermission(AppPermissions.Pages_TTTasks_Edit, L("EditTTTask"));
+            ttTasks.CreateChildPermission(AppPermissions.Pages_TTTasks_Delete, L("DeleteTTTask"));
+
+
             pages.CreateChildPermission(AppPermissions.Pages_DemoUiComponents, L("DemoUiComponents"));
 
             var administration = pages.CreateChildPermission(AppPermissions.Pages_Administration, L("Administration"));

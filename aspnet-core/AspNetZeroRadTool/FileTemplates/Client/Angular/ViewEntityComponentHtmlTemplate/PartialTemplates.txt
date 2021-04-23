@@ -25,7 +25,7 @@
 					"type" : "DateTime",
 					"content" : "                    <div class=\"col-6 mb-3\">
                         <h6>{{l(\"{{Property_Name_Here}}\")}} :</h6>
-                        {{ item.{{entity_Name_Here}}.{{property_Name_Here}} | {{Datetime_Format_Pipe_Here}} }}
+                        {{ item.{{entity_Name_Here}}.{{property_Name_Here}} | momentFormat:'YYYY-MM-DD HH:mm:ss' }}
                     </div>
 "
 					},
@@ -70,16 +70,6 @@
             "placeholder": "{{Font_Success_Class_Here}}",
             "condition": "{{Project_Version_Here}} >= 090000",
             "content": "text-success"
-        },
-        {
-             "placeholder": "{{Datetime_Format_Pipe_Here}}",
-             "condition": "{{Project_Version_Here}} >= 100000",
-             "content": " luxonFormat:'yyyy-LL-dd HH:mm:ss' "
-        },
-        {
-             "placeholder": "{{Datetime_Format_Pipe_Here}}",
-             "condition": "{{Project_Version_Here}} < 100000",
-             "content": " momentFormat:'YYYY-MM-DD HH:mm:ss' "
         }
 	]
 }

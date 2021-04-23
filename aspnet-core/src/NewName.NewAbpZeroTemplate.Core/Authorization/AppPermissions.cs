@@ -6,6 +6,46 @@
     /// </summary>
     public static class AppPermissions
     {
+        public const string Pages_Task_TaskTopics = "Pages.Task_TaskTopics";
+        public const string Pages_Task_TaskTopics_Create = "Pages.Task_TaskTopics.Create";
+        public const string Pages_Task_TaskTopics_Edit = "Pages.Task_TaskTopics.Edit";
+        public const string Pages_Task_TaskTopics_Delete = "Pages.Task_TaskTopics.Delete";
+
+        public const string Pages_Tasks_Users = "Pages.Tasks_Users";
+        public const string Pages_Tasks_Users_Create = "Pages.Tasks_Users.Create";
+        public const string Pages_Tasks_Users_Edit = "Pages.Tasks_Users.Edit";
+        public const string Pages_Tasks_Users_Delete = "Pages.Tasks_Users.Delete";
+
+        public const string Pages_TaskHistories = "Pages.TaskHistories";
+        public const string Pages_TaskHistories_Create = "Pages.TaskHistories.Create";
+        public const string Pages_TaskHistories_Edit = "Pages.TaskHistories.Edit";
+        public const string Pages_TaskHistories_Delete = "Pages.TaskHistories.Delete";
+
+        public const string Pages_Subtaskses = "Pages.Subtaskses";
+        public const string Pages_Subtaskses_Create = "Pages.Subtaskses.Create";
+        public const string Pages_Subtaskses_Edit = "Pages.Subtaskses.Edit";
+        public const string Pages_Subtaskses_Delete = "Pages.Subtaskses.Delete";
+
+        public const string Pages_TaskTopics = "Pages.TaskTopics";
+        public const string Pages_TaskTopics_Create = "Pages.TaskTopics.Create";
+        public const string Pages_TaskTopics_Edit = "Pages.TaskTopics.Edit";
+        public const string Pages_TaskTopics_Delete = "Pages.TaskTopics.Delete";
+
+        public const string Pages_TaskPriorities = "Pages.TaskPriorities";
+        public const string Pages_TaskPriorities_Create = "Pages.TaskPriorities.Create";
+        public const string Pages_TaskPriorities_Edit = "Pages.TaskPriorities.Edit";
+        public const string Pages_TaskPriorities_Delete = "Pages.TaskPriorities.Delete";
+
+        public const string Pages_TaskTypes = "Pages.TaskTypes";
+        public const string Pages_TaskTypes_Create = "Pages.TaskTypes.Create";
+        public const string Pages_TaskTypes_Edit = "Pages.TaskTypes.Edit";
+        public const string Pages_TaskTypes_Delete = "Pages.TaskTypes.Delete";
+
+        public const string Pages_TTTasks = "Pages.TTTasks";
+        public const string Pages_TTTasks_Create = "Pages.TTTasks.Create";
+        public const string Pages_TTTasks_Edit = "Pages.TTTasks.Edit";
+        public const string Pages_TTTasks_Delete = "Pages.TTTasks.Delete";
+
         //COMMON PERMISSIONS (FOR BOTH OF TENANTS AND HOST)
 
         public const string Pages = "Pages";

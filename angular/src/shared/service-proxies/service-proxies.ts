@@ -27897,7 +27897,7 @@ export class TasksServiceProxy {
 
 
     getTasks(): Observable<TaskNameAndIdEditDto> {
-        let url_ = this.baseUrl + "/api/services/app/WebLog/GetLatestWebLogs";
+        let url_ = this.baseUrl + "/api/services/app/TTTasks/GetAllTask";
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {

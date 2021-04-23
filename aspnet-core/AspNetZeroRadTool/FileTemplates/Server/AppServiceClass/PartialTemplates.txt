@@ -183,6 +183,7 @@
 					"viewType": "Dropdown",						
 					"preventDuplicate":true,
 					"content" : "using {{NP_Namespace_Here}};
+					using System.Collections.Generic;
 "
 					},
 				]
