@@ -32,7 +32,7 @@ span.p-treenode-icon {
     display: none;
 }
 
-p-tree[selectionmode="checkbox"] .p-tree .p-tree-container .p-treenode .p-treenode-content .p-treenode-label.ui-state-highlight {
+p-tree[selectionmode="checkbox"] .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight {
     background-color: transparent !important;
     color: #333 !important;
     font-weight: 300 !important;

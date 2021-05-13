@@ -11,7 +11,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
+                    <div class="form-group" *ngIf="canUseGravatar()">
                         <label for="Profile_UseGravatarProfilePicture" class="checkbox">
                             <input id="Profile_UseGravatarProfilePicture" type="checkbox" name="UseGravatarProfilePicture"
                             [(ngModel)]="useGravatarProfilePicture">

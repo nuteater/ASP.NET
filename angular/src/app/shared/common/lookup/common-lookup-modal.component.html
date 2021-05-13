@@ -15,9 +15,9 @@
                 <form novalidate (ngSubmit)="refreshTable()" autocomplete="new-password">
                     <div *ngIf="options.isFilterEnabled" class="input-group mb-4">
                         <input autoFocus [(ngModel)]="filterText" name="filterText" class="form-control" placeholder="{{'SearchWithThreeDot' | localize}}" type="text">
-                        <span class="input-group-btn">
+                        <div class="input-group-append">
                             <button class="btn btn btn-primary" type="submit"><i class="flaticon-search-1" [attr.aria-label]="l('Search')"></i></button>
-                        </span>
+                        </div>
                     </div>
 
                     <!--<Primeng-TurboTable-Start>-->
@@ -63,11 +63,11 @@
                                          #paginator
                                          (onPageChange)="getRecordsIfNeeds($event)"
                                          [totalRecords]="primengTableHelper.totalRecordsCount"
-                                         [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                                         [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                         [showCurrentPageReport]="true"
+                                         [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                            >
                             </p-paginator>
-                            <span class="total-records-count">
-                                {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                            </span>
                         </div>
                     </div>
                     <!--<Primeng-TurboTable-End>-->

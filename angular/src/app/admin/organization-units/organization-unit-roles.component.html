@@ -36,7 +36,7 @@
                                 <button class="btn btn-outline-danger btn-icon"
                                         (click)="removeRole(record)"
                                         title="{{'Delete' | localize}}">
-                                    <i class="fa fa-times" [attr.aria-label]="l('Delete')"></i>
+                                    <i class="la la-times" [attr.aria-label]="l('Delete')"></i>
                                 </button>
                             </td>
                             <td>
@@ -58,11 +58,11 @@
                                  #paginator
                                  (onPageChange)="getOrganizationUnitRoles($event)"
                                  [totalRecords]="primengTableHelper.totalRecordsCount"
-                                 [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                                 [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                 [showCurrentPageReport]="true"
+                                 [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                    >
                     </p-paginator>
-                    <span class="total-records-count">
-                        {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                    </span>
                 </div>
             </div>
             <!--<Primeng-TurboTable-End>-->

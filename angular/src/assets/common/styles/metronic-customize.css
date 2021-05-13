@@ -29,4 +29,7 @@ header-notifications .dropdown-menu{
 body.aside-minimize #kt_brand {
     width: 70px;
   }
-  
+
+.p-paginator {
+    justify-content: flex-end !important;
+}

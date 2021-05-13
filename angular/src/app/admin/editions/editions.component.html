@@ -43,27 +43,24 @@
                                 <ng-template pTemplate="body" let-record="$implicit">
                                     <tr>
                                         <td style="width: 130px;text-align:center">
-                                            <div class="btn-group dropdown" dropdown>
-                                                <button dropdownToggle class="dropdown-toggle btn btn-sm btn-primary">
+                                            <div class="btn-group" dropdown placement="bottom left">
+                                                <button id="dropdownButton" type="button" class="btn btn-primary btn-sm dropdown-toggle" dropdownToggle aria-controls="dropdownMenu">
                                                     <i class="fa fa-cog"></i><span class="caret"></span>
                                                     {{"Actions" | localize}}
                                                 </button>
-                                                <ul class="dropdown-menu" *dropdownMenu>
-                                                    <li>
-                                                        <a href="javascript:;" class="dropdown-item"
-                                                           *ngIf="'Pages.Editions.Edit' | permission"
+                                                <ul id="dropdownMenu" class="dropdown-menu" role="menu" *dropdownMenu aria-labelledby="dropdownButton">
+                                                    <li *ngIf="'Pages.Editions.Edit' | permission" role="menuitem">
+                                                        <a href="javascript:;" class="dropdown-item"                                                           
                                                            (click)="editEditionModal.show(record.id)">{{'Edit' | localize}}</a>
                                                     </li>
 
-                                                    <li>
+                                                    <li *ngIf="'Pages.Editions.Delete' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                           *ngIf="'Pages.Editions.Delete' | permission"
                                                            (click)="deleteEdition(record)">{{'Delete' | localize}}</a>
                                                     </li>
 
-                                                    <li>
+                                                    <li *ngIf="'Pages.Editions.MoveTenantsToAnotherEdition' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                           *ngIf="'Pages.Editions.MoveTenantsToAnotherEdition' | permission"
                                                            (click)="moveTenantsToAnotherEditionModal.show(record.id)">{{'MoveTenantsToAnotherEdition' | localize}}</a>
                                                     </li>
                                                 </ul>

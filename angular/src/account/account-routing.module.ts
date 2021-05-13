@@ -3,26 +3,6 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { AppUiCustomizationService } from '@shared/common/ui/app-ui-customization.service';
 import { AccountComponent } from './account.component';
 import { AccountRouteGuard } from './auth/account-route-guard';
-import { ConfirmEmailComponent } from './email-activation/confirm-email.component';
-import { EmailActivationComponent } from './email-activation/email-activation.component';
-import { LoginComponent } from './login/login.component';
-import { SendTwoFactorCodeComponent } from './login/send-two-factor-code.component';
-import { ValidateTwoFactorCodeComponent } from './login/validate-two-factor-code.component';
-import { ForgotPasswordComponent } from './password/forgot-password.component';
-import { ResetPasswordComponent } from './password/reset-password.component';
-import { BuyEditionComponent } from './payment/buy.component';
-import { UpgradeEditionComponent } from './payment/upgrade.component';
-import { ExtendEditionComponent } from './payment/extend.component';
-import { RegisterTenantResultComponent } from './register/register-tenant-result.component';
-import { RegisterTenantComponent } from './register/register-tenant.component';
-import { RegisterComponent } from './register/register.component';
-import { SelectEditionComponent } from './register/select-edition.component';
-import { PayPalPurchaseComponent } from './payment/paypal/paypal-purchase.component';
-import { StripePurchaseComponent } from './payment/stripe/stripe-purchase.component';
-import { StripeCancelPaymentComponent } from './payment/stripe/stripe-cancel-payment.component';
-import { StripePaymentResultComponent } from './payment/stripe/stripe-payment-result.component';
-import { PaymentCompletedComponent } from './payment/payment-completed.component';
-import { SessionLockScreenComponent } from './login/session-lock-screen.component';
 
 @NgModule({
     imports: [
@@ -31,43 +11,129 @@ import { SessionLockScreenComponent } from './login/session-lock-screen.componen
                 path: '',
                 component: AccountComponent,
                 children: [
-                    { path: '', redirectTo: 'login' },
-                    { path: 'login', component: LoginComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'register', component: RegisterComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'register-tenant', component: RegisterTenantComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'register-tenant-result', component: RegisterTenantResultComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'reset-password', component: ResetPasswordComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'email-activation', component: EmailActivationComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'confirm-email', component: ConfirmEmailComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'send-code', component: SendTwoFactorCodeComponent, canActivate: [AccountRouteGuard] },
-                    { path: 'verify-code', component: ValidateTwoFactorCodeComponent, canActivate: [AccountRouteGuard] },
-
-                    { path: 'buy', component: BuyEditionComponent },
-                    { path: 'extend', component: ExtendEditionComponent },
-                    { path: 'upgrade', component: UpgradeEditionComponent },
-                    { path: 'select-edition', component: SelectEditionComponent },
-                    { path: 'paypal-purchase', component: PayPalPurchaseComponent },
-                    { path: 'stripe-purchase', component: StripePurchaseComponent },
-                    { path: 'stripe-payment-result', component: StripePaymentResultComponent },
-                    { path: 'stripe-cancel-payment', component: StripeCancelPaymentComponent },
-                    { path: 'payment-completed', component: PaymentCompletedComponent },
-                    { path: 'session-locked', component: SessionLockScreenComponent },
-
-                    { path: '**', redirectTo: 'login' }
-                ]
-            }
-        ])
+                    { path: '', redirectTo: 'login', pathMatch: 'full' },
+                    {
+                        path: 'login',
+                        loadChildren: () => import('./login/login.module').then((m) => m.LoginModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'register',
+                        loadChildren: () => import('./register/register.module').then((m) => m.RegisterModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'register-tenant',
+                        loadChildren: () =>
+                            import('./register/register-tenant.module').then((m) => m.RegisterTenantModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'register-tenant-result',
+                        loadChildren: () =>
+                            import('./register/register-tenant-result.module').then(
+                                (m) => m.RegisterTenantResultModule
+                            ),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'forgot-password',
+                        loadChildren: () =>
+                            import('./password/forgot-password.module').then((m) => m.ForgotPasswordModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'reset-password',
+                        loadChildren: () =>
+                            import('./password/reset-password.module').then((m) => m.ResetPasswordModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'email-activation',
+                        loadChildren: () =>
+                            import('./email-activation/email-activation.module').then((m) => m.EmailActivationModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'confirm-email',
+                        loadChildren: () =>
+                            import('./email-activation/confirm-email.module').then((m) => m.EmailConfirmModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'send-code',
+                        loadChildren: () =>
+                            import('./login/send-two-factor-code.module').then((m) => m.SendTwoFactorCodeModule),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'verify-code',
+                        loadChildren: () =>
+                            import('./login/validate-two-factor-code.module').then(
+                                (m) => m.ValidateTwoFactorCodeModule
+                            ),
+                        canActivate: [AccountRouteGuard],
+                    },
+                    {
+                        path: 'buy',
+                        loadChildren: () => import('./payment/buy.module').then((m) => m.BuyModule),
+                    },
+                    {
+                        path: 'extend',
+                        loadChildren: () => import('./payment/extend.module').then((m) => m.ExtendModule),
+                    },
+                    {
+                        path: 'upgrade',
+                        loadChildren: () => import('./payment/upgrade.module').then((m) => m.UpgradeModule),
+                    },
+                    {
+                        path: 'select-edition',
+                        loadChildren: () =>
+                            import('./register/select-edition.module').then((m) => m.SelectEditionModule),
+                    },
+                    {
+                        path: 'paypal-purchase',
+                        loadChildren: () =>
+                            import('./payment/paypal/paypal-purchase.module').then((m) => m.PaypalPurchaseModule),
+                    },
+                    {
+                        path: 'stripe-purchase',
+                        loadChildren: () =>
+                            import('./payment/stripe/stripe-purchase.module').then((m) => m.StripePurchaseModule),
+                    },
+                    {
+                        path: 'stripe-payment-result',
+                        loadChildren: () =>
+                            import('./payment/stripe/stripe-payment-result.module').then(
+                                (m) => m.StripePaymentResultModule
+                            ),
+                    },
+                    {
+                        path: 'stripe-cancel-payment',
+                        loadChildren: () =>
+                            import('./payment/stripe/stripe-cancel-payment.module').then(
+                                (m) => m.StripeCancelPaymentModule
+                            ),
+                    },
+                    {
+                        path: 'payment-completed',
+                        loadChildren: () =>
+                            import('./payment/payment-completed.module').then((m) => m.PaymentCompletedModule),
+                    },
+                    {
+                        path: 'session-locked',
+                        loadChildren: () =>
+                            import('./login/session-lock-screen.module').then((m) => m.SessionLockScreenModule),
+                    },
+                    { path: '**', redirectTo: 'login' },
+                ],
+            },
+        ]),
     ],
-    exports: [
-        RouterModule
-    ]
+    exports: [RouterModule],
 })
 export class AccountRoutingModule {
-    constructor(
-        private router: Router,
-        private _uiCustomizationService: AppUiCustomizationService
-    ) {
+    constructor(private router: Router, private _uiCustomizationService: AppUiCustomizationService) {
         router.events.subscribe((event: NavigationEnd) => {
             setTimeout(() => {
                 this.toggleBodyCssClass(event.url);

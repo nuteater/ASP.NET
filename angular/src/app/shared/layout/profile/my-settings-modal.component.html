@@ -36,7 +36,7 @@
                                     <div class="input-group">
                                         <input type="text" name="PhoneNumber" class="form-control" [(ngModel)]="user.phoneNumber" maxlength="32">
 
-                                        <span id="SpanSmsVerificationUnverified" class="input-group-btn">
+                                        <span id="SpanSmsVerificationUnverified" class="input-group-append">
                                             <button id="btnSmsVerification" (click)="smsVerify()" [disabled]="isPhoneNumberConfirmed && savedPhoneNumber == user.phoneNumber" class="btn btn-primary" type="button" tooltip="{{'YourPhoneNumberIsNotVerified' | localize}}">
                                                 <i class="fa fa-exclamation-triangle"></i>{{'Verify' | localize}}
                                             </button>

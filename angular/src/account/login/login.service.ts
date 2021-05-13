@@ -241,24 +241,33 @@ export class LoginService {
             );
         }
 
+        let self = this;
         this._localStorageService.setItem(
             AppConsts.authorization.encrptedAuthTokenName,
             {
                 token: encryptedAccessToken,
                 expireDate: tokenExpireDate,
+            },
+            () => {
+                if (twoFactorRememberClientToken) {
+                    self._localStorageService.setItem(
+                        LoginService.twoFactorRememberClientTokenName,
+                        {
+                            token: twoFactorRememberClientToken,
+                            expireDate: new Date(new Date().getTime() + 365 * 86400000), // 1 year
+                        },
+                        () => {
+                            self.redirectToLoginResult(redirectUrl);
+                        }
+                    );
+                } else {
+                    self.redirectToLoginResult(redirectUrl);
+                }
             }
         );
+    }
 
-        if (twoFactorRememberClientToken) {
-            this._localStorageService.setItem(
-                LoginService.twoFactorRememberClientTokenName,
-                {
-                    token: twoFactorRememberClientToken,
-                    expireDate: new Date(new Date().getTime() + 365 * 86400000), // 1 year
-                }
-            );
-        }
-
+    private redirectToLoginResult(redirectUrl?: string): void {
         if (redirectUrl) {
             location.href = redirectUrl;
         } else {

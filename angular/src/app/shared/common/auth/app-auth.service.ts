@@ -20,14 +20,17 @@ export class AppAuthService {
             () => {
                 abp.auth.clearToken();
                 abp.auth.clearRefreshToken();
-                new LocalStorageService().removeItem(AppConsts.authorization.encrptedAuthTokenName);
-                if (reload !== false) {
-                    if (returnUrl) {
-                        location.href = returnUrl;
-                    } else {
-                        location.href = '';
+                new LocalStorageService().removeItem(AppConsts.authorization.encrptedAuthTokenName,
+                    () => {
+                        if (reload !== false) {
+                            if (returnUrl) {
+                                location.href = returnUrl;
+                            } else {
+                                location.href = '';
+                            }
+                        }
                     }
-                }
+                );
             }
         );
     }

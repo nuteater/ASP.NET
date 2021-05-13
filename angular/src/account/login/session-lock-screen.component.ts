@@ -1,4 +1,4 @@
-import { Component, Injector, ViewChild } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { AppComponentBase } from '@shared/common/app-component-base';
 import { ProfileServiceProxy } from '@shared/service-proxies/service-proxies';
 import { accountModuleAnimation } from '@shared/animations/routerTransition';

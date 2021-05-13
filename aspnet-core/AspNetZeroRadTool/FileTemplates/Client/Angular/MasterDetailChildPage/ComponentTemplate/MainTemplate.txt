@@ -10,8 +10,9 @@ import { appModuleAnimation } from '@shared/animations/routerTransition';
 {{DataTable_Import_Here}}{{TurboTable_Import_Here}};
 {{PrimeNG_Imports_Here}}
 import { FileDownloadService } from '@shared/utils/file-download.service';{{EntityTypeHistoryModalComponent_Import_Here}}
-import * as _ from 'lodash';
-import * as moment from 'moment';
+{{Import_Lodash_Filter_Here}}
+{{Import_Datetime_Here}}
+{{Import_DateTime_Service_Here}}
 
 @Component({
     templateUrl: './{{master_Detail_Child_Prefix_Here}}{{entity_Name_Plural_Here}}.component.html',
@@ -39,7 +40,7 @@ export class {{Master_Detail_Child_Prefix_Here}}{{Entity_Name_Plural_Here}}Compo
         private _notifyService: NotifyService,
         private _tokenAuth: TokenAuthServiceProxy,
         private _activatedRoute: ActivatedRoute,
-        private _fileDownloadService: FileDownloadService{{Router_Field_Here}}
+        private _fileDownloadService: FileDownloadService{{Router_Field_Here}}{{Get_DateTime_Service_Here}}
     ) {
         super(injector);
     }

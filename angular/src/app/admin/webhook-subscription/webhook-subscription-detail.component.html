@@ -4,21 +4,19 @@
             <div role="actions">
                 <span *ngIf="subscription && subscription.isActive" class="label label-success label-inline mr-2">{{"Active"|localize}}</span>
                 <span *ngIf="subscription && !subscription.isActive" class="label label-dark label-inline mr-2">{{"Disabled"|localize}}</span>
-                <div class="btn-group dropdown"
+                <div class="btn-group"
                      *ngIf="subscription && ('Pages.Administration.WebhookSubscription.Edit' | permission) || ('Pages.Administration.WebhookSubscription.ChangeActivity' | permission)"
                      dropdown placement="bottom right">
-                    <button dropdownToggle class="dropdown-toggle btn btn-sm btn-primary">
+                    <button id="dropdownButton01" type="button" class="btn btn-primary btn-sm dropdown-toggle" dropdownToggle aria-controls="dropdownMenu01">
                         <i class="fa fa-cog"></i><span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-right" *dropdownMenu>
-                        <li>
+                    <ul id="dropdownMenu01" class="dropdown-menu dropdown-menu-right" role="menu" *dropdownMenu aria-labelledby="dropdownButton01">
+                        <li *ngIf="('Pages.Administration.WebhookSubscription.Edit' | permission) && subscription" role="menuitem">
                             <a href="javascript:;" class="dropdown-item"
-                               *ngIf="('Pages.Administration.WebhookSubscription.Edit' | permission) && subscription"
                                (click)="createOrEditWebhookSubscriptionModal.show(subscription.id)">{{'EditWebhookSubscription' | localize}}</a>
                         </li>
-                        <li>
+                        <li *ngIf="'Pages.Administration.WebhookSubscription.ChangeActivity' | permission" role="menuitem">
                             <a href="javascript:;" class="dropdown-item"
-                               *ngIf="'Pages.Administration.WebhookSubscription.ChangeActivity' | permission"
                                (click)="toggleActivity()">
                                 <span *ngIf="subscription.isActive">{{'Disable' | localize}}</span>
                                 <span *ngIf="!subscription.isActive">{{'Enable' | localize}}</span>
@@ -105,21 +103,20 @@
                                 <ng-template pTemplate="body" let-record="$implicit">
                                     <tr>
                                         <td>
-                                            <div class="btn-group dropdown"
+                                            <div class="btn-group"
                                                  *ngIf="subscription && ('Pages.Administration.WebhookSubscription.Edit' | permission) || ('Pages.Administration.WebhookSubscription.ChangeActivity' | permission)"
-                                                 dropdown>
-                                                <button dropdownToggle class="dropdown-toggle btn btn-sm btn-primary">
+                                                 dropdown
+                                                 placement="bottom left">
+                                                <button id="dropdownButton02" type="button" class="btn btn-primary btn-sm dropdown-toggle" dropdownToggle aria-controls="dropdownMenu02">
                                                     <i class="fa fa-cog"></i><span class="caret"></span>
                                                 </button>
-                                                <ul class="dropdown-menu" *dropdownMenu>
-                                                    <li>
+                                                <ul id="dropdownMenu02" class="dropdown-menu" role="menu" *dropdownMenu aria-labelledby="dropdownButton02">
+                                                    <li *ngIf="('Pages.Administration.Webhook.ResendWebhook' | permission)" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                           *ngIf="('Pages.Administration.Webhook.ResendWebhook' | permission)"
                                                            (click)="resend(record.id)">{{'Resend' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Administration.WebhookSubscription.ChangeActivity' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                           *ngIf="'Pages.Administration.WebhookSubscription.ChangeActivity' | permission"
                                                            (click)="goToWebhookDetail(record.webhookEventId)">
                                                             {{"ViewWebhookEvent" |localize}}
                                                         </a>
@@ -168,11 +165,10 @@
                                 <p-paginator [rows]="primengTableHelper.defaultRecordsCountPerPage" #paginator
                                              (onPageChange)="getSendAttempts($event)"
                                              [totalRecords]="primengTableHelper.totalRecordsCount"
-                                             [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                                             [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                             [showCurrentPageReport]="true"
+                                             [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount">
                                 </p-paginator>
-                                <span class="total-records-count">
-                                    {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                                </span>
                             </div>
                         </div>
                         <!--<Primeng-TurboTable-End>-->

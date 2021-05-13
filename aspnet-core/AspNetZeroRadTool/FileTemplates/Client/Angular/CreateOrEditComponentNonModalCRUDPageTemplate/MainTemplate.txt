@@ -3,11 +3,12 @@
 import { finalize } from 'rxjs/operators';
 import { {{Entity_Name_Plural_Here}}ServiceProxy, CreateOrEdit{{Entity_Name_Here}}Dto {{NP_Looped_Import_Dropdown_LookupTableDto_Here}}} from '@shared/service-proxies/service-proxies';
 import { AppComponentBase } from '@shared/common/app-component-base';
-import * as moment from 'moment';{{NP_Looped_Lookup_Component_Import_Here}}
+{{Import_Datetime_Here}}{{NP_Looped_Lookup_Component_Import_Here}}
 import { ActivatedRoute, Router } from '@angular/router';
 import { appModuleAnimation } from '@shared/animations/routerTransition';
 import {Observable} from "@node_modules/rxjs";
 {{Import_Breadcrumb_Here}}
+{{Import_DateTime_Service_Here}}
 
 @Component({
     templateUrl: './create-or-edit-{{entity_Name_Here}}.component.html',
@@ -26,7 +27,7 @@ export class CreateOrEdit{{Entity_Name_Here}}Component extends AppComponentBase 
         injector: Injector,
         private _activatedRoute: ActivatedRoute,        
         private _{{entity_Name_Plural_Here}}ServiceProxy: {{Entity_Name_Plural_Here}}ServiceProxy,
-        private _router: Router
+        private _router: Router{{Get_DateTime_Service_Here}}
     ) {
         super(injector);
     }
@@ -52,26 +53,23 @@ export class CreateOrEdit{{Entity_Name_Here}}Component extends AppComponentBase 
         }
         {{NP_Looped_Dropdown_GetAll_Here}}
     }
-
-    private saveInternal(): Observable<void> {
-            this.saving = true;
-            
-        {{Property_Nullable_Datetime_GetValue_Looped_Template_Here}}
-        return this._{{entity_Name_Plural_Here}}ServiceProxy.createOrEdit(this.{{entity_Name_Here}})
-         .pipe(finalize(() => { 
-            this.saving = false;               
-            this.notify.info(this.l('SavedSuccessfully'));
-         }));
-    }
     
     save(): void {
-        this.saveInternal().subscribe(x => {
+        this.saving = true;
+        {{Property_Nullable_Datetime_GetValue_Looped_Template_Here}}
+        this._{{entity_Name_Plural_Here}}ServiceProxy.createOrEdit(this.{{entity_Name_Here}}).subscribe(x => {
+             this.saving = false;               
+             this.notify.info(this.l('SavedSuccessfully'));
              this._router.navigate( ['/app/{{menu_Position_Here}}/{{namespace_Relative_Here}}/{{entity_Name_Plural_Here}}']);
         })
     }
     
     saveAndNew(): void {
-        this.saveInternal().subscribe(x => {
+        this.saving = true;
+        {{Property_Nullable_Datetime_GetValue_Looped_Template_Here}}
+        this._{{entity_Name_Plural_Here}}ServiceProxy.createOrEdit(this.{{entity_Name_Here}}).subscribe(x => {
+            this.saving = false;               
+            this.notify.info(this.l('SavedSuccessfully'));
             this.{{entity_Name_Here}} = new CreateOrEdit{{Entity_Name_Here}}Dto();
         })
     }

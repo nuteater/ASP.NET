@@ -70,7 +70,7 @@ export class DateTimeService {
     getStartOfDayMinusDays(daysFromNow: number): DateTime {
         let date = this.getDate();
         let newDate = this.minusDays(date, daysFromNow);
-        return this.getEndOfDayForDate(newDate);
+        return this.getStartOfDayForDate(newDate);
     }
 
     getEndOfDay(): DateTime {
@@ -171,9 +171,9 @@ export class DateTimeService {
         return DateTime.utc(year, month + 1, day);
     }
 
-    toUtcDate(date: DateTime | Date): any {
+    toUtcDate(date: DateTime | Date): DateTime {
         if (date instanceof Date) {
-            return this.createUtcDate(date.getFullYear(), date.getMonth(), date.getDate()).toJSDate();
+            return this.createUtcDate(date.getFullYear(), date.getMonth(), date.getDate());
         }
 
         return this.createUtcDate(date.year, date.month, date.day);

@@ -7,7 +7,7 @@
 					{
 					"type" : "DateTime",
 					"content" : "
-            this.{{entity_Name_Here}}.{{property_Name_Here}} = moment().startOf('day');"
+            this.{{entity_Name_Here}}.{{property_Name_Here}} = {{Start_Of_Day_Here}};"
 					}
 				]
 		},
@@ -18,7 +18,7 @@
 					{
 					"type" : "DateTime",
 					"content" : "
-            this.{{entity_Name_Here}}.{{property_Name_Here}} = moment().startOf('day');"
+            this.{{entity_Name_Here}}.{{property_Name_Here}} = {{Start_Of_Day_Here}};"
 					}
 				]
 		},
@@ -66,10 +66,10 @@
 					"content" : "
         if (this.{{property_Name_Here}}) {
             if (!this.{{entity_Name_Here}}.{{property_Name_Here}}) {
-                this.{{entity_Name_Here}}.{{property_Name_Here}} = moment(this.{{property_Name_Here}}).startOf('day');
+                this.{{entity_Name_Here}}.{{property_Name_Here}} = {{DateTime_Start_Of_Day_From_Property_Here}};
             }
             else {
-                this.{{entity_Name_Here}}.{{property_Name_Here}} = moment(this.{{property_Name_Here}});
+                this.{{entity_Name_Here}}.{{property_Name_Here}} = {{DateTime_From_Property_Here}};
             }
         }
         else {
@@ -118,7 +118,7 @@
 					"viewType": "LookupTable",
 					"preventDuplicate":true,
 					"content" : "
-import { {{Entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModalComponent } from './{{entity_Name_Here}}-{{nP_Foreign_Entity_Name_Here}}-lookup-table-modal.component';"
+import { {{Master_Detail_Child_Prefix_Here}}{{Entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModalComponent } from './{{master_Detail_Child_Prefix_Here}}{{entity_Name_Here}}-{{nP_Foreign_Entity_Name_Here}}-lookup-table-modal.component';"
 					}
 				]
 		},
@@ -128,7 +128,7 @@ import { {{Entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModalComp
 					{
 					"relation" : "single",
 					"viewType": "LookupTable",
-					"content" : "    @ViewChild('{{entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModal{{NP_Duplication_Number_Here}}', { static: true }) {{entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModal{{NP_Duplication_Number_Here}}: {{Entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModalComponent;
+					"content" : "    @ViewChild('{{entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModal{{NP_Duplication_Number_Here}}', { static: true }) {{entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModal{{NP_Duplication_Number_Here}}: {{Master_Detail_Child_Prefix_Here}}{{Entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModalComponent;
 "
 					}
 				]
@@ -267,6 +267,58 @@ import { {{Entity_Name_Here}}{{NP_Foreign_Entity_Name_Here}}LookupTableModalComp
              "content" : "
                  this.{{master_Detail_Child_Foreign_Property_Name_Here}} = {{master_Detail_Child_Foreign_Property_Name_Here}};
              "
+        },
+        {
+             "placeholder" : "{{Import_Datetime_Here}}",
+             "condition": "{{Project_Version_Here}} < 100000",
+             "content" : "import * as moment from 'moment';"
+        },
+        {
+             "placeholder" : "{{Import_Datetime_Here}}",
+             "condition": "{{Project_Version_Here}} >= 100000",
+             "content" : "import { DateTime } from 'luxon';"
+        },
+        {
+             "placeholder" : "{{Start_Of_Day_Here}}",
+             "condition": "{{Project_Version_Here}} < 100000",
+             "content" : "moment().startOf('day')"
+        },
+        {
+             "placeholder" : "{{Start_Of_Day_Here}}",
+             "condition": "{{Project_Version_Here}} >= 100000",
+             "content" : "this._dateTimeService.getStartOfDay()"
+        },
+        {
+             "placeholder" : "{{Import_DateTime_Service_Here}}",
+             "condition": "{{Project_Version_Here}} >= 100000",
+             "content" : "
+             import { DateTimeService } from '@app/shared/common/timing/date-time.service';"
+        },
+        {
+             "placeholder" : "{{Get_DateTime_Service_Here}}",
+             "condition": "{{Project_Version_Here}} >= 100000",
+             "content" : ",
+             private _dateTimeService: DateTimeService"
+        },
+        {
+             "placeholder" : "{{DateTime_From_Property_Here}}",
+             "condition": "{{Project_Version_Here}} < 100000",
+             "content" : "moment(this.{{property_Name_Here}})"
+        },
+        {
+             "placeholder" : "{{DateTime_From_Property_Here}}",
+             "condition": "{{Project_Version_Here}} >= 100000",
+             "content" : "this._dateTimeService.fromJSDate(this.{{property_Name_Here}})"
+        },
+        {
+             "placeholder" : "{{DateTime_Start_Of_Day_From_Property_Here}}",
+             "condition": "{{Project_Version_Here}} < 100000",
+             "content" : "moment(this.{{property_Name_Here}}).startOf('day')"
+        },
+        {
+             "placeholder" : "{{DateTime_Start_Of_Day_From_Property_Here}}",
+             "condition": "{{Project_Version_Here}} >= 100000",
+             "content" : "this._dateTimeService.getStartOfDayForDate(this.{{property_Name_Here}})"
         }
 	]
 }

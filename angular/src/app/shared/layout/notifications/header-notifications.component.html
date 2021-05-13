@@ -49,7 +49,7 @@
                                     {{notification.text}}
                                 </div>
                                 <div class="text-muted">
-                                    {{notification.time | luxonFromNow}}
+                                    {{notification.creationTime | luxonFromNow}}
                                 </div>
                                 <span *ngIf="notification.isUnread"
                                     class="btn btn-link-success set-notification-as-read"

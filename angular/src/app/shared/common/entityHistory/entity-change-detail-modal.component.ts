@@ -31,7 +31,7 @@ export class EntityChangeDetailModalComponent extends AppComponentBase {
         }
         propertyChangeValue = propertyChangeValue.replace(/^['"]+/g, '').replace(/['"]+$/g, '');
         if (this.isDate(propertyChangeValue, propertyTypeFullName)) {
-            return this._dateTimeService.formatDate(propertyChangeValue, 'yyyy-LL-dd HH:mm:ss');
+            return this._dateTimeService.formatDate(this._dateTimeService.fromISODateString(propertyChangeValue), 'yyyy-LL-dd HH:mm:ss');
         }
 
         if (propertyChangeValue === 'null') {

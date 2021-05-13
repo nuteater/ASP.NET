@@ -3,7 +3,8 @@ export class NgxBootstrapLocaleMappingService {
         const cultureMap = {
             'zh-Hans': 'zh-cn',
             'es-MX': 'es',
-            'vi': 'en-gb'
+            'vi': 'en-gb',
+            'ta': 'en-gb'
             // Add more here
         };
 
@@ -23,7 +24,8 @@ export class NgxBootstrapLocaleMappingService {
             'zh-Hans': 'zhCn',
             'es-MX': 'es',
             'pt-BR': 'ptBr',
-            'vi': 'enGb'
+            'vi': 'enGb',
+            'ta': 'enGb'
             // Add more here
         };
 

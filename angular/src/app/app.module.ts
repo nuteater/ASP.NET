@@ -72,7 +72,6 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ActiveDelegatedUsersComboComponent } from './shared/layout/topbar/active-delegated-users-combo.component';
 
-
 // Metronic
 import { PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -87,7 +86,7 @@ import { MenuSearchBarComponent } from './shared/layout/nav/menu-search-bar/menu
 import { NgxSpinnerModule, NgxSpinnerComponent } from 'ngx-spinner';
 import { ScrollTopComponent } from './shared/layout/scroll-top.component';
 import { AppBsModalModule } from '@shared/common/appBsModal/app-bs-modal.module';
-
+import { SubheaderModule } from './shared/common/sub-header/subheader.module';
 
 
 @NgModule({
@@ -171,7 +170,8 @@ import { AppBsModalModule } from '@shared/common/appBsModal/app-bs-modal.module'
         ImageCropperModule,
         AutoCompleteModule,
         NgxSpinnerModule,
-        AppBsModalModule
+        AppBsModalModule,
+        SubheaderModule
     ],
     providers: [
         ImpersonationService,

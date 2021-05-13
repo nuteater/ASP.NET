@@ -11,7 +11,7 @@ export interface IFormattedUserNotification {
     userNotificationId: string;
     text: string;
     time: string;
-    creationTime: Date;
+    creationTime: DateTime;
     icon: string;
     state: String;
     data: any;
@@ -89,8 +89,8 @@ export class UserNotificationHelper extends AppComponentBase {
         let formatted: IFormattedUserNotification = {
             userNotificationId: userNotification.id,
             text: abp.notifications.getFormattedMessageFromUserNotification(userNotification),
-            time: this._dateTimeService.formatJSDate(userNotification.notification.creationTime, 'yyyy-LL-dd HH:mm:ss'),
-            creationTime: userNotification.notification.creationTime,
+            time: this._dateTimeService.formatDate(userNotification.notification.creationTime, 'yyyy-LL-dd HH:mm:ss'),
+            creationTime: (userNotification.notification.creationTime as any),
             icon: this.getUiIconBySeverity(userNotification.notification.severity),
             state: abp.notifications.getUserNotificationStateAsString(userNotification.state),
             data: userNotification.notification.data,

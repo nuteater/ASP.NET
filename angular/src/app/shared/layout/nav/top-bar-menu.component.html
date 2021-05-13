@@ -21,7 +21,7 @@
 <!-- END: Horizontal Menu -->
 
 <ng-template #kt_menu let-item="item" let-parentItem="parentItem" let-depth="depth">
-    <li attr.aria-haspopup="true" data-menu-toggle="click" class="{{ getItemCssClasses(item, parentItem, depth) }}"
+    <li attr.aria-haspopup="true" data-menu-toggle="hover" class="{{ getItemCssClasses(item, parentItem, depth) }}"
         *ngIf="showMenuItem(item)" routerLinkActive="menu-item-active">
 
         <!-- if item has submenu -->

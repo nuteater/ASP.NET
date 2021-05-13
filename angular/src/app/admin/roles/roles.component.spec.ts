@@ -1,7 +1,7 @@
 import { TestBed, ComponentFixture, } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { RolesComponent } from './roles.component';
-import { RoleServiceProxy, ListResultDtoOfRoleListDto } from '@shared/service-proxies/service-proxies';
+import { RoleServiceProxy, ListResultDtoOfRoleListDto, API_BASE_URL } from '@shared/service-proxies/service-proxies';
 import { Observable, Observer } from 'rxjs';
 
 import { AppModule } from '@app/app.module';
@@ -13,6 +13,10 @@ import { PermissionTreeModalComponent } from '../shared/permission-tree-modal.co
 import { ServiceProxyModule } from '@shared/service-proxies/service-proxy.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppBsModalModule } from '@shared/common/appBsModal/app-bs-modal.module';
+
+export function getRemoteServiceBaseUrl(): string {
+    return 'https://localhost:44301';
+}
 
 describe('RolesComponent', () => {
     let fixture: ComponentFixture<RolesComponent>;
@@ -36,6 +40,7 @@ describe('RolesComponent', () => {
                 NO_ERRORS_SCHEMA
             ],
             providers: [
+                { provide: API_BASE_URL, useValue: getRemoteServiceBaseUrl() },
                 { provide: LOCALE_ID, useValue: 'en' }
             ]
         });

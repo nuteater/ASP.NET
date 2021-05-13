@@ -104,7 +104,7 @@
                                     <span></span>
                                     {{"ShouldChangePasswordOnNextLogin" | localize}}
                                 </label>
-                                
+
                                 <span class="form-text text-muted" *ngIf="!isSMTPSettingsProvided()">{{'SMTPSettingsNotProvidedWarningText' | localize}}</span>
                                 <label for="EditUser_SendActivationEmail" class="checkbox" [class.checkbox-disabled]="!isSMTPSettingsProvided()">
                                     <input id="EditUser_SendActivationEmail" type="checkbox" name="SendActivationEmail" [disabled]="!isSMTPSettingsProvided()" [(ngModel)]="sendActivationEmail">
@@ -135,7 +135,7 @@
                             <ng-template tabHeading>
                                 <span class="label label-success label-inline assigned-role-count">{{getAssignedRoleCount()}}</span>
                             </ng-template>
-                            <div class="checkbox-inline">
+                            <div class="checkbox-list">
                                 <label attr.for="EditUser_{{role.roleName}}" class="checkbox" *ngFor="let role of roles">
                                     <input id="EditUser_{{role.roleName}}" type="checkbox" name="{{role.roleName}}" [(ngModel)]="role.isAssigned" [disabled]="role.inheritedFromOrganizationUnit">
                                     <span></span>

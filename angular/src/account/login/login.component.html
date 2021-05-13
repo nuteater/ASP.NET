@@ -52,9 +52,9 @@
         </div>
     </div>
 
-    <div class="pb-lg-0 pb-5"
+    <div class="pb-lg-0 pb-5 login__options"
         *ngIf="(multiTenancySideIsTeanant || !isMultiTenancyEnabled) && loginService.externalLoginProviders.length > 0">
-        <a *ngFor="let provider of loginService.externalLoginProviders" class="btn btn-sm btn-light-primary font-weight-bolder py-2"
+        <a *ngFor="let provider of loginService.externalLoginProviders" class="btn btn-sm btn-light-primary font-weight-bolder py-2 mb-2 ml-0 mr-2"
             (click)="externalLogin(provider)" title="{{provider.name}}">
             <i class="fab fa-{{provider.icon}}"></i>
             {{provider.name}}

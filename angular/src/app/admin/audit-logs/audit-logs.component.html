@@ -207,11 +207,11 @@
                                         <p-paginator [rows]="primengTableHelperAuditLogs.defaultRecordsCountPerPage"
                                             #paginatorAuditLogs (onPageChange)="getAuditLogs($event)"
                                             [totalRecords]="primengTableHelperAuditLogs.totalRecordsCount"
-                                            [rowsPerPageOptions]="primengTableHelperAuditLogs.predefinedRecordsCountPerPage">
+                                            [rowsPerPageOptions]="primengTableHelperAuditLogs.predefinedRecordsCountPerPage"
+                                            [showCurrentPageReport]="true"
+                                            [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                                        >
                                         </p-paginator>
-                                        <span class="total-records-count">
-                                            {{'TotalRecordsCount' | localize:primengTableHelperAuditLogs.totalRecordsCount}}
-                                        </span>
                                     </div>
                                 </div>
                                 <!--<Primeng-TurboTable-End>-->
@@ -332,11 +332,11 @@
                                         <p-paginator [rows]="primengTableHelperEntityChanges.defaultRecordsCountPerPage"
                                             #paginatorEntityChanges (onPageChange)="getEntityChanges($event)"
                                             [totalRecords]="primengTableHelperEntityChanges.totalRecordsCount"
-                                            [rowsPerPageOptions]="primengTableHelperEntityChanges.predefinedRecordsCountPerPage">
+                                            [rowsPerPageOptions]="primengTableHelperEntityChanges.predefinedRecordsCountPerPage"
+                                            [showCurrentPageReport]="true"
+                                            [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                                        >
                                         </p-paginator>
-                                        <span class="total-records-count">
-                                            {{'TotalRecordsCount' | localize:primengTableHelperEntityChanges.totalRecordsCount}}
-                                        </span>
                                     </div>
                                 </div>
                                 <!--<Primeng-TurboTable-End>-->

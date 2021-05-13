@@ -30,6 +30,7 @@
     "strictOutputEventTypes": false,
     "strictDomEventTypes": false,
     "strictLiteralTypes": false,
-    "strictInjectionParameters": false
+    "strictInjectionParameters": false,
+    "enableIvy": true
   }
 }

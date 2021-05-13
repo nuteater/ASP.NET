@@ -49,6 +49,7 @@ export class CreateOrEditRoleModalComponent extends AppComponentBase {
         const input = new CreateOrUpdateRoleInput();
         input.role = self.role;
         input.grantedPermissionNames = self.permissionTree.getGrantedPermissionNames();
+
         this.saving = true;
         this._roleService.createOrUpdateRole(input)
             .pipe(finalize(() => this.saving = false))

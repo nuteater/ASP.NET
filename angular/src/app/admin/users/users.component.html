@@ -2,33 +2,38 @@
     <div class="content d-flex flex-column flex-column-fluid">
         <sub-header [title]="'Users' | localize" [description]="'UsersHeaderInfo' | localize">
             <div role="actions">
-                <div class="btn-group" dropdown>
-                    <button dropdownToggle type="button" class="btn btn-outline-success dropdown-toggle mr-1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="btn-group" dropdown placement="button right">
+                    <button id="dropdownButtonExcelOperations" dropdownToggle type="button" class="btn btn-outline-success dropdown-toggle mr-1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenuExcelOperations">
                         <i class="far fa-file-excel"></i> {{"ExcelOperations" | localize}}
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-excel-operations" *dropdownMenu>
-                        <a class="dropdown-item" id="ExportUsersToExcelButton" (click)="exportToExcel()"
+                    <ul id="dropdownMenuExcelOperations" class="dropdown-menu dropdown-menu-right dropdown-excel-operations" role="menu" *dropdownMenu aria-labelledby="dropdownButtonExcelOperations">
+                        <li role="menuitem">
+                            <a class="dropdown-item" id="ExportUsersToExcelButton" (click)="exportToExcel()"
                             href="javascript:;">
-                            <i class="fa fa-download mr-2 mt-1" style="font-size: 1rem;"></i>
-                            {{'ExportToExcel' | localize}}
-                        </a>
-                        <a href="javascript:;" *ngIf="'Pages.Administration.Users.Create' | permission"
-                            class="no-padding">
-                            <span class="fileinput-button">
-                                <p-fileUpload customUpload="true" name="ExcelFileUpload" #ExcelFileUpload
-                                    maxFileSize="10000000" auto="auto" accept=".csv,.xls,.xlsx"
-                                    (uploadHandler)="uploadExcel($event)" (onError)="onUploadExcelError()"
-                                    chooseLabel="{{'ImportFromExcel' | localize}}">
-                                </p-fileUpload>
+                                <i class="fa fa-download mr-2 mt-1" style="font-size: 1rem;"></i>
+                                {{'ExportToExcel' | localize}}
+                            </a>
+                        </li>
+                        <li  *ngIf="'Pages.Administration.Users.Create' | permission" role="menuitem">
+                            <a href="javascript:;" class="no-padding">
+                                <span class="fileinput-button">
+                                    <p-fileUpload customUpload="true" name="ExcelFileUpload" #ExcelFileUpload
+                                        maxFileSize="10000000" auto="auto" accept=".csv,.xls,.xlsx"
+                                        (uploadHandler)="uploadExcel($event)" (onError)="onUploadExcelError()"
+                                        chooseLabel="{{'ImportFromExcel' | localize}}">
+                                    </p-fileUpload>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="divider dropdown-divider"></li>
+                        <li role="menuitem">
+                            <span class="dropdown-item-text text-muted pl-3" href="#">
+                                <small
+                                    [innerHTML]="l('ImportToExcelSampleFileDownloadInfo', '<a href=/assets/sampleFiles/ImportUsersSampleFile.xlsx>' + l('ClickHere') + '</a>')"></small>
                             </span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <span class="dropdown-item-text text-muted pl-3" href="#">
-                            <small
-                                [innerHTML]="l('ImportToExcelSampleFileDownloadInfo', '<a href=/assets/sampleFiles/ImportUsersSampleFile.xlsx>' + l('ClickHere') + '</a>')"></small>
-                        </span>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <button (click)="createUser()" *ngIf="'Pages.Administration.Users.Create' | permission"
@@ -47,11 +52,11 @@
                                             <input [(ngModel)]="filterText" name="filterText" autoFocus
                                                 class="form-control m-input" [placeholder]="l('SearchWithThreeDot')"
                                                 type="text">
-                                            <span class="input-group-btn">
+                                            <div class="input-group-append">
                                                 <button (click)="getUsers()" class="btn btn-primary" type="submit"><i
                                                         class="flaticon-search-1"
                                                         [attr.aria-label]="l('Search')"></i></button>
-                                            </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -152,40 +157,34 @@
                                     <tr>
                                         <td style="width: 130px"
                                             [hidden]="!(['Pages.Administration.Users.Impersonation', 'Pages.Administration.Users.Edit', 'Pages.Administration.Users.ChangePermissions', 'Pages.Administration.Users.Delete'] | permissionAny)">
-                                            <div class="btn-group dropdown" dropdown container="body">
-                                                <button dropdownToggle class="dropdown-toggle btn btn-sm btn-primary">
+                                            <div class="btn-group" dropdown placement="bottom left" container="body">
+                                                <button id="dropdownButton" type="button" class="btn btn-primary btn-sm dropdown-toggle" dropdownToggle aria-controls="dropdownMenu">
                                                     <i class="fa fa-cog"></i><span class="caret"></span>
                                                     {{"Actions" | localize}}
                                                 </button>
-                                                <ul class="dropdown-menu" *dropdownMenu>
-                                                    <li>
+                                                <ul id="dropdownMenu" class="dropdown-menu" role="menu" *dropdownMenu aria-labelledby="dropdownButton">
+                                                    <li *ngIf="('Pages.Administration.Users.Impersonation' | permission) && record.id !== appSession.userId" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="('Pages.Administration.Users.Impersonation' | permission) && record.id !== appSession.userId"
                                                             (click)="_impersonationService.impersonate(record.id, appSession.tenantId)">{{'LoginAsThisUser' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Administration.Users.Edit' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="'Pages.Administration.Users.Edit' | permission"
                                                             (click)="createOrEditUserModal.show(record.id)">{{'Edit' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Administration.Users.ChangePermissions' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="'Pages.Administration.Users.ChangePermissions' | permission"
                                                             (click)="editUserPermissionsModal.show(record.id, record.userName)">{{'Permissions' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Administration.Users.Unlock' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="'Pages.Administration.Users.Unlock' | permission"
                                                             (click)="unlockUser(record)">{{'Unlock' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="dynamicEntityPropertyManager.canShow('MyCompanyName.AbpZeroTemplate.Authorization.Users.User')" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="'Pages.Administration.DynamicEntityPropertyValue.Edit' | permission"
                                                             (click)="showDynamicProperties(record)">{{'DynamicProperties' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Administration.Users.Delete' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="'Pages.Administration.Users.Delete' | permission"
                                                             (click)="deleteUser(record)">{{'Delete' | localize}}</a>
                                                     </li>
                                                 </ul>
@@ -244,12 +243,11 @@
                                 <p-paginator [rows]="primengTableHelper.defaultRecordsCountPerPage" #paginator
                                     (onPageChange)="getUsers($event)"
                                     [totalRecords]="primengTableHelper.totalRecordsCount"
-                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
-
+                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                    [showCurrentPageReport]="true"
+                                    [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                                >
                                 </p-paginator>
-                                <span class="total-records-count">
-                                    {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                                </span>
                             </div>
                         </div>
                         <!--<Primeng-TurboTable-End>-->
@@ -260,7 +258,7 @@
 
         <createOrEditUserModal #createOrEditUserModal (modalSave)="getUsers()"></createOrEditUserModal>
         <editUserPermissionsModal #editUserPermissionsModal></editUserPermissionsModal>
-        <manage-dynamic-entity-property-values-modal #dynamicPropertiesModal>
-        </manage-dynamic-entity-property-values-modal>
+        <dynamic-entity-property-manager #dynamicEntityPropertyManager>
+        </dynamic-entity-property-manager>
     </div>
 </div>

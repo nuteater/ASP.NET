@@ -61,11 +61,10 @@
                                      #paginator
                                      (onPageChange)="getLinkedUsers($event)"
                                      [totalRecords]="primengTableHelper.totalRecordsCount"
-                                     [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                                     [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                     [showCurrentPageReport]="true"
+                                     [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount">
                         </p-paginator>
-                        <span class="total-records-count">
-                            {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                        </span>
                     </div>
                 </div>
                 <!--<Primeng-TurboTable-End>-->

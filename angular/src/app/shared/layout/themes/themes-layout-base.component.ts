@@ -3,7 +3,6 @@ import { DateTimeService } from '@app/shared/common/timing/date-time.service';
 import { AppConsts } from '@shared/AppConsts';
 import { AppComponentBase } from '@shared/common/app-component-base';
 import { TenantLoginInfoDto, EditionPaymentType, SubscriptionStartType, SubscriptionPaymentType } from '@shared/service-proxies/service-proxies';
-import { DateTime } from 'luxon';
 
 @Component({ template: '' })
 export class ThemesLayoutBaseComponent extends AppComponentBase {

@@ -11,15 +11,18 @@ import { LocaleMappingService } from '@shared/locale-mapping.service';
 import { LocalStorageService } from '@shared/utils/local-storage.service';
 import { merge as _merge } from 'lodash-es';
 import { DateTime, Settings } from 'luxon';
+import { AccountServiceProxy, IsTenantAvailableInput, IsTenantAvailableOutput, TenantAvailabilityState } from '@shared/service-proxies/service-proxies';
+import { Injector } from '@angular/core';
 
 export class AppPreBootstrap {
     static run(
         appRootUrl: string,
+        injector: Injector,
         callback: () => void,
         resolve: any,
         reject: any
     ): void {
-        AppPreBootstrap.getApplicationConfig(appRootUrl, () => {
+        AppPreBootstrap.getApplicationConfig(appRootUrl, injector, () => {
             if (UrlHelper.isInstallUrl(location.href)) {
                 AppPreBootstrap.loadAssetsForInstallPage(callback);
                 return;
@@ -82,6 +85,7 @@ export class AppPreBootstrap {
 
     private static getApplicationConfig(
         appRootUrl: string,
+        injector: Injector,
         callback: () => void
     ) {
         let type = 'GET';
@@ -99,9 +103,10 @@ export class AppPreBootstrap {
                 result.appBaseUrl
             );
 
+            AppConsts.localeMappings = result.localeMappings;
+
             AppConsts.appBaseUrlFormat = result.appBaseUrl;
             AppConsts.remoteServiceBaseUrlFormat = result.remoteServiceBaseUrl;
-            AppConsts.localeMappings = result.localeMappings;
 
             if (tenancyName == null) {
                 AppConsts.appBaseUrl = result.appBaseUrl.replace(
@@ -112,6 +117,8 @@ export class AppPreBootstrap {
                     AppConsts.tenancyNamePlaceHolderInUrl + '.',
                     ''
                 );
+
+                callback();
             } else {
                 AppConsts.appBaseUrl = result.appBaseUrl.replace(
                     AppConsts.tenancyNamePlaceHolderInUrl,
@@ -121,9 +128,23 @@ export class AppPreBootstrap {
                     AppConsts.tenancyNamePlaceHolderInUrl,
                     tenancyName
                 );
-            }
 
-            callback();
+                if (!subdomainTenancyNameFinder.urlHasTenancyNamePlaceholder(result.remoteServiceBaseUrl)) {
+                    let accountServiceProxy: AccountServiceProxy = injector.get(AccountServiceProxy);
+                    let input = new IsTenantAvailableInput();
+                    input.tenancyName = tenancyName;
+
+                    accountServiceProxy.isTenantAvailable(input).subscribe((result: IsTenantAvailableOutput) => {
+                        if (result.state === TenantAvailabilityState.Available) {
+                            abp.multiTenancy.setTenantIdCookie(result.tenantId);
+                        }
+
+                        callback();
+                    });
+                } else {
+                    callback();
+                }
+            }
         });
     }
 
@@ -178,11 +199,12 @@ export class AppPreBootstrap {
             (response) => {
                 let result = response.result;
                 abp.auth.setToken(result.accessToken);
-                AppPreBootstrap.setEncryptedTokenCookie(
-                    result.encryptedAccessToken
+                AppPreBootstrap.setEncryptedTokenCookie(result.encryptedAccessToken,
+                    () => {
+                        callback();
+                        location.search = '';
+                    }
                 );
-                location.search = '';
-                callback();
             }
         );
     }
@@ -208,11 +230,12 @@ export class AppPreBootstrap {
             (response) => {
                 let result = response.result;
                 abp.auth.setToken(result.accessToken);
-                AppPreBootstrap.setEncryptedTokenCookie(
-                    result.encryptedAccessToken
+                AppPreBootstrap.setEncryptedTokenCookie(result.encryptedAccessToken,
+                    () => {
+                        callback();
+                        location.search = '';
+                    }
                 );
-                location.search = '';
-                callback();
             }
         );
     }
@@ -235,11 +258,12 @@ export class AppPreBootstrap {
             (response) => {
                 let result = response.result;
                 abp.auth.setToken(result.accessToken);
-                AppPreBootstrap.setEncryptedTokenCookie(
-                    result.encryptedAccessToken
+                AppPreBootstrap.setEncryptedTokenCookie(result.encryptedAccessToken,
+                    () => {
+                        callback();
+                        location.search = '';
+                    }
                 );
-                location.search = '';
-                callback();
             }
         );
     }
@@ -307,15 +331,21 @@ export class AppPreBootstrap {
             let value = DateTime.fromJSDate(this).setLocale('en').setZone(abp.timing.timeZoneInfo.iana.timeZoneId).toString();
             return value;
         };
+
+        DateTime.prototype.toString = function () {
+            let date = this.setLocale('en').setZone(abp.timing.timeZoneInfo.iana.timeZoneId) as DateTime;
+            return date.toISO();
+        };
     }
 
-    private static setEncryptedTokenCookie(encryptedToken: string) {
+    private static setEncryptedTokenCookie(encryptedToken: string, callback: () => void) {
         new LocalStorageService().setItem(
             AppConsts.authorization.encrptedAuthTokenName,
             {
                 token: encryptedToken,
                 expireDate: new Date(new Date().getTime() + 365 * 86400000), //1 year
-            }
+            },
+            callback
         );
     }
 

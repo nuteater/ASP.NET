@@ -45,6 +45,8 @@ export class ValidateTwoFactorCodeComponent extends AppComponentBase implements 
             return;
         }
 
+        this.remainingSeconds = this.appSession.application.twoFactorCodeExpireSeconds;
+
         const timerSource = timer(1000, 1000);
         this.timerSubscription = timerSource.subscribe(() => {
             this.remainingSeconds = this.remainingSeconds - 1;

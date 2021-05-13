@@ -75,10 +75,12 @@ export class CustomizableDashboardComponent extends AppComponentBase implements 
         this.initializeUserDashboardFilters();
 
         //select first page (if user delete all pages server will add default page to userDashboard.)
-        this.selectedPage = {
-          id: this.userDashboard.pages[0].id,
-          name: this.userDashboard.pages[0].name
-        };
+        if (this.userDashboard.pages?.length) {
+          this.selectedPage = {
+            id: this.userDashboard.pages[0].id,
+            name: this.userDashboard.pages[0].name
+          };
+        }
 
         this.loading = false;
         this.busy = false;

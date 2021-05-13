@@ -21,52 +21,63 @@ dotnet restore
 
 Set-Location $webHostFolder
 dotnet publish --output (Join-Path $outputFolder "Host") --configuration Release
+Copy-Item ("Dockerfile.original") (Join-Path $outputFolder "Host")
+
+## COPY YML AND PFX FILES HOST ##############################################
+Set-Location $outputFolder
+Copy-Item ("../host/*.yml") (Join-Path $outputFolder "Host")
 
 ## PUBLISH WEB PUBLIC PROJECT ###################################################
 
 Set-Location $webPublicFolder
+yarn
+yarn run build
 dotnet publish --output (Join-Path $outputFolder "Public") --configuration Release
+Copy-Item ("Dockerfile.original") (Join-Path $outputFolder "Public")
 
-# Change Public configuration
-$publicConfigPath = Join-Path $outputFolder "Public/appsettings.Staging.json"
-(Get-Content $publicConfigPath) -replace "9903", "9902" | Set-Content $publicConfigPath
+## COPY YML AND PFX FILES PUBLIC ##############################################
+Set-Location $outputFolder
+Copy-Item ("../public/*.yml") (Join-Path $outputFolder "Public")
 
 ## PUBLISH ANGULAR UI PROJECT #################################################
 
 Set-Location $ngFolder
-& yarn
-& ng build --prod
+yarn
+ng build --prod
 Copy-Item (Join-Path $ngFolder "dist") (Join-Path $outputFolder "ng/") -Recurse
+New-Item -ItemType directory -Path (Join-Path $outputFolder "ng" "nginx.conf")
 Copy-Item (Join-Path $ngFolder "Dockerfile") (Join-Path $outputFolder "ng")
 
-# Change UI configuration
-$ngConfigPath = Join-Path $outputFolder "ng/assets/appconfig.json"
-(Get-Content $ngConfigPath) -replace "22742", "9901" | Set-Content $ngConfigPath
-(Get-Content $ngConfigPath) -replace "4200", "9902" | Set-Content $ngConfigPath
+## COPY YML AND PFX FILES PUBLIC ##############################################
+Set-Location $outputFolder
+Copy-Item ("../ng/*.*") (Join-Path $outputFolder "ng")
 
 ## CREATE DOCKER IMAGES #######################################################
 
-# Host
+# Mvc
 Set-Location (Join-Path $outputFolder "Host")
+Remove-Item ("Dockerfile")
+Rename-Item -Path "Dockerfile.original" -NewName "Dockerfile"
+dotnet dev-certs https -v -ep aspnetzero-devcert-host.pfx -p 2825e4d9-5cef-4373-bed3-d7ebf59de216
 
-docker rmi zero/host -f
-docker build -t zero/host .
+docker rmi mycompanynameabpzerotemplatewebhost -f
+docker compose -f docker-compose.yml build
 
 # Public
+# Public
 Set-Location (Join-Path $outputFolder "Public")
+Remove-Item ("Dockerfile")
+Rename-Item -Path "Dockerfile.original" -NewName "Dockerfile"
+dotnet dev-certs https -v -ep aspnetzero-devcert-public.pfx -p b7ca126d-5085-47a0-8ac3-1b5971bd65a1
 
-docker rmi zero/public -f
-docker build -t zero/public .
+docker rmi mycompanynameabpzerotemplatewebpublic -f
+docker compose -f docker-compose.yml build
 
 # Angular UI
 Set-Location (Join-Path $outputFolder "ng")
 
-docker rmi zero/ng -f
-docker build -t zero/ng .
-
-## DOCKER COMPOSE FILES #######################################################
-
-Copy-Item (Join-Path $slnFolder "docker/ng/*.*") $outputFolder
+docker rmi mycompanynameabpzerotemplatewebangular -f
+docker compose -f docker-compose.yml build
 
 ## FINALIZE ###################################################################
 

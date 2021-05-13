@@ -59,10 +59,10 @@
                                     <div class="input-group">
                                         <input [(ngModel)]="filterText" name="filterText" autoFocus class="form-control"
                                             placeholder="{{'SearchWithThreeDot' | localize}}" type="text">
-                                        <span class="input-group-btn">
+                                        <div class="input-group-append">
                                             <button (click)="applyFilters()" class="btn btn-primary" type="submit"><i
                                                     class="icon-refresh"></i> {{"Refresh" | localize}}</button>
-                                        </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                             <button class="btn btn-outline-primary btn-sm btn-icon"
                                                 (click)="editTextModal.show(baseLanguageName,targetLanguageName,sourceName,record.key,record.baseValue,record.targetValue)"
                                                 title="{{'Edit' | localize}}">
-                                                <i class="fa fa-edit" [attr.aria-label]="l('Edit')"></i>
+                                                <i class="la la-edit" [attr.aria-label]="l('Edit')"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -125,11 +125,11 @@
                                 <p-paginator [rows]="primengTableHelper.defaultRecordsCountPerPage" #paginator
                                     (onPageChange)="getLanguageTexts($event)"
                                     [totalRecords]="primengTableHelper.totalRecordsCount"
-                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                    [showCurrentPageReport]="true"
+                                    [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                                >
                                 </p-paginator>
-                                <span class="total-records-count">
-                                    {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                                </span>
                             </div>
                         </div>
                         <!--<Primeng-TurboTable-End>-->

@@ -1,10 +1,9 @@
-import { Component, Injector, Output, ViewChild, OnDestroy } from '@angular/core';
+import { Component, Injector, ViewChild, OnDestroy } from '@angular/core';
 import { AppComponentBase } from '@shared/common/app-component-base';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { timer, Subscription } from 'rxjs';
 import { AppAuthService } from '../auth/app-auth.service';
 import { SessionServiceProxy } from '@shared/service-proxies/service-proxies';
-import { LocalStorageService } from '@shared/utils/local-storage.service';
 
 @Component({
     selector: 'session-timeout-modal',
@@ -23,7 +22,6 @@ export class SessionTimeoutModalComponent extends AppComponentBase implements On
         injector: Injector,
         private _appAuthService: AppAuthService,
         private _sessionService: SessionServiceProxy,
-        private _localStorageService: LocalStorageService
     ) {
         super(injector);
     }

@@ -45,22 +45,25 @@
                                     <tr>
                                         <td
                                             [hidden]="!((['Pages.Administration.Roles.Edit', 'Pages.Administration.Roles.Delete'] | permissionAny) || entityHistoryEnabled)">
-                                            <div class="btn-group dropdown" dropdown>
-                                                <button dropdownToggle
-                                                    class="dropdown-toggle btn btn-primary btn-sm dropdown-toggle">
+                                            <div class="btn-group" dropdown placement="bottom left">
+                                                <button id="dropdownButton" type="button" class="btn btn-primary btn-sm dropdown-toggle" dropdownToggle aria-controls="dropdownMenu">
                                                     <i class="fa fa-cog"></i><span class="caret"></span>
                                                     {{"Actions" | localize}}
                                                 </button>
-                                                <div class="dropdown-menu dropdown-menu-left dropdown-excel-operations" *dropdownMenu>
-                                                    <a class="dropdown-item" href="javascript:;"
-                                                       *ngIf="'Pages.Administration.Roles.Edit' | permission"
-                                                       (click)="createOrEditRoleModal.show(record.id)">{{'Edit' | localize}}</a>
-                                                    <a class="dropdown-item" href="javascript:;"
-                                                       *ngIf="!record.isStatic && ('Pages.Administration.Roles.Delete' | permission)"
-                                                       (click)="deleteRole(record)">{{'Delete' | localize}}</a>
-                                                    <a class="dropdown-item" href="javascript:;" *ngIf="entityHistoryEnabled"
-                                                       (click)="showHistory(record)">{{'History' | localize}}</a>
-                                                </div>
+                                                <ul id="dropdownMenu" class="dropdown-menu" role="menu" *dropdownMenu aria-labelledby="dropdownButton">
+                                                    <li *ngIf="'Pages.Administration.Roles.Edit' | permission" role="menuitem">
+                                                        <a class="dropdown-item" href="javascript:;"
+                                                        (click)="createOrEditRoleModal.show(record.id)">{{'Edit' | localize}}</a>
+                                                    </li>
+                                                    <li *ngIf="!record.isStatic && ('Pages.Administration.Roles.Delete' | permission)" role="menuitem">
+                                                        <a class="dropdown-item" href="javascript:;"                                                        
+                                                        (click)="deleteRole(record)">{{'Delete' | localize}}</a>
+                                                    </li>
+                                                    <li *ngIf="entityHistoryEnabled" role="menuitem">
+                                                        <a class="dropdown-item" href="javascript:;"
+                                                        (click)="showHistory(record)">{{'History' | localize}}</a>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </td>
                                         <td>

@@ -76,14 +76,14 @@
                                             </button>
                                             <button class="btn btn-sm btn-icon btn-danger" [attr.title]="l('Delete')"
                                                 (click)="deleteNotification(record)">
-                                                <i class="fa fa-times" [attr.aria-label]="l('Delete')"></i>
+                                                <i class="la la-times" [attr.aria-label]="l('Delete')"></i>
                                             </button>
                                         </td>
                                         <td style="text-align: center;">
                                             <i
-                                                class="{{record.formattedNotification.icon}} {{record.formattedNotification.iconFontClass}} fa-2x"></i>
-                                            <br>
-                                            {{getNotificationTextBySeverity(record.formattedNotification.severity)}}
+                                                class="{{record.formattedNotification.icon}} {{record.formattedNotification.iconFontClass}} fa-2x"
+                                                tooltip="{{getNotificationTextBySeverity(record.formattedNotification.severity)}}"
+                                            ></i>
                                         </td>
                                         <td>
                                             <span class="p-column-title">{{'Notification' | localize}}</span>
@@ -110,11 +110,11 @@
                                 <p-paginator [rows]="primengTableHelper.defaultRecordsCountPerPage" #paginator
                                     (onPageChange)="getNotifications($event)"
                                     [totalRecords]="primengTableHelper.totalRecordsCount"
-                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                    [showCurrentPageReport]="true"
+                                    [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                                >
                                 </p-paginator>
-                                <span class="total-records-count">
-                                    {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                                </span>
                             </div>
                         </div>
                         <!--<Primeng-TurboTable-End>-->
@@ -123,4 +123,4 @@
             </div>
         </div>
     </div>
-</div>  
+</div>

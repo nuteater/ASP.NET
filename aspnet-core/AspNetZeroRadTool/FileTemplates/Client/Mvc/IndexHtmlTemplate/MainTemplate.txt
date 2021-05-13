@@ -46,9 +46,9 @@
                     <thead>
                         <tr>
                             <th></th>
-                            
-                            <th>@L("Actions")</th>{{Property_Looped_Template_Here}}{{NP_Looped_Template_Here}}
                             {{NP_OneToMany_Looped_Table_Header_Here}}
+                            <th>@L("Actions")</th>{{Property_Looped_Template_Here}}{{NP_Looped_Template_Here}}
+                            
                         </tr>
                     </thead>
                 </table>

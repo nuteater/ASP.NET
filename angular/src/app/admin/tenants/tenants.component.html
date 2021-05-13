@@ -29,11 +29,11 @@
                                                 class="form-control"
                                                 placeholder="{{'SearchWithThreeDot' | localize}}"
                                                 type="text">
-                                            <span class="input-group-btn">
+                                            <div class="input-group-append">
                                                 <button class="btn btn-primary"
                                                     type="submit"><i class="flaticon-search-1"
                                                         [attr.aria-label]="l('Search')"></i></button>
-                                            </span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-xl-6">
@@ -59,7 +59,6 @@
                                             [attr.disabled]="!filters.subscriptionEndDateRangeActive ? 'disabled' : null"
                                             #drpSubscriptionEndDateRange="bsDaterangepicker"
                                             bsDaterangepicker
-                                            readonly="readonly"
                                             dateRangePickerLuxonModifier
                                             [(date)]="subscriptionDateRange">
                                     </div>
@@ -80,7 +79,6 @@
                                             [attr.disabled]="!filters.creationDateRangeActive ? 'disabled' : null"
                                             #drpCreationDateRange="bsDaterangepicker"
                                             bsDaterangepicker
-                                            readonly="readonly"
                                             dateRangePickerLuxonModifier
                                             [(date)]="creationDateRange" />
                                     </div>
@@ -137,48 +135,50 @@
                                     let-record="$implicit">
                                     <tr>
                                         <td style="width: 130px">
-                                            <div class="btn-group dropdown"
-                                                dropdown>
-                                                <button dropdownToggle
-                                                    class="dropdown-toggle btn btn-sm btn-primary">
+                                            <div class="btn-group"
+                                                dropdown
+                                                placement="bottom left">
+                                                <button id="dropdownButton"
+                                                    type="button"
+                                                    class="btn btn-primary btn-sm dropdown-toggle"
+                                                    dropdownToggle
+                                                    aria-controls="dropdownMenu">
                                                     <i class="fa fa-cog"></i><span class="caret"></span>
                                                     {{"Actions" | localize}}
                                                 </button>
-                                                <ul class="dropdown-menu"
-                                                    *dropdownMenu>
-                                                    <li [class.disabled]="!record.isActive">
+                                                <ul id="dropdownMenu"
+                                                    class="dropdown-menu"
+                                                    role="menu"
+                                                    *dropdownMenu
+                                                    aria-labelledby="dropdownButton">
+                                                    <li *ngIf="'Pages.Tenants.Impersonation' | permission" [class.disabled]="!record.isActive" role="menuitem">
                                                         <a href="javascript:;"
                                                             class="dropdown-item"
-                                                            *ngIf="'Pages.Tenants.Impersonation' | permission"
                                                             [class.disabled]="!record.isActive"
                                                             (click)="record.isActive && showUserImpersonateLookUpModal(record)">{{'LoginAsThisTenant' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Tenants.Edit' | permission" role="menuitem">
                                                         <a href="javascript:;"
                                                             class="dropdown-item"
-                                                            *ngIf="'Pages.Tenants.Edit' | permission"
                                                             (click)="editTenantModal.show(record.id)">{{'Edit' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Tenants.ChangeFeatures' | permission" role="menuitem">
                                                         <a href="javascript:;"
                                                             class="dropdown-item"
-                                                            *ngIf="'Pages.Tenants.ChangeFeatures' | permission"
                                                             (click)="tenantFeaturesModal.show(record.id, record.name)">{{'Features' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Tenants.Delete' | permission" role="menuitem">
                                                         <a href="javascript:;"
                                                             class="dropdown-item"
-                                                            *ngIf="'Pages.Tenants.Delete' | permission"
                                                             (click)="deleteTenant(record)">{{'Delete' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li role="menuitem">
                                                         <a href="javascript:;"
                                                             class="dropdown-item"
                                                             (click)="unlockUser(record)">{{'Unlock' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="entityHistoryEnabled" role="menuitem">
                                                         <a href="javascript:;"
-                                                            *ngIf="entityHistoryEnabled"
                                                             class="dropdown-item"
                                                             (click)="showHistory(record)">{{'History' | localize}}</a>
                                                     </li>
@@ -227,11 +227,11 @@
                                     #paginator
                                     (onPageChange)="getTenants($event)"
                                     [totalRecords]="primengTableHelper.totalRecordsCount"
-                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage">
+                                    [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
+                                    [showCurrentPageReport]="true"
+                                    [currentPageReportTemplate]="'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount"
+                                >
                                 </p-paginator>
-                                <span class="total-records-count">
-                                    {{'TotalRecordsCount' | localize:primengTableHelper.totalRecordsCount}}
-                                </span>
                             </div>
                         </div>
                         <!--<Primeng-TurboTable-End>-->

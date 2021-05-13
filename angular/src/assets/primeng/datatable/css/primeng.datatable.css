@@ -249,3 +249,7 @@
     font-size: 0.85rem;
     opacity: 0.5;
 }
+
+.p-datatable-scrollable-header-box {
+  margin-right: -17px !important;
+}

@@ -1,4 +1,4 @@
-﻿import {PermissionCheckerService} from 'abp-ng2-module';
+import {PermissionCheckerService} from 'abp-ng2-module';
 import {AppSessionService} from '@shared/common/session/app-session.service';
 
 import {Injectable} from '@angular/core';
@@ -21,12 +21,7 @@ export class AppNavigationService {
             new AppMenuItem('Dashboard', 'Pages.Tenant.Dashboard', 'flaticon-line-graph', '/app/main/dashboard'),
             new AppMenuItem('Tenants', 'Pages.Tenants', 'flaticon-list-3', '/app/admin/tenants'),
             new AppMenuItem('Editions', 'Pages.Editions', 'flaticon-app', '/app/admin/editions'),
-            new AppMenuItem('Tasks', 'Pages.Editions', 'flaticon-app', '/app/admin/tasks'),
-           
-            new AppMenuItem('TTTasks', 'Pages.TTTasks', 'flaticon-more', '/app/main/tasksNamespace/ttTasks'),
-            
-            new AppMenuItem('TaskPriorities', 'Pages.TaskPriorities', 'flaticon-more', '/app/main/tasksNamespace/taskPriorities'),
-             new AppMenuItem('Administration', '', 'flaticon-interface-8', '', [], [
+            new AppMenuItem('Administration', '', 'flaticon-interface-8', '', [], [
                 new AppMenuItem('OrganizationUnits', 'Pages.Administration.OrganizationUnits', 'flaticon-map', '/app/admin/organization-units'),
                 new AppMenuItem('Roles', 'Pages.Administration.Roles', 'flaticon-suitcase', '/app/admin/roles'),
                 new AppMenuItem('Users', 'Pages.Administration.Users', 'flaticon-users', '/app/admin/users'),

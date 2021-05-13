@@ -43,30 +43,26 @@
                                 <ng-template pTemplate="body" let-record="$implicit">
                                     <tr>
                                         <td style="width: 130px; text-align: center">
-                                            <div class="btn-group dropdown" dropdown container="body">
-                                                <button dropdownToggle class="dropdown-toggle btn btn-sm btn-primary">
+                                            <div class="btn-group" dropdown placement="bottom left" container="body">
+                                                <button id="dropdownButton" type="button" class="btn btn-primary btn-sm dropdown-toggle" dropdownToggle aria-controls="dropdownMenu">
                                                     <i class="fa fa-cog"></i><span class="caret"></span>
                                                     {{"Actions" | localize}}
                                                 </button>
-                                                <ul class="dropdown-menu" *dropdownMenu>
-                                                    <li>
+                                                <ul id="dropdownMenu" class="dropdown-menu" role="menu" *dropdownMenu aria-labelledby="dropdownButton">
+                                                    <li *ngIf="('Pages.Administration.Languages.Edit' | permission) && record.tenantId === appSession.tenantId" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="('Pages.Administration.Languages.Edit' | permission) && record.tenantId === appSession.tenantId"
                                                             (click)="createOrEditLanguageModal.show(record.id)">{{'Edit' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Administration.Languages.ChangeTexts' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="'Pages.Administration.Languages.ChangeTexts' | permission"
                                                             (click)="changeTexts(record)">{{'ChangeTexts' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="'Pages.Administration.Languages.Edit' | permission" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="'Pages.Administration.Languages.Edit' | permission"
                                                             (click)="setAsDefaultLanguage(record)">{{'SetAsDefaultLanguage' | localize}}</a>
                                                     </li>
-                                                    <li>
+                                                    <li *ngIf="('Pages.Administration.Languages.Delete' | permission) && record.tenantId === appSession.tenantId" role="menuitem">
                                                         <a href="javascript:;" class="dropdown-item"
-                                                            *ngIf="('Pages.Administration.Languages.Delete' | permission) && record.tenantId === appSession.tenantId"
                                                             (click)="deleteLanguage(record)">{{'Delete' | localize}}</a>
                                                     </li>
                                                 </ul>

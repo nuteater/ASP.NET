@@ -26,6 +26,7 @@
 		},
 		{
 			"placeholder" : "{{Navigation_Property_Dropdown_Using}}",
+			"preventDuplicate":true,
 			"templates" : [
 					{
 					"relation" : "single",

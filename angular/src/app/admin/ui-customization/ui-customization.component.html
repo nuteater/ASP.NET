@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <tabset type="pills">
                         <tab *ngFor="let themeSetting of themeSettings"
-                            [active]="themeSetting.theme == currentThemeName">
+                            [active]="themeSetting.theme == currentThemeName" customClass="pb-5">
                             <ng-template tabHeading>
                                 <div class="theme-select-box">
                                     <img [src]="'/assets/common/images/metronic-themes/' + themeSetting.theme +  '.png'"

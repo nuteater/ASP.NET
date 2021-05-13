@@ -133,11 +133,11 @@ export class OrganizationTreeComponent extends AppComponentBase implements OnIni
                         }
                     }, {
                         target: 'expandedIcon',
-                        value: 'fa fa-folder-open m--font-warning'
+                        value: 'fa fa-folder-open text-warning'
                     },
                     {
                         target: 'collapsedIcon',
-                        value: 'fa fa-folder m--font-warning'
+                        value: 'fa fa-folder text-warning'
                     },
                     {
                         target: 'selectable',
@@ -241,8 +241,8 @@ export class OrganizationTreeComponent extends AppComponentBase implements OnIni
 
             unit.children.push({
                 label: ou.displayName,
-                expandedIcon: 'fa fa-folder-open m--font-warning',
-                collapsedIcon: 'fa fa-folder m--font-warning',
+                expandedIcon: 'fa fa-folder-open text-warning',
+                collapsedIcon: 'fa fa-folder text-warning',
                 selected: true,
                 children: [],
                 data: ou,
@@ -252,8 +252,8 @@ export class OrganizationTreeComponent extends AppComponentBase implements OnIni
         } else {
             this.treeData.push({
                 label: ou.displayName,
-                expandedIcon: 'fa fa-folder-open m--font-warning',
-                collapsedIcon: 'fa fa-folder m--font-warning',
+                expandedIcon: 'fa fa-folder-open text-warning',
+                collapsedIcon: 'fa fa-folder text-warning',
                 selected: true,
                 children: [],
                 data: ou,

@@ -39,11 +39,11 @@ export class PermissionTreeComponent extends AppComponentBase {
                 source: 'displayName'
             }, {
                 target: 'expandedIcon',
-                value: 'fa fa-folder-open m--font-warning'
+                value: 'fa fa-folder-open text-warning'
             },
             {
                 target: 'collapsedIcon',
-                value: 'fa fa-folder m--font-warning'
+                value: 'fa fa-folder text-warning'
             },
             {
                 target: 'expanded',

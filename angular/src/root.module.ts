@@ -47,7 +47,7 @@ export function appInitializerFactory(
 
             initializeLocalForage();
 
-            AppPreBootstrap.run(appBaseUrl, () => {
+            AppPreBootstrap.run(appBaseUrl, injector, () => {
 
                 handleLogoutRequest(injector.get(AppAuthService));
 

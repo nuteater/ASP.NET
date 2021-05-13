@@ -3,7 +3,7 @@ import { OnDestroy, Injector, Component } from '@angular/core';
 import { timer, Subscription } from 'rxjs';
 
 @Component({ template: '' })
-export abstract class WidgetComponentBaseComponent extends AppComponentBase implements OnDestroy {
+export class WidgetComponentBaseComponent extends AppComponentBase implements OnDestroy {
     delay = 300;
     timer: Subscription;
 

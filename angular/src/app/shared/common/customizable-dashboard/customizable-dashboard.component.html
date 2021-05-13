@@ -3,8 +3,9 @@
         <sub-header [title]="'Dashboard' | localize" [description]="'DashboardHeaderInfo' | localize">
             <div role="actions">
                 <button type="button" *ngIf="!loading && userDashboard && userDashboard.filters && userDashboard.filters.length > 0"
-                        class="btn btn-brand btn-icon btn-filter" (click)="filterModal.show()"><i
-                    class="fa fa-filter"></i></button>
+                        class="btn btn-light-primary btn-filter" (click)="filterModal.show()">
+                    <i class="fa fa-filter"></i> {{'Filter' | localize}}
+                </button>
 
                 <span class="switch m-0 p-0" [class]="{ 'switch-primary' : editModeEnabled }">
                      <label class="m-0 p-0" style="margin-bottom:-10px !important">
@@ -20,6 +21,13 @@
         </sub-header>
 
         <div [class]="containerClass" *ngIf="!loading">
+            <div class="row" *ngIf="!userDashboard?.pages?.length">
+                <div class="col-md-12">
+                    <div class="alert alert-warning" role="alert">
+                        {{"Dashboard_NoPageDefined_Warning" | localize}}
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-12" style="z-index: 0;">
                     <tabset #dashboardTabs [justified]="true" [ngClass]="{'nav-hidden': !moreThanOnePage()}">
@@ -31,7 +39,7 @@
                                     <ng-container *ngComponentOutlet="widget.component"></ng-container>
                                     <button class="btn btn-sm text-white bg-danger deleteWidgetButton"
                                         *ngIf="editModeEnabled" (click)="removeItem(widget.gridInformation)">
-                                        <i class="fa fa-times"></i>
+                                        <i class="la la-times"></i>
                                     </button>
                                 </gridster-item>
                             </gridster>
@@ -48,13 +56,13 @@
                     </div>
                     <div class="vr">
                         <div class="btn-group" dropdown #dropdownAddPage="bs-dropdown" (onShown)="addPageDropdownShown()" [dropup]="true" [insideClick]="true">
-                            <button dropdownToggle type="button"
+                            <button id="dropdownButtonAddPage" dropdownToggle type="button"
                                 class="btn btn-sm btn-primary dropdown-toggle btn-elevate-hover btn-pill"
-                                aria-controls="dropdown-basic">
+                                aria-controls="dropdownMenuAddPage">
                                 <i class="fa fa-plus"></i> {{"AddPage" | localize}}<span class="caret"></span>
                             </button>
-                            <ul *dropdownMenu class="dropdown-menu p-10" role="menu"
-                                aria-labelledby="button-basic">
+                            <ul id="dropdownMenuAddPage" *dropdownMenu class="dropdown-menu p-10" role="menu"
+                                aria-labelledby="dropdownButtonAddPage">
                                 <li role="menuitem">
                                     <div class="form-group">
                                         <label for="PageNameInput">{{"NewPageName" | localize}}</label>
@@ -67,13 +75,13 @@
                         </div>
                         <div class="btn-group" dropdown #dropdownRenamePage="bs-dropdown" (onShown)="renamePageDropdownShown();" [dropup]="true" [insideClick]="true"
                             [isDisabled]="selectedPage.id===''">
-                            <button dropdownToggle type="button"
+                            <button id="dropdownButtonRenamePage" dropdownToggle type="button"
                                 class="btn btn-sm btn-info btn-elevate-hover btn-pill dropdown-toggle"
-                                aria-controls="dropdown-basic">
+                                aria-controls="dropdownMenuRenamePage">
                                 <i class="fa fa-edit"></i>{{"RenamePage" | localize}}<span class="caret"></span>
                             </button>
-                            <ul *dropdownMenu class="dropdown-menu p-10" role="menu"
-                                aria-labelledby="button-basic">
+                            <ul id="dropdownMenuRenamePage" *dropdownMenu class="dropdown-menu p-10" role="menu"
+                                aria-labelledby="dropdownButtonRenamePage">
                                 <li role="menuitem">
                                     <div class="form-group">
                                         <label for="PageNameInput">{{"PageNewName" | localize}}</label>

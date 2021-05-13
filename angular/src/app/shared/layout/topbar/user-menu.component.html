@@ -21,7 +21,7 @@
 </div>
 <div *ngIf="!iconOnly" class="topbar-item">
     <div [class]="togglerCssClass" id="kt_quick_user_toggle">
-        <i *ngIf="isImpersonatedLogin" class="fa fa-reply text-danger"></i>
+        <i *ngIf="isImpersonatedLogin" class="fa fa-reply text-danger pr-2"></i>
         <span [class]="textCssClass">
             <span *ngIf="isMultiTenancyEnabled" class="tenancy-name">{{tenancyName}}\</span>{{userName}}
         </span>
@@ -62,8 +62,7 @@
 
         <!--begin::Nav-->
         <div class="navi navi-spacer-x-0 p-0">
-            <a href="javascript:;" *ngIf="isImpersonatedLogin" (click)="backToMyAccount()" class="navi-item"
-                id="UserProfileBackToMyAccountButton">
+            <a href="javascript:;" *ngIf="isImpersonatedLogin" (click)="backToMyAccount()" class="navi-item" id="UserProfileBackToMyAccountButton">
                 <div class="navi-link">
                     <div class="symbol symbol-40 bg-light mr-3">
                         <div class="symbol-label">
@@ -80,13 +79,13 @@
                             </span>
                         </div>
                     </div>
-                </div>
-                <div class="navi-text">
-                    <div class="font-weight-bold">
-                        {{"BackToMyAccount" | localize}}
-                    </div>
-                    <div class="text-muted">
-                        {{"BackToMyAccount_Description" | localize}}
+                    <div class="navi-text">
+                        <div class="font-weight-bold">
+                            {{"BackToMyAccount" | localize}}
+                        </div>
+                        <div class="text-muted">
+                            {{"BackToMyAccount_Description" | localize}}
+                        </div>
                     </div>
                 </div>
             </a>

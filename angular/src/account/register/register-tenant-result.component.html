@@ -13,13 +13,16 @@
             {{"ConfirmationMailSentPleaseClickLinkInTheEmail" | localize:model.emailAddress}}
         </div>
 
-        <div *ngIf="!model.isActive" class="alert alert-primary" role="alert">
+        <div *ngIf="!model.isActive" class="alert alert-warning" role="alert">
             {{"YourAccountIsWaitingToBeActivatedByAdmin" | localize}}
         </div>
 
-        <div *ngIf="tenantUrl" class="alert alert-secondary" role="alert">
-            {{"TenantRegistrationLoginInfo" | localize}}<br />
-            <a href="{{tenantUrl}}">{{tenantUrl}}</a>
-        </div>
+        <a href="{{tenantUrl}}" *ngIf="tenantUrl">
+            <button type="button" class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3"> ← {{'TenantRegistrationLoginInfo' |localize }}</button>
+        </a>
+
+        <a href="/" *ngIf="!tenantUrl">
+            <button type="button" class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3"> ← {{'GoToLoginPage' |localize }}</button>
+        </a>
     </div>
 </div>

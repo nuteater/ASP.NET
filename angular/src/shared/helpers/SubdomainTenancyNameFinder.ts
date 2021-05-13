@@ -3,6 +3,10 @@ import { FormattedStringValueExtracter } from '@shared/helpers/FormattedStringVa
 
 export class SubdomainTenancyNameFinder {
 
+    urlHasTenancyNamePlaceholder(url: string): boolean {
+        return url.indexOf(AppConsts.tenancyNamePlaceHolderInUrl) >= 0;
+    }
+
     getCurrentTenancyNameOrNull(rootAddress: string): string {
         if (rootAddress.indexOf(AppConsts.tenancyNamePlaceHolderInUrl) < 0) {
             // Web site does not support subdomain tenant name
