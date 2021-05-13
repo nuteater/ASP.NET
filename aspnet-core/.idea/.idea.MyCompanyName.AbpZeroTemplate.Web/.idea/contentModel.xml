@@ -243,6 +243,41 @@
           <e p="Timing" t="Include">
             <e p="TimingAppService.cs" t="Include" />
           </e>
+          <e p="TTTasksNameSace" t="Include">
+            <e p="Exporting" t="Include">
+              <e p="ITaskTypesExcelExporter.cs" t="Include" />
+              <e p="TaskTypesExcelExporter.cs" t="Include" />
+            </e>
+            <e p="TaskTypesAppService.cs" t="Include" />
+          </e>
+          <e p="TTTasksNameSpace" t="Include">
+            <e p="Exporting" t="Include">
+              <e p="ISubtasksExcelExporter.cs" t="Include" />
+              <e p="ITask_TaskTopicsExcelExporter.cs" t="Include" />
+              <e p="ITaskHistoriesExcelExporter.cs" t="Include" />
+              <e p="ITaskPrioritiesExcelExporter.cs" t="Include" />
+              <e p="ITasks_UsersExcelExporter.cs" t="Include" />
+              <e p="ITaskTopicsExcelExporter.cs" t="Include" />
+              <e p="ITaskTypesExcelExporter.cs" t="Include" />
+              <e p="ITTTasksExcelExporter.cs" t="Include" />
+              <e p="SubtasksExcelExporter.cs" t="Include" />
+              <e p="Task_TaskTopicsExcelExporter.cs" t="Include" />
+              <e p="TaskHistoriesExcelExporter.cs" t="Include" />
+              <e p="TaskPrioritiesExcelExporter.cs" t="Include" />
+              <e p="Tasks_UsersExcelExporter.cs" t="Include" />
+              <e p="TaskTopicsExcelExporter.cs" t="Include" />
+              <e p="TaskTypesExcelExporter.cs" t="Include" />
+              <e p="TTTasksExcelExporter.cs" t="Include" />
+            </e>
+            <e p="SubtasksAppService.cs" t="Include" />
+            <e p="Task_TaskTopicsAppService.cs" t="Include" />
+            <e p="TaskHistoriesAppService.cs" t="Include" />
+            <e p="TaskPrioritiesAppService.cs" t="Include" />
+            <e p="Tasks_UsersAppService.cs" t="Include" />
+            <e p="TaskTopicsAppService.cs" t="Include" />
+            <e p="TaskTypesAppService.cs" t="Include" />
+            <e p="TTTasksAppService.cs" t="Include" />
+          </e>
           <e p="UiCustomization" t="Include">
             <e p="IUiCustomizer.cs" t="Include" />
             <e p="IUiThemeCustomizerFactory.cs" t="Include" />
@@ -666,6 +701,87 @@
             </e>
             <e p="ITimingAppService.cs" t="Include" />
           </e>
+          <e p="TTTasksNameSace" t="Include">
+            <e p="Dtos" t="Include">
+              <e p="CreateOrEditTaskTypeDto.cs" t="Include" />
+              <e p="GetAllForLookupTableInput.cs" t="Include" />
+              <e p="GetAllTaskTypesForExcelInput.cs" t="Include" />
+              <e p="GetAllTaskTypesInput.cs" t="Include" />
+              <e p="GetTaskTypeForEditOutput.cs" t="Include" />
+              <e p="GetTaskTypeForViewDto.cs" t="Include" />
+              <e p="TaskTypeDto.cs" t="Include" />
+            </e>
+            <e p="ITaskTypesAppService.cs" t="Include" />
+          </e>
+          <e p="TTTasksNameSpace" t="Include">
+            <e p="Dtos" t="Include">
+              <e p="CreateOrEditSubtaskDto.cs" t="Include" />
+              <e p="CreateOrEditTask_TaskTopicDto.cs" t="Include" />
+              <e p="CreateOrEditTaskHistoryDto.cs" t="Include" />
+              <e p="CreateOrEditTaskPriorityDto.cs" t="Include" />
+              <e p="CreateOrEditTasks_UserDto.cs" t="Include" />
+              <e p="CreateOrEditTaskTopicDto.cs" t="Include" />
+              <e p="CreateOrEditTaskTypeDto.cs" t="Include" />
+              <e p="CreateOrEditTTTaskDto.cs" t="Include" />
+              <e p="GetAllForLookupTableInput.cs" t="Include" />
+              <e p="GetAllSubtasksForExcelInput.cs" t="Include" />
+              <e p="GetAllSubtasksInput.cs" t="Include" />
+              <e p="GetAllTask_TaskTopicsForExcelInput.cs" t="Include" />
+              <e p="GetAllTask_TaskTopicsInput.cs" t="Include" />
+              <e p="GetAllTaskHistoriesForExcelInput.cs" t="Include" />
+              <e p="GetAllTaskHistoriesInput.cs" t="Include" />
+              <e p="GetAllTaskPrioritiesForExcelInput.cs" t="Include" />
+              <e p="GetAllTaskPrioritiesInput.cs" t="Include" />
+              <e p="GetAllTasks_UsersForExcelInput.cs" t="Include" />
+              <e p="GetAllTasks_UsersInput.cs" t="Include" />
+              <e p="GetAllTaskTopicsForExcelInput.cs" t="Include" />
+              <e p="GetAllTaskTopicsInput.cs" t="Include" />
+              <e p="GetAllTaskTypesForExcelInput.cs" t="Include" />
+              <e p="GetAllTaskTypesInput.cs" t="Include" />
+              <e p="GetAllTTTasksForExcelInput.cs" t="Include" />
+              <e p="GetAllTTTasksInput.cs" t="Include" />
+              <e p="GetSubtaskForEditOutput.cs" t="Include" />
+              <e p="GetSubtaskForViewDto.cs" t="Include" />
+              <e p="GetTask_TaskTopicForEditOutput.cs" t="Include" />
+              <e p="GetTask_TaskTopicForViewDto.cs" t="Include" />
+              <e p="GetTaskHistoryForEditOutput.cs" t="Include" />
+              <e p="GetTaskHistoryForViewDto.cs" t="Include" />
+              <e p="GetTaskPriorityForEditOutput.cs" t="Include" />
+              <e p="GetTaskPriorityForViewDto.cs" t="Include" />
+              <e p="GetTasks_UserForEditOutput.cs" t="Include" />
+              <e p="GetTasks_UserForViewDto.cs" t="Include" />
+              <e p="GetTaskTopicForEditOutput.cs" t="Include" />
+              <e p="GetTaskTopicForViewDto.cs" t="Include" />
+              <e p="GetTaskTypeForEditOutput.cs" t="Include" />
+              <e p="GetTaskTypeForViewDto.cs" t="Include" />
+              <e p="GetTTTaskForEditOutput.cs" t="Include" />
+              <e p="GetTTTaskForViewDto.cs" t="Include" />
+              <e p="SubtaskDto.cs" t="Include" />
+              <e p="Task_TaskTopicDto.cs" t="Include" />
+              <e p="Task_TaskTopicTaskTopicLookupTableDto.cs" t="Include" />
+              <e p="Task_TaskTopicTTTaskLookupTableDto.cs" t="Include" />
+              <e p="TaskHistoryDto.cs" t="Include" />
+              <e p="TaskPriorityDto.cs" t="Include" />
+              <e p="Tasks_UserDto.cs" t="Include" />
+              <e p="Tasks_UserTTTaskLookupTableDto.cs" t="Include" />
+              <e p="Tasks_UserUserLookupTableDto.cs" t="Include" />
+              <e p="TaskTopicDto.cs" t="Include" />
+              <e p="TaskTypeDto.cs" t="Include" />
+              <e p="TTTaskDto.cs" t="Include" />
+              <e p="TTTaskSubtaskLookupTableDto.cs" t="Include" />
+              <e p="TTTaskTaskHistoryLookupTableDto.cs" t="Include" />
+              <e p="TTTaskTaskPriorityLookupTableDto.cs" t="Include" />
+              <e p="TTTaskTaskTypeLookupTableDto.cs" t="Include" />
+            </e>
+            <e p="ISubtasksAppService.cs" t="Include" />
+            <e p="ITask_TaskTopicsAppService.cs" t="Include" />
+            <e p="ITaskHistoriesAppService.cs" t="Include" />
+            <e p="ITaskPrioritiesAppService.cs" t="Include" />
+            <e p="ITasks_UsersAppService.cs" t="Include" />
+            <e p="ITaskTopicsAppService.cs" t="Include" />
+            <e p="ITaskTypesAppService.cs" t="Include" />
+            <e p="ITTTasksAppService.cs" t="Include" />
+          </e>
           <e p="UiCustomization" t="Include">
             <e p="Dto" t="Include">
               <e p="UiCustomizationSettingsDto.cs" t="Include" />
@@ -950,6 +1066,19 @@
             <e p="ITimeZoneService.cs" t="Include" />
             <e p="TimeZoneService.cs" t="Include" />
           </e>
+          <e p="TTTasksNameSace" t="Include">
+            <e p="TaskType.cs" t="Include" />
+          </e>
+          <e p="TTTasksNameSpace" t="Include">
+            <e p="Subtask.cs" t="Include" />
+            <e p="Task_TaskTopic.cs" t="Include" />
+            <e p="TaskHistory.cs" t="Include" />
+            <e p="TaskPriority.cs" t="Include" />
+            <e p="Tasks_User.cs" t="Include" />
+            <e p="TaskTopic.cs" t="Include" />
+            <e p="TaskType.cs" t="Include" />
+            <e p="TTTask.cs" t="Include" />
+          </e>
           <e p="Url" t="Include">
             <e p="IWebUrlService.cs" t="Include" />
           </e>
@@ -1021,6 +1150,19 @@
           </e>
           <e p="Security" t="Include">
             <e p="PasswordComplexitySetting.cs" t="Include" />
+          </e>
+          <e p="TTTasksNameSace" t="Include">
+            <e p="TaskTypeConsts.cs" t="Include" />
+          </e>
+          <e p="TTTasksNameSpace" t="Include">
+            <e p="SubtaskConsts.cs" t="Include" />
+            <e p="Task_TaskTopicConsts.cs" t="Include" />
+            <e p="TaskHistoryConsts.cs" t="Include" />
+            <e p="TaskPriorityConsts.cs" t="Include" />
+            <e p="Tasks_UserConsts.cs" t="Include" />
+            <e p="TaskTopicConsts.cs" t="Include" />
+            <e p="TaskTypeConsts.cs" t="Include" />
+            <e p="TTTaskConsts.cs" t="Include" />
           </e>
           <e p="Validation" t="Include">
             <e p="ValidationHelper.cs" t="Include" />
@@ -1116,6 +1258,26 @@
             <e p="20201217075257_Upgrade_To_ABP_6_1.Designer.cs" t="Include" />
             <e p="20210224123746_Upgraded_To_Abp_6_3.cs" t="Include" />
             <e p="20210224123746_Upgraded_To_Abp_6_3.Designer.cs" t="Include" />
+            <e p="20210513133239_Regenerated_TaskType5794.cs" t="Include" />
+            <e p="20210513133239_Regenerated_TaskType5794.Designer.cs" t="Include" />
+            <e p="20210513133509_Added_TaskPriority.cs" t="Include" />
+            <e p="20210513133509_Added_TaskPriority.Designer.cs" t="Include" />
+            <e p="20210513133712_Added_TaskTopic.cs" t="Include" />
+            <e p="20210513133712_Added_TaskTopic.Designer.cs" t="Include" />
+            <e p="20210513134011_Added_Subtask.cs" t="Include" />
+            <e p="20210513134011_Added_Subtask.Designer.cs" t="Include" />
+            <e p="20210513134155_Added_TaskHistory.cs" t="Include" />
+            <e p="20210513134155_Added_TaskHistory.Designer.cs" t="Include" />
+            <e p="20210513140258_Added_Task_TaskTopic.cs" t="Include" />
+            <e p="20210513140258_Added_Task_TaskTopic.Designer.cs" t="Include" />
+            <e p="20210513142608_Added_TTTask.cs" t="Include" />
+            <e p="20210513142608_Added_TTTask.Designer.cs" t="Include" />
+            <e p="20210513144549_Regenerated_TTTask7566.cs" t="Include" />
+            <e p="20210513144549_Regenerated_TTTask7566.Designer.cs" t="Include" />
+            <e p="20210513145047_Regenerated_Task_TaskTopic5862.cs" t="Include" />
+            <e p="20210513145047_Regenerated_Task_TaskTopic5862.Designer.cs" t="Include" />
+            <e p="20210513145348_Added_Tasks_User.cs" t="Include" />
+            <e p="20210513145348_Added_Tasks_User.Designer.cs" t="Include" />
             <e p="AbpZeroTemplateDbContextModelSnapshot.cs" t="Include" />
             <e p="Seed" t="Include">
               <e p="Host" t="Include">
